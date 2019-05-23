@@ -26,9 +26,37 @@ namespace PokeWalkerSimulator {
             InitializeComponent();
 
             steps = 0;
-            watts = stepsToWatts(steps);
+            watts = StepsToWatts(steps);
 
             InitializeCourses();
+            
+        }
+
+        /// <summary>
+        /// Initializes the courses
+        /// </summary>
+        public void InitializeCourses() {
+            // Course 1 - Refreshing Field
+            int[] steps = { 2000, 3000, 500, 500, 0, 0 };
+            courses[0] = new Course(steps);
+            courses[0].name = "Refreshing Field";
+            courses[0].SetSelectedPokemon();
+            courses[0].UpdateEncounterRates();
+            courses[0].Write();
+        }
+
+        /// <summary>
+        /// Converts steps to watts (20 steps = 1 watt)
+        /// </summary>
+        /// <param name="steps">Number of steps</param>
+        /// <returns>Watts (rounded to whole number)</returns>
+        public int StepsToWatts(int steps) {
+            Console.WriteLine("Converting steps to watts...");
+            double watts = steps / 20;
+            watts = Math.Round(watts, 0);
+
+            Console.WriteLine("Returning new watts (" + watts + ")");
+            return (int) watts;
         }
 
         public void SetStrollPokemonToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -38,38 +66,35 @@ namespace PokeWalkerSimulator {
             strollPokemon = main.PKME_Tabs.pkm;
         }
 
-        /// <summary>
-        /// Initializes the courses
-        /// </summary>
-        public void InitializeCourses() {
-            // Course 1 - Refreshing Field
-            courses[0] = new Course();
-            courses[0].name = "Refreshing Field";
-            courses[0].SetSelectedPokemon();
-            courses[0].SetEncounterRates();
-
-        }
-
-        /// <summary>
-        /// Converts steps to watts (20 steps = 1 watt)
-        /// </summary>
-        /// <param name="steps">Number of steps</param>
-        /// <returns>Watts (rounded to whole number)</returns>
-        public int stepsToWatts(int steps) {
-            Console.WriteLine("Converting steps to watts...");
-            double watts = steps / 20;
-            watts = Math.Round(watts, 0);
-
-            Console.WriteLine("Returning new watts (" + watts + ")");
-            return (int) watts;
-        }
-
         private void BtnAddSteps_Click(object sender, EventArgs e) {
-            Console.WriteLine("Adding 100 steps");
-            courses[0].stepsTaken += 100;
+            Console.WriteLine("Adding 1000 steps");
+            courses[0].stepsTaken += 1000;
             steps += courses[0].stepsTaken;
-            watts = stepsToWatts(courses[0].stepsTaken);
+            watts = StepsToWatts(courses[0].stepsTaken);
 
+            Console.WriteLine("New steps: " + courses[0].stepsTaken);
+            courses[0].UpdateEncounterRates();
+            courses[0].Write();
         }
+
+        private void BtnPokeRadar_Click(object sender, EventArgs e) {
+            StartPokeRadar();
+        }
+
+        /// <summary>
+        /// PokeWalker method
+        /// </summary>
+        public void StartPokeRadar() {
+            Random random = new Random();
+            int pokeRadarSelection = random.Next(0, 100);
+            Console.WriteLine("Random: " + pokeRadarSelection);
+
+            for (int i = 0; i < courses[0].groups.Length; i++) {
+                if (pokeRadarSelection < courses[0].groups[i].GetSelectedGroupPokemon().encounterRate) {
+                    Console.WriteLine("Encountered pokemon " + courses[0].groups[i].GetSelectedGroupPokemon().ToString());
+                }
+            }
+        }
+
     }
 }

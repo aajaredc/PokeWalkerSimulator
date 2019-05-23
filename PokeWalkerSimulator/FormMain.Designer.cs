@@ -27,6 +27,7 @@
             this.pokeWalkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setStrollPokemonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddSteps = new System.Windows.Forms.Button();
+            this.btnPokeRadar = new System.Windows.Forms.Button();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,19 +59,30 @@
             // 
             // btnAddSteps
             // 
-            this.btnAddSteps.Location = new System.Drawing.Point(12, 31);
+            this.btnAddSteps.Location = new System.Drawing.Point(12, 85);
             this.btnAddSteps.Name = "btnAddSteps";
             this.btnAddSteps.Size = new System.Drawing.Size(156, 48);
             this.btnAddSteps.TabIndex = 1;
-            this.btnAddSteps.Text = "Add 100 Steps";
+            this.btnAddSteps.Text = "Add Steps";
             this.btnAddSteps.UseVisualStyleBackColor = true;
             this.btnAddSteps.Click += new System.EventHandler(this.BtnAddSteps_Click);
+            // 
+            // btnPokeRadar
+            // 
+            this.btnPokeRadar.Location = new System.Drawing.Point(12, 31);
+            this.btnPokeRadar.Name = "btnPokeRadar";
+            this.btnPokeRadar.Size = new System.Drawing.Size(156, 48);
+            this.btnPokeRadar.TabIndex = 2;
+            this.btnPokeRadar.Text = "Poke Radar";
+            this.btnPokeRadar.UseVisualStyleBackColor = true;
+            this.btnPokeRadar.Click += new System.EventHandler(this.BtnPokeRadar_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPokeRadar);
             this.Controls.Add(this.btnAddSteps);
             this.Controls.Add(this.menuMain);
             this.MainMenuStrip = this.menuMain;
@@ -88,6 +100,7 @@
         private System.Windows.Forms.ToolStripMenuItem pokeWalkerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setStrollPokemonToolStripMenuItem;
         private System.Windows.Forms.Button btnAddSteps;
+        private System.Windows.Forms.Button btnPokeRadar;
     }
 }
 

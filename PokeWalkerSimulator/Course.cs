@@ -23,24 +23,24 @@ namespace PokeWalkerSimulator {
         /// (Check Serebii for more inforamation)
         public int encounterCalculationType = 0;
 
-        public Course() {
+        public Course(int[] pokemonRequiredSteps) {
 
             for (int groupIndex = 0; groupIndex < groups.Length; groupIndex++) {
-                groups[groupIndex] = new Group();
+                groups[groupIndex] = new Group(groupIndex, pokemonRequiredSteps);
             }
         }
 
         public void SetSelectedPokemon() {
             Random random = new Random();
             
-            for (int groupIndex = 0; groupIndex < groups.Length; groupIndex++) {
-                int pokemonSelection = random.Next(1, 3);
-                Console.WriteLine("Selecting Pokemon " + pokemonSelection + " of Group " + groupIndex);
+            for (int g = 0; g < groups.Length; g++) {
+                int pokemonSelection = random.Next(0, 2);
                 if (pokemonSelection == 1) {
-                    groups[groupIndex].pokemon1.isSelected = true;
+                    groups[g].pokemon[0].isSelected = true;
                 } else {
-                    groups[groupIndex].pokemon1.isSelected = false;
+                    groups[g].pokemon[1].isSelected = true;
                 }
+                Console.WriteLine("Selected " + groups[g].GetSelectedGroupPokemon().ToString());
             }
 
         }
@@ -50,188 +50,212 @@ namespace PokeWalkerSimulator {
         /// </summary>
         // TODO Make this data driven/dynamic?
         // TODO Add other encounter calculation types accordingly
-        public void SetEncounterRates() { 
+        public void UpdateEncounterRates() { 
+
+            // Set the encounter rates of selected pokemon, depending on encounter type
             if (encounterCalculationType == 0) {
                 // Pokemon 1 of group a is selected
-                if (groups[0].pokemon1.isSelected) {
+                if (groups[0].pokemon[0].isSelected) {
                     // Pokemon 1 of group b is selected
-                    if (groups[1].pokemon1.isSelected) {
+                    if (groups[1].pokemon[0].isSelected) {
                         // Pokemon 1 of group c is selected
-                        if (groups[2].pokemon1.isSelected) {
+                        if (groups[2].pokemon[0].isSelected) {
                             // 1a 1b 1c
-                            if (stepsTaken < groups[1].pokemon2.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 0;
-                                groups[2].pokemon1.encounterRate = 100;
+                            Console.WriteLine("1a 1b 1c");
+                            if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 0;
+                                groups[1].pokemon[0].encounterRate = 0;
+                                groups[2].pokemon[0].encounterRate = 100;
                             }
-                            else if (stepsTaken >= groups[1].pokemon2.requiredSteps && stepsTaken < groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 75;
-                                groups[2].pokemon1.encounterRate = 25;
+                            else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[0].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 0;
+                                groups[1].pokemon[0].encounterRate = 75;
+                                groups[2].pokemon[0].encounterRate = 25;
                             }
-                            else if (stepsTaken >= groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 70;
-                                groups[1].pokemon1.encounterRate = 22.5;
-                                groups[2].pokemon1.encounterRate = 7.5;
+                            else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 70;
+                                groups[1].pokemon[0].encounterRate = 22.5;
+                                groups[2].pokemon[0].encounterRate = 7.5;
                             }
                             // No Kangaskhan
                         }
                         // Pokemon 2 of group c is selected
-                        else if (groups[2].pokemon2.isSelected) {
+                        else if (groups[2].pokemon[1].isSelected) {
                             // 1a 1b 2c
-                            if (stepsTaken < groups[1].pokemon2.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 0;
-                                groups[2].pokemon2.encounterRate = 100;
+                            Console.WriteLine("1a 1b 2c");
+                            if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 0;
+                                groups[1].pokemon[0].encounterRate = 0;
+                                groups[2].pokemon[1].encounterRate = 100;
                             }
-                            else if (stepsTaken >= groups[1].pokemon2.requiredSteps && stepsTaken < groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 75;
-                                groups[2].pokemon2.encounterRate = 25;
+                            else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[0].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 0;
+                                groups[1].pokemon[0].encounterRate = 75;
+                                groups[2].pokemon[1].encounterRate = 25;
                             }
-                            else if (stepsTaken >= groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 70;
-                                groups[1].pokemon1.encounterRate = 22.5;
-                                groups[2].pokemon2.encounterRate = 7.5;
+                            else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 70;
+                                groups[1].pokemon[0].encounterRate = 22.5;
+                                groups[2].pokemon[1].encounterRate = 7.5;
                             }
                             // No Kangaskhan
                         }
                     } 
                     // Pokemon 2 of group b is selected
-                    else if (groups[1].pokemon2.isSelected) {
+                    else if (groups[1].pokemon[1].isSelected) {
                         // Pokemon 1 of group c is selected
-                        if (groups[2].pokemon1.isSelected) {
+                        if (groups[2].pokemon[0].isSelected) {
                             // 1a 2b 1c
-                            if (stepsTaken < groups[1].pokemon2.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 0;
-                                groups[1].pokemon2.encounterRate = 0;
-                                groups[2].pokemon1.encounterRate = 100;
+                            Console.WriteLine("1a 2b 1c");
+                            if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 0;
+                                groups[1].pokemon[1].encounterRate = 0;
+                                groups[2].pokemon[0].encounterRate = 100;
                             }
-                            else if (stepsTaken >= groups[1].pokemon2.requiredSteps && stepsTaken < groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 0;
-                                groups[1].pokemon2.encounterRate = 75;
-                                groups[2].pokemon1.encounterRate = 25;
+                            else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[0].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 0;
+                                groups[1].pokemon[1].encounterRate = 75;
+                                groups[2].pokemon[0].encounterRate = 25;
                             }
-                            else if (stepsTaken >= groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 70;
-                                groups[1].pokemon2.encounterRate = 22.5;
-                                groups[2].pokemon1.encounterRate = 7.5;
+                            else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 70;
+                                groups[1].pokemon[1].encounterRate = 22.5;
+                                groups[2].pokemon[0].encounterRate = 7.5;
                             }
                             // No Kangaskhan
                         }
                         // Pokemon 2 of group c is selected
-                        else if (groups[2].pokemon2.isSelected) {
+                        else if (groups[2].pokemon[1].isSelected) {
                             // 1a 2b 2c
-                            if (stepsTaken < groups[1].pokemon2.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 0;
-                                groups[1].pokemon2.encounterRate = 0;
-                                groups[2].pokemon2.encounterRate = 100;
+                            Console.WriteLine("1a 2b 2c");
+                            if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 0;
+                                groups[1].pokemon[1].encounterRate = 0;
+                                groups[2].pokemon[1].encounterRate = 100;
                             }
-                            else if (stepsTaken >= groups[1].pokemon2.requiredSteps && stepsTaken < groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 0;
-                                groups[1].pokemon2.encounterRate = 75;
-                                groups[2].pokemon2.encounterRate = 25;
+                            else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[0].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 0;
+                                groups[1].pokemon[1].encounterRate = 75;
+                                groups[2].pokemon[1].encounterRate = 25;
                             }
-                            else if (stepsTaken >= groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon1.encounterRate = 70;
-                                groups[1].pokemon2.encounterRate = 22.5;
-                                groups[2].pokemon2.encounterRate = 7.5;
+                            else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
+                                groups[0].pokemon[0].encounterRate = 70;
+                                groups[1].pokemon[1].encounterRate = 22.5;
+                                groups[2].pokemon[1].encounterRate = 7.5;
                             }
                             // No Kangaskhan
                         }
                     }
                 }
 
+                // ------------------------------------------------------------
+
                 // Pokemon 2 of group a is selected
-                else if (groups[0].pokemon2.isSelected) {
+                else if (groups[0].pokemon[1].isSelected) {
                     // Pokemon 1 of group b is selected
-                    if (groups[1].pokemon1.isSelected) {
+                    if (groups[1].pokemon[0].isSelected) {
                         // Pokemon 1 of group c is selected
-                        if (groups[2].pokemon1.isSelected) {
+                        if (groups[2].pokemon[0].isSelected) {
                             // 2a 1b 1c
-                            if (stepsTaken < groups[1].pokemon2.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 0;
-                                groups[2].pokemon1.encounterRate = 100;
+                            Console.WriteLine("2a 1b 1c");
+                            if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 0;
+                                groups[1].pokemon[0].encounterRate = 0;
+                                groups[2].pokemon[0].encounterRate = 100;
                             }
-                            else if (stepsTaken >= groups[1].pokemon2.requiredSteps && stepsTaken < groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 75;
-                                groups[2].pokemon1.encounterRate = 25;
+                            else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 0;
+                                groups[1].pokemon[0].encounterRate = 75;
+                                groups[2].pokemon[0].encounterRate = 25;
                             }
                             // No Doduo, but there is a Kangaskhan
-                            else if (stepsTaken >= groups[0].pokemon2.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 50;
-                                groups[1].pokemon1.encounterRate = 37.5;
-                                groups[2].pokemon1.encounterRate = 12.5;
+                            else if (stepsTaken >= groups[0].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 50;
+                                groups[1].pokemon[0].encounterRate = 37.5;
+                                groups[2].pokemon[0].encounterRate = 12.5;
                             }
                         }
                         // Pokemon 2 of group c is selected
-                        else if (groups[2].pokemon2.isSelected) {
+                        else if (groups[2].pokemon[1].isSelected) {
                             // 2a 1b 2c
-                            if (stepsTaken < groups[1].pokemon2.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 0;
-                                groups[2].pokemon1.encounterRate = 100;
+                            Console.WriteLine("2a 1b 2c");
+                            if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 0;
+                                groups[1].pokemon[0].encounterRate = 0;
+                                groups[2].pokemon[1].encounterRate = 100;
                             }
-                            else if (stepsTaken >= groups[1].pokemon2.requiredSteps && stepsTaken < groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 75;
-                                groups[2].pokemon1.encounterRate = 25;
+                            else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 0;
+                                groups[1].pokemon[0].encounterRate = 75;
+                                groups[2].pokemon[1].encounterRate = 25;
                             }
                             // No Doduo, but there is a Kangaskhan
-                            else if (stepsTaken >= groups[0].pokemon2.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 50;
-                                groups[1].pokemon1.encounterRate = 37.5;
-                                groups[2].pokemon1.encounterRate = 12.5;
+                            else if (stepsTaken >= groups[0].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 50;
+                                groups[1].pokemon[0].encounterRate = 37.5;
+                                groups[2].pokemon[1].encounterRate = 12.5;
                             }
                         }
                     }
                     // Pokemon 2 of group b is selected
-                    else if (groups[1].pokemon2.isSelected) {
+                    else if (groups[1].pokemon[1].isSelected) {
                         // Pokemon 1 of group c is selected
-                        if (groups[2].pokemon1.isSelected) {
+                        if (groups[2].pokemon[0].isSelected) {
                             // 2a 2b 1c
-                            if (stepsTaken < groups[1].pokemon2.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 0;
-                                groups[2].pokemon1.encounterRate = 100;
+                            Console.WriteLine("2a 2b 1c");
+                            if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 0;
+                                groups[1].pokemon[1].encounterRate = 0;
+                                groups[2].pokemon[0].encounterRate = 100;
                             }
-                            else if (stepsTaken >= groups[1].pokemon2.requiredSteps && stepsTaken < groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 75;
-                                groups[2].pokemon1.encounterRate = 25;
+                            else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 0;
+                                groups[1].pokemon[1].encounterRate = 75;
+                                groups[2].pokemon[0].encounterRate = 25;
                             }
                             // No Doduo, but there is a Kangaskhan
-                            else if (stepsTaken >= groups[0].pokemon2.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 50;
-                                groups[1].pokemon1.encounterRate = 37.5;
-                                groups[2].pokemon1.encounterRate = 12.5;
+                            else if (stepsTaken >= groups[0].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 50;
+                                groups[1].pokemon[1].encounterRate = 37.5;
+                                groups[2].pokemon[0].encounterRate = 12.5;
                             }
                         }
                         // Pokemon 2 of group c is selected
-                        else if (groups[2].pokemon2.isSelected) {
+                        else if (groups[2].pokemon[1].isSelected) {
                             // 2a 2b 2c
-                            if (stepsTaken < groups[1].pokemon2.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 0;
-                                groups[2].pokemon1.encounterRate = 100;
+                            Console.WriteLine("2a 2b 2c");
+                            if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 0;
+                                groups[1].pokemon[1].encounterRate = 0;
+                                groups[2].pokemon[1].encounterRate = 100;
                             }
-                            else if (stepsTaken >= groups[1].pokemon2.requiredSteps && stepsTaken < groups[0].pokemon1.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 0;
-                                groups[1].pokemon1.encounterRate = 75;
-                                groups[2].pokemon1.encounterRate = 25;
+                            else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 0;
+                                groups[1].pokemon[1].encounterRate = 75;
+                                groups[2].pokemon[1].encounterRate = 25;
                             }
                             // No Doduo, but there is a Kangaskhan
-                            else if (stepsTaken >= groups[0].pokemon2.requiredSteps) {
-                                groups[0].pokemon2.encounterRate = 50;
-                                groups[1].pokemon1.encounterRate = 37.5;
-                                groups[2].pokemon1.encounterRate = 12.5;
+                            else if (stepsTaken >= groups[0].pokemon[1].requiredSteps) {
+                                groups[0].pokemon[1].encounterRate = 50;
+                                groups[1].pokemon[1].encounterRate = 37.5;
+                                groups[2].pokemon[1].encounterRate = 12.5;
                             }
                         }
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Writes information of the course to the console
+        /// </summary>
+        public void Write() {
+            Console.WriteLine("");
+            groups[0].Write();
+            Console.WriteLine("----------");
+            groups[1].Write();
+            Console.WriteLine("----------");
+            groups[2].Write();
         }
     }
 }
