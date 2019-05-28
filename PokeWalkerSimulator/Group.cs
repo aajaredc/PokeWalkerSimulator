@@ -18,7 +18,7 @@ namespace PokeWalkerSimulator {
             this.groupNumber = groupNumber;
 
             pokemon[0] = new GroupPokemon() {
-                pokemonNumber = 0,
+                groupPokemonIndex = 0,
                 group = this.groupNumber
             };
             switch (this.groupNumber) {
@@ -34,7 +34,7 @@ namespace PokeWalkerSimulator {
             }
 
             pokemon[1] = new GroupPokemon() {
-                pokemonNumber = 1,
+                groupPokemonIndex = 1,
                 group = this.groupNumber
             };
             switch (this.groupNumber) {

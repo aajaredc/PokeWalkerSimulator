@@ -8,12 +8,14 @@ using PKHeX.Core;
 namespace PokeWalkerSimulator {
     public class GroupPokemon : PK4 {
 
-        // PokeWalker related defaults
-        public int requiredSteps = 0;
-        public double encounterRate = 0;
+        // PokeWalker related
+        public int requiredSteps = -1;
+        public double encounterRate = -1;
         public bool isSelected = false;
-        public int group = 4;
-        public int pokemonNumber = 3;
+        public int group = -1;
+        public int groupPokemonIndex = -1;
+
+        // Pokemon related
         public PKM pk;
 
         public GroupPokemon() {
@@ -21,7 +23,7 @@ namespace PokeWalkerSimulator {
         }
 
         public override string ToString() {
-            return ("Group: " + group + " | Pokemon: " + pokemonNumber
+            return ("Group: " + group + " | Pokemon: " + groupPokemonIndex
                 + " | Encounter Rate: " + encounterRate + " | Required Steps: " + requiredSteps
                 + " | Selected: " + isSelected);
         }

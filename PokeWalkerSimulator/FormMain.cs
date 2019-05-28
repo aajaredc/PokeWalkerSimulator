@@ -18,6 +18,7 @@ namespace PokeWalkerSimulator {
     public partial class FormMain : Form {
         public PKHeX.WinForms.Main main = new PKHeX.WinForms.Main();
         public PKM strollPokemon;
+        public PKM wildEncounter;
         List<PKM> inventoryPokemon = new List<PKM>();
         public int steps;
         public int watts;
@@ -80,31 +81,61 @@ namespace PokeWalkerSimulator {
         }
 
         public void SetStrollPokemonToolStripMenuItem_Click(object sender, EventArgs e) {
+            // Select the Pokemon
             if (WinFormsUtil.OpenSAVPKMDialog(main.C_SAV.SAV.PKMExtensions, out string path)) {
                 main.OpenQuick(path);
                 Console.WriteLine(path);
             }
+
+            // Set the Pokemon
             strollPokemon = main.PKME_Tabs.pkm;
+
+            // Enable the buttons
+            steps100.Enabled = true;
+            steps500.Enabled = true;
+            steps1000.Enabled = true;
         }
 
         private void BtnPokeRadar_Click(object sender, EventArgs e) {
-            StartPokeRadar();
+            PokeRadarEncounter();
         }
 
         /// <summary>
-        /// PokeRadar method
+        /// Encounter a Pokemon with the PokeRadar
         /// </summary>
-        public void StartPokeRadar() {
+        public void PokeRadarEncounter() {
             Random random = new Random();
             int pokeRadarSelection = random.Next(0, 100);
+            double cumulativeRandom = 0;
             Console.WriteLine("Random: " + pokeRadarSelection);
 
             for (int i = 0; i < courses[0].groups.Length; i++) {
-                if (pokeRadarSelection < courses[0].groups[i].GetSelectedGroupPokemon().encounterRate) {
+
+                cumulativeRandom += courses[0].groups[i].GetSelectedGroupPokemon().encounterRate;
+
+                if (pokeRadarSelection < cumulativeRandom) {
                     Console.WriteLine("Encountered pokemon " + courses[0].groups[i].GetSelectedGroupPokemon().ToString());
-                    inventoryPokemon.Add(courses[0].groups[i].GetSelectedGroupPokemon());
+                    wildEncounter = courses[0].groups[i].GetSelectedGroupPokemon().pk;
+
+                    InitializePokeRadarBattle();
+
+                    return;
                 }
             }
+        }
+
+        /// <summary>
+        /// Initializes the battle for the PokeRadar
+        /// </summary>
+        public void InitializePokeRadarBattle() {
+            // Reset the images
+            picCurrentPokemon.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + strollPokemon.Species + ".png");
+            picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + wildEncounter.Species + ".png");
+
+            // Enable the buttons
+            btnAttack.Enabled = true;
+            btnEvade.Enabled = true;
+            btnCatch.Enabled = true;
         }
 
 
@@ -165,5 +196,8 @@ namespace PokeWalkerSimulator {
             AddSteps(1000);
         }
 
+        private void ChangePokeRadarImagesToolStripMenuItem_Click(object sender, EventArgs e) {
+            picCurrentPokemon.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + strollPokemon.Species + ".png");
+        }
     }
 }
