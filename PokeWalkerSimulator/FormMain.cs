@@ -87,17 +87,6 @@ namespace PokeWalkerSimulator {
             strollPokemon = main.PKME_Tabs.pkm;
         }
 
-        private void BtnAddSteps_Click(object sender, EventArgs e) {
-            Console.WriteLine("Adding 1000 steps");
-            courses[0].stepsTaken += 1000;
-            steps += courses[0].stepsTaken;
-            watts = StepsToWatts(courses[0].stepsTaken);
-
-            Console.WriteLine("New steps: " + courses[0].stepsTaken);
-            courses[0].UpdateEncounterRates();
-            courses[0].Write();
-        }
-
         private void BtnPokeRadar_Click(object sender, EventArgs e) {
             StartPokeRadar();
         }
@@ -147,5 +136,34 @@ namespace PokeWalkerSimulator {
             PKMConverter.Trainer.ApplyToPKM(strollPokemon);
             Console.WriteLine(strollPokemon.TID);
         }
+
+
+        /// <summary>
+        /// Adds steps
+        /// </summary>
+        /// <param name="stepsToAdd">Steps to add</param>
+        private void AddSteps(int stepsToAdd) {
+            Console.WriteLine("Adding 1000 steps");
+            courses[0].stepsTaken += stepsToAdd;
+            steps += courses[0].stepsTaken;
+            watts = StepsToWatts(courses[0].stepsTaken);
+
+            Console.WriteLine("New steps: " + courses[0].stepsTaken);
+            courses[0].UpdateEncounterRates();
+            courses[0].Write();
+        }
+
+        private void Steps100_Click(object sender, EventArgs e) {
+            AddSteps(100);
+        }
+
+        private void Steps500_Click(object sender, EventArgs e) {
+            AddSteps(500);
+        }
+
+        private void Steps1000_Click(object sender, EventArgs e) {
+            AddSteps(1000);
+        }
+
     }
 }

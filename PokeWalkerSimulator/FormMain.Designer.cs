@@ -33,17 +33,21 @@
             this.endStrollToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.setStrollPokemonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stepsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stepsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.stepsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.stepsToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.steps100 = new System.Windows.Forms.ToolStripMenuItem();
+            this.steps500 = new System.Windows.Forms.ToolStripMenuItem();
+            this.steps1000 = new System.Windows.Forms.ToolStripMenuItem();
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.randomizeStrollPKMIVsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnAddSteps = new System.Windows.Forms.Button();
-            this.btnPokeRadar = new System.Windows.Forms.Button();
-            this.btnExportStrollPokemon = new System.Windows.Forms.Button();
             this.viewPK4InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTrainerInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPokeRadar = new System.Windows.Forms.Button();
+            this.btnExportStrollPokemon = new System.Windows.Forms.Button();
+            this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.tabPokeRadar = new System.Windows.Forms.TabPage();
+            this.tabDowsingMachine = new System.Windows.Forms.TabPage();
+            this.tabInventory = new System.Windows.Forms.TabPage();
             this.menuMain.SuspendLayout();
+            this.tabControlMain.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuMain
@@ -55,7 +59,7 @@
             this.debugToolStripMenuItem});
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.Name = "menuMain";
-            this.menuMain.Size = new System.Drawing.Size(800, 28);
+            this.menuMain.Size = new System.Drawing.Size(643, 28);
             this.menuMain.TabIndex = 0;
             this.menuMain.Text = "menuMain";
             // 
@@ -71,14 +75,14 @@
             // selectSaveFileToolStripMenuItem
             // 
             this.selectSaveFileToolStripMenuItem.Name = "selectSaveFileToolStripMenuItem";
-            this.selectSaveFileToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.selectSaveFileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.selectSaveFileToolStripMenuItem.Text = "Select Save File";
             this.selectSaveFileToolStripMenuItem.Click += new System.EventHandler(this.SelectSaveFileToolStripMenuItem_Click);
             // 
             // exportSaveFileToolStripMenuItem
             // 
             this.exportSaveFileToolStripMenuItem.Name = "exportSaveFileToolStripMenuItem";
-            this.exportSaveFileToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.exportSaveFileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.exportSaveFileToolStripMenuItem.Text = "Export Save File";
             this.exportSaveFileToolStripMenuItem.Click += new System.EventHandler(this.ExportSaveFileToolStripMenuItem_Click);
             // 
@@ -98,7 +102,7 @@
             this.startStrollToolStripMenuItem,
             this.endStrollToolStripMenuItem1});
             this.beginStrollToolStripMenuItem.Name = "beginStrollToolStripMenuItem";
-            this.beginStrollToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.beginStrollToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.beginStrollToolStripMenuItem.Text = "Stroll";
             // 
             // startStrollToolStripMenuItem
@@ -116,37 +120,40 @@
             // setStrollPokemonToolStripMenuItem
             // 
             this.setStrollPokemonToolStripMenuItem.Name = "setStrollPokemonToolStripMenuItem";
-            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.setStrollPokemonToolStripMenuItem.Text = "Set Stroll Pokemon";
             this.setStrollPokemonToolStripMenuItem.Click += new System.EventHandler(this.SetStrollPokemonToolStripMenuItem_Click);
             // 
             // stepsToolStripMenuItem
             // 
             this.stepsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stepsToolStripMenuItem1,
-            this.stepsToolStripMenuItem2,
-            this.stepsToolStripMenuItem3});
+            this.steps100,
+            this.steps500,
+            this.steps1000});
             this.stepsToolStripMenuItem.Name = "stepsToolStripMenuItem";
-            this.stepsToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.stepsToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.stepsToolStripMenuItem.Text = "Steps";
             // 
-            // stepsToolStripMenuItem1
+            // steps100
             // 
-            this.stepsToolStripMenuItem1.Name = "stepsToolStripMenuItem1";
-            this.stepsToolStripMenuItem1.Size = new System.Drawing.Size(156, 26);
-            this.stepsToolStripMenuItem1.Text = "100 Steps";
+            this.steps100.Name = "steps100";
+            this.steps100.Size = new System.Drawing.Size(216, 26);
+            this.steps100.Text = "100 Steps";
+            this.steps100.Click += new System.EventHandler(this.Steps100_Click);
             // 
-            // stepsToolStripMenuItem2
+            // steps500
             // 
-            this.stepsToolStripMenuItem2.Name = "stepsToolStripMenuItem2";
-            this.stepsToolStripMenuItem2.Size = new System.Drawing.Size(156, 26);
-            this.stepsToolStripMenuItem2.Text = "500 Steps";
+            this.steps500.Name = "steps500";
+            this.steps500.Size = new System.Drawing.Size(216, 26);
+            this.steps500.Text = "500 Steps";
+            this.steps500.Click += new System.EventHandler(this.Steps500_Click);
             // 
-            // stepsToolStripMenuItem3
+            // steps1000
             // 
-            this.stepsToolStripMenuItem3.Name = "stepsToolStripMenuItem3";
-            this.stepsToolStripMenuItem3.Size = new System.Drawing.Size(156, 26);
-            this.stepsToolStripMenuItem3.Text = "1000 Steps";
+            this.steps1000.Name = "steps1000";
+            this.steps1000.Size = new System.Drawing.Size(216, 26);
+            this.steps1000.Text = "1000 Steps";
+            this.steps1000.Click += new System.EventHandler(this.Steps1000_Click);
             // 
             // debugToolStripMenuItem
             // 
@@ -165,36 +172,6 @@
             this.randomizeStrollPKMIVsToolStripMenuItem.Text = "Randomize Stroll PKM IVs";
             this.randomizeStrollPKMIVsToolStripMenuItem.Click += new System.EventHandler(this.RandomizeStrollPKMIVsToolStripMenuItem_Click);
             // 
-            // btnAddSteps
-            // 
-            this.btnAddSteps.Location = new System.Drawing.Point(12, 85);
-            this.btnAddSteps.Name = "btnAddSteps";
-            this.btnAddSteps.Size = new System.Drawing.Size(156, 48);
-            this.btnAddSteps.TabIndex = 1;
-            this.btnAddSteps.Text = "Add Steps";
-            this.btnAddSteps.UseVisualStyleBackColor = true;
-            this.btnAddSteps.Click += new System.EventHandler(this.BtnAddSteps_Click);
-            // 
-            // btnPokeRadar
-            // 
-            this.btnPokeRadar.Location = new System.Drawing.Point(12, 31);
-            this.btnPokeRadar.Name = "btnPokeRadar";
-            this.btnPokeRadar.Size = new System.Drawing.Size(156, 48);
-            this.btnPokeRadar.TabIndex = 2;
-            this.btnPokeRadar.Text = "Poke Radar";
-            this.btnPokeRadar.UseVisualStyleBackColor = true;
-            this.btnPokeRadar.Click += new System.EventHandler(this.BtnPokeRadar_Click);
-            // 
-            // btnExportStrollPokemon
-            // 
-            this.btnExportStrollPokemon.Location = new System.Drawing.Point(632, 390);
-            this.btnExportStrollPokemon.Name = "btnExportStrollPokemon";
-            this.btnExportStrollPokemon.Size = new System.Drawing.Size(156, 48);
-            this.btnExportStrollPokemon.TabIndex = 5;
-            this.btnExportStrollPokemon.Text = "Export Stroll Pokemon";
-            this.btnExportStrollPokemon.UseVisualStyleBackColor = true;
-            this.btnExportStrollPokemon.Click += new System.EventHandler(this.BtnExportStrollPokemon_Click);
-            // 
             // viewPK4InformationToolStripMenuItem
             // 
             this.viewPK4InformationToolStripMenuItem.Name = "viewPK4InformationToolStripMenuItem";
@@ -209,20 +186,82 @@
             this.viewTrainerInformationToolStripMenuItem.Text = "View Trainer Information";
             this.viewTrainerInformationToolStripMenuItem.Click += new System.EventHandler(this.ViewTrainerInformationToolStripMenuItem_Click);
             // 
+            // btnPokeRadar
+            // 
+            this.btnPokeRadar.Location = new System.Drawing.Point(470, 110);
+            this.btnPokeRadar.Name = "btnPokeRadar";
+            this.btnPokeRadar.Size = new System.Drawing.Size(156, 48);
+            this.btnPokeRadar.TabIndex = 2;
+            this.btnPokeRadar.Text = "Poke Radar";
+            this.btnPokeRadar.UseVisualStyleBackColor = true;
+            this.btnPokeRadar.Click += new System.EventHandler(this.BtnPokeRadar_Click);
+            // 
+            // btnExportStrollPokemon
+            // 
+            this.btnExportStrollPokemon.Location = new System.Drawing.Point(470, 56);
+            this.btnExportStrollPokemon.Name = "btnExportStrollPokemon";
+            this.btnExportStrollPokemon.Size = new System.Drawing.Size(156, 48);
+            this.btnExportStrollPokemon.TabIndex = 5;
+            this.btnExportStrollPokemon.Text = "Export Stroll Pokemon";
+            this.btnExportStrollPokemon.UseVisualStyleBackColor = true;
+            this.btnExportStrollPokemon.Click += new System.EventHandler(this.BtnExportStrollPokemon_Click);
+            // 
+            // tabControlMain
+            // 
+            this.tabControlMain.Controls.Add(this.tabPokeRadar);
+            this.tabControlMain.Controls.Add(this.tabDowsingMachine);
+            this.tabControlMain.Controls.Add(this.tabInventory);
+            this.tabControlMain.Location = new System.Drawing.Point(12, 31);
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.Size = new System.Drawing.Size(452, 407);
+            this.tabControlMain.TabIndex = 6;
+            // 
+            // tabPokeRadar
+            // 
+            this.tabPokeRadar.Location = new System.Drawing.Point(4, 25);
+            this.tabPokeRadar.Name = "tabPokeRadar";
+            this.tabPokeRadar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPokeRadar.Size = new System.Drawing.Size(444, 378);
+            this.tabPokeRadar.TabIndex = 0;
+            this.tabPokeRadar.Text = "PokeRadar";
+            this.tabPokeRadar.UseVisualStyleBackColor = true;
+            // 
+            // tabDowsingMachine
+            // 
+            this.tabDowsingMachine.Location = new System.Drawing.Point(4, 25);
+            this.tabDowsingMachine.Name = "tabDowsingMachine";
+            this.tabDowsingMachine.Padding = new System.Windows.Forms.Padding(3);
+            this.tabDowsingMachine.Size = new System.Drawing.Size(444, 378);
+            this.tabDowsingMachine.TabIndex = 1;
+            this.tabDowsingMachine.Text = "Dowsing Machine";
+            this.tabDowsingMachine.UseVisualStyleBackColor = true;
+            // 
+            // tabInventory
+            // 
+            this.tabInventory.Location = new System.Drawing.Point(4, 25);
+            this.tabInventory.Name = "tabInventory";
+            this.tabInventory.Size = new System.Drawing.Size(444, 378);
+            this.tabInventory.TabIndex = 2;
+            this.tabInventory.Text = "Inventory";
+            this.tabInventory.UseVisualStyleBackColor = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(643, 448);
+            this.Controls.Add(this.tabControlMain);
             this.Controls.Add(this.btnExportStrollPokemon);
             this.Controls.Add(this.btnPokeRadar);
-            this.Controls.Add(this.btnAddSteps);
             this.Controls.Add(this.menuMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuMain;
             this.Name = "FormMain";
             this.Text = "PokeWalker Simulator";
             this.menuMain.ResumeLayout(false);
             this.menuMain.PerformLayout();
+            this.tabControlMain.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,7 +271,6 @@
         private System.Windows.Forms.MenuStrip menuMain;
         private System.Windows.Forms.ToolStripMenuItem pokeWalkerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem setStrollPokemonToolStripMenuItem;
-        private System.Windows.Forms.Button btnAddSteps;
         private System.Windows.Forms.Button btnPokeRadar;
         private System.Windows.Forms.Button btnExportStrollPokemon;
         private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
@@ -243,12 +281,16 @@
         private System.Windows.Forms.ToolStripMenuItem endStrollToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stepsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stepsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem stepsToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem stepsToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem steps100;
+        private System.Windows.Forms.ToolStripMenuItem steps500;
+        private System.Windows.Forms.ToolStripMenuItem steps1000;
         private System.Windows.Forms.ToolStripMenuItem randomizeStrollPKMIVsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewPK4InformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewTrainerInformationToolStripMenuItem;
+        private System.Windows.Forms.TabControl tabControlMain;
+        private System.Windows.Forms.TabPage tabPokeRadar;
+        private System.Windows.Forms.TabPage tabDowsingMachine;
+        private System.Windows.Forms.TabPage tabInventory;
     }
 }
 
