@@ -31,6 +31,13 @@
             this.getPK4Info = new System.Windows.Forms.Button();
             this.btnRandomIVs = new System.Windows.Forms.Button();
             this.btnExportStrollPokemon = new System.Windows.Forms.Button();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.selectSaveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportSaveFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.beginStrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startStrollToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.endStrollToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -38,7 +45,9 @@
             // 
             this.menuMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pokeWalkerToolStripMenuItem});
+            this.saveToolStripMenuItem,
+            this.pokeWalkerToolStripMenuItem,
+            this.debugToolStripMenuItem});
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.Name = "menuMain";
             this.menuMain.Size = new System.Drawing.Size(800, 28);
@@ -48,6 +57,7 @@
             // pokeWalkerToolStripMenuItem
             // 
             this.pokeWalkerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.beginStrollToolStripMenuItem,
             this.setStrollPokemonToolStripMenuItem});
             this.pokeWalkerToolStripMenuItem.Name = "pokeWalkerToolStripMenuItem";
             this.pokeWalkerToolStripMenuItem.Size = new System.Drawing.Size(97, 24);
@@ -56,7 +66,7 @@
             // setStrollPokemonToolStripMenuItem
             // 
             this.setStrollPokemonToolStripMenuItem.Name = "setStrollPokemonToolStripMenuItem";
-            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.setStrollPokemonToolStripMenuItem.Text = "Set Stroll Pokemon";
             this.setStrollPokemonToolStripMenuItem.Click += new System.EventHandler(this.SetStrollPokemonToolStripMenuItem_Click);
             // 
@@ -110,6 +120,56 @@
             this.btnExportStrollPokemon.UseVisualStyleBackColor = true;
             this.btnExportStrollPokemon.Click += new System.EventHandler(this.BtnExportStrollPokemon_Click);
             // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.selectSaveFileToolStripMenuItem,
+            this.exportSaveFileToolStripMenuItem});
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(52, 24);
+            this.saveToolStripMenuItem.Text = "Save";
+            // 
+            // selectSaveFileToolStripMenuItem
+            // 
+            this.selectSaveFileToolStripMenuItem.Name = "selectSaveFileToolStripMenuItem";
+            this.selectSaveFileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.selectSaveFileToolStripMenuItem.Text = "Select Save File";
+            this.selectSaveFileToolStripMenuItem.Click += new System.EventHandler(this.SelectSaveFileToolStripMenuItem_Click);
+            // 
+            // exportSaveFileToolStripMenuItem
+            // 
+            this.exportSaveFileToolStripMenuItem.Name = "exportSaveFileToolStripMenuItem";
+            this.exportSaveFileToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.exportSaveFileToolStripMenuItem.Text = "Export Save File";
+            this.exportSaveFileToolStripMenuItem.Click += new System.EventHandler(this.ExportSaveFileToolStripMenuItem_Click);
+            // 
+            // beginStrollToolStripMenuItem
+            // 
+            this.beginStrollToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startStrollToolStripMenuItem,
+            this.endStrollToolStripMenuItem1});
+            this.beginStrollToolStripMenuItem.Name = "beginStrollToolStripMenuItem";
+            this.beginStrollToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.beginStrollToolStripMenuItem.Text = "Stroll";
+            // 
+            // debugToolStripMenuItem
+            // 
+            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
+            this.debugToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.debugToolStripMenuItem.Text = "Debug";
+            // 
+            // startStrollToolStripMenuItem
+            // 
+            this.startStrollToolStripMenuItem.Name = "startStrollToolStripMenuItem";
+            this.startStrollToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.startStrollToolStripMenuItem.Text = "Start Stroll";
+            // 
+            // endStrollToolStripMenuItem1
+            // 
+            this.endStrollToolStripMenuItem1.Name = "endStrollToolStripMenuItem1";
+            this.endStrollToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.endStrollToolStripMenuItem1.Text = "End Stroll";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -140,6 +200,13 @@
         private System.Windows.Forms.Button getPK4Info;
         private System.Windows.Forms.Button btnRandomIVs;
         private System.Windows.Forms.Button btnExportStrollPokemon;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem selectSaveFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportSaveFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem beginStrollToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem startStrollToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem endStrollToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
     }
 }
 

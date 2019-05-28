@@ -114,5 +114,14 @@ namespace PokeWalkerSimulator {
             PKM pk = main.PreparePKM();
             WinFormsUtil.SavePKMDialog(pk);
         }
+
+        private void SelectSaveFileToolStripMenuItem_Click(object sender, EventArgs e) {
+            if (WinFormsUtil.OpenSAVPKMDialog(main.C_SAV.SAV.PKMExtensions, out string path))
+                main.OpenQuick(path);
+        }
+
+        private void ExportSaveFileToolStripMenuItem_Click(object sender, EventArgs e) {
+            main.C_SAV.ExportSaveFile();
+        }
     }
 }
