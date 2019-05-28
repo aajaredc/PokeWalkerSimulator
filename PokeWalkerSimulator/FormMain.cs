@@ -18,11 +18,15 @@ namespace PokeWalkerSimulator {
     public partial class FormMain : Form {
         public PKHeX.WinForms.Main main = new PKHeX.WinForms.Main();
         public PKM strollPokemon;
+        
         public int steps;
         public int watts;
         public Course[] courses = new Course[1];
 
         public FormMain() {
+
+            
+
             InitializeComponent();
 
             steps = 0;
@@ -82,7 +86,7 @@ namespace PokeWalkerSimulator {
         }
 
         /// <summary>
-        /// PokeWalker method
+        /// PokeRadar method
         /// </summary>
         public void StartPokeRadar() {
             Random random = new Random();
@@ -96,5 +100,19 @@ namespace PokeWalkerSimulator {
             }
         }
 
+        private void GetPK4Info_Click(object sender, EventArgs e) {
+            Console.WriteLine("Loaded Pokemon Information: ");
+        }
+
+        private void BtnRandomIVs_Click(object sender, EventArgs e) {
+            strollPokemon.SetRandomIVs();
+        }
+
+        private void BtnExportStrollPokemon_Click(object sender, EventArgs e) {
+            if (!main.PKME_Tabs.EditsComplete)
+                return;
+            PKM pk = main.PreparePKM();
+            WinFormsUtil.SavePKMDialog(pk);
+        }
     }
 }

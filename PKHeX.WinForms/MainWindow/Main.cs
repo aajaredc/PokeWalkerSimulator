@@ -1084,7 +1084,7 @@ namespace PKHeX.WinForms
         private void PKME_Tabs_RequestShowdownExport(object sender, EventArgs e) => ClickShowdownExportPKM(sender, e);
         private void PKME_Tabs_RequestShowdownImport(object sender, EventArgs e) => ClickShowdownImportPKM(sender, e);
         private SaveFile PKME_Tabs_SaveFileRequested(object sender, EventArgs e) => C_SAV.SAV;
-        private PKM PreparePKM(bool click = true) => PKME_Tabs.PreparePKM(click);
+        public PKM PreparePKM(bool click = true) => PKME_Tabs.PreparePKM(click);
 
         // Drag & Drop Events
         private static void Main_DragEnter(object sender, DragEventArgs e)

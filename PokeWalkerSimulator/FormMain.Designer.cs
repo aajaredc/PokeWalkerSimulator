@@ -28,6 +28,9 @@
             this.setStrollPokemonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnAddSteps = new System.Windows.Forms.Button();
             this.btnPokeRadar = new System.Windows.Forms.Button();
+            this.getPK4Info = new System.Windows.Forms.Button();
+            this.btnRandomIVs = new System.Windows.Forms.Button();
+            this.btnExportStrollPokemon = new System.Windows.Forms.Button();
             this.menuMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +56,7 @@
             // setStrollPokemonToolStripMenuItem
             // 
             this.setStrollPokemonToolStripMenuItem.Name = "setStrollPokemonToolStripMenuItem";
-            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
             this.setStrollPokemonToolStripMenuItem.Text = "Set Stroll Pokemon";
             this.setStrollPokemonToolStripMenuItem.Click += new System.EventHandler(this.SetStrollPokemonToolStripMenuItem_Click);
             // 
@@ -77,11 +80,44 @@
             this.btnPokeRadar.UseVisualStyleBackColor = true;
             this.btnPokeRadar.Click += new System.EventHandler(this.BtnPokeRadar_Click);
             // 
+            // getPK4Info
+            // 
+            this.getPK4Info.Location = new System.Drawing.Point(12, 390);
+            this.getPK4Info.Name = "getPK4Info";
+            this.getPK4Info.Size = new System.Drawing.Size(156, 48);
+            this.getPK4Info.TabIndex = 3;
+            this.getPK4Info.Text = "Get PKHeX PK4 info";
+            this.getPK4Info.UseVisualStyleBackColor = true;
+            this.getPK4Info.Click += new System.EventHandler(this.GetPK4Info_Click);
+            // 
+            // btnRandomIVs
+            // 
+            this.btnRandomIVs.Location = new System.Drawing.Point(174, 390);
+            this.btnRandomIVs.Name = "btnRandomIVs";
+            this.btnRandomIVs.Size = new System.Drawing.Size(156, 48);
+            this.btnRandomIVs.TabIndex = 4;
+            this.btnRandomIVs.Text = "Randomize IVs";
+            this.btnRandomIVs.UseVisualStyleBackColor = true;
+            this.btnRandomIVs.Click += new System.EventHandler(this.BtnRandomIVs_Click);
+            // 
+            // btnExportStrollPokemon
+            // 
+            this.btnExportStrollPokemon.Location = new System.Drawing.Point(632, 390);
+            this.btnExportStrollPokemon.Name = "btnExportStrollPokemon";
+            this.btnExportStrollPokemon.Size = new System.Drawing.Size(156, 48);
+            this.btnExportStrollPokemon.TabIndex = 5;
+            this.btnExportStrollPokemon.Text = "Export Stroll Pokemon";
+            this.btnExportStrollPokemon.UseVisualStyleBackColor = true;
+            this.btnExportStrollPokemon.Click += new System.EventHandler(this.BtnExportStrollPokemon_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnExportStrollPokemon);
+            this.Controls.Add(this.btnRandomIVs);
+            this.Controls.Add(this.getPK4Info);
             this.Controls.Add(this.btnPokeRadar);
             this.Controls.Add(this.btnAddSteps);
             this.Controls.Add(this.menuMain);
@@ -101,6 +137,9 @@
         private System.Windows.Forms.ToolStripMenuItem setStrollPokemonToolStripMenuItem;
         private System.Windows.Forms.Button btnAddSteps;
         private System.Windows.Forms.Button btnPokeRadar;
+        private System.Windows.Forms.Button getPK4Info;
+        private System.Windows.Forms.Button btnRandomIVs;
+        private System.Windows.Forms.Button btnExportStrollPokemon;
     }
 }
 
