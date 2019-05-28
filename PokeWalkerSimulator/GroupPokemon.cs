@@ -14,13 +14,7 @@ namespace PokeWalkerSimulator {
         public bool isSelected = false;
         public int group = 4;
         public int pokemonNumber = 3;
-
-        // PK4 defaults
-        
-        
-        // Things to not default:
-        // ability
-        // ability number?
+        public PKM pk;
 
         public GroupPokemon() {
             

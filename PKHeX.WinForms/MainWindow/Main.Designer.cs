@@ -137,7 +137,7 @@
             this.Menu_ExportMAIN.Name = "Menu_ExportMAIN";
             this.Menu_ExportMAIN.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
             this.Menu_ExportMAIN.ShowShortcutKeys = false;
-            this.Menu_ExportMAIN.Size = new System.Drawing.Size(170, 26);
+            this.Menu_ExportMAIN.Size = new System.Drawing.Size(216, 26);
             this.Menu_ExportMAIN.Text = "&Export main";
             this.Menu_ExportMAIN.Click += new System.EventHandler(this.ClickExportSAV);
             // 
@@ -147,7 +147,7 @@
             this.Menu_ExportBAK.Name = "Menu_ExportBAK";
             this.Menu_ExportBAK.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.B)));
             this.Menu_ExportBAK.ShowShortcutKeys = false;
-            this.Menu_ExportBAK.Size = new System.Drawing.Size(170, 26);
+            this.Menu_ExportBAK.Size = new System.Drawing.Size(216, 26);
             this.Menu_ExportBAK.Text = "Export &Backup";
             this.Menu_ExportBAK.Click += new System.EventHandler(this.ClickExportSAVBAK);
             // 

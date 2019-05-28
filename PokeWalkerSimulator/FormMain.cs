@@ -18,7 +18,7 @@ namespace PokeWalkerSimulator {
     public partial class FormMain : Form {
         public PKHeX.WinForms.Main main = new PKHeX.WinForms.Main();
         public PKM strollPokemon;
-        
+        List<PKM> inventoryPokemon = new List<PKM>();
         public int steps;
         public int watts;
         public Course[] courses = new Course[1];
@@ -40,13 +40,29 @@ namespace PokeWalkerSimulator {
         /// Initializes the courses
         /// </summary>
         public void InitializeCourses() {
-            // Course 1 - Refreshing Field
+
+            string path;
+
+            // Course 0 - Refreshing Field
             int[] steps = { 2000, 3000, 500, 500, 0, 0 };
             courses[0] = new Course(steps);
             courses[0].name = "Refreshing Field";
+
+            for (int groupIndex = 0; groupIndex < courses[0].groups.Length; groupIndex++) {
+                for (int groupPokemonIndex = 0; groupPokemonIndex < courses[0].groups[groupIndex].pokemon.Length; groupPokemonIndex++) {
+                    path = "../../PK4/0/" + groupIndex + groupPokemonIndex + ".pk4";
+
+                    main.OpenQuick(path);
+                    Console.WriteLine(path);
+
+                    courses[0].groups[groupIndex].pokemon[groupPokemonIndex].pk = main.PKME_Tabs.pkm;
+                }
+            }
+
             courses[0].SetSelectedPokemon();
             courses[0].UpdateEncounterRates();
             courses[0].Write();
+
         }
 
         /// <summary>
@@ -66,6 +82,7 @@ namespace PokeWalkerSimulator {
         public void SetStrollPokemonToolStripMenuItem_Click(object sender, EventArgs e) {
             if (WinFormsUtil.OpenSAVPKMDialog(main.C_SAV.SAV.PKMExtensions, out string path)) {
                 main.OpenQuick(path);
+                Console.WriteLine(path);
             }
             strollPokemon = main.PKME_Tabs.pkm;
         }
@@ -96,17 +113,11 @@ namespace PokeWalkerSimulator {
             for (int i = 0; i < courses[0].groups.Length; i++) {
                 if (pokeRadarSelection < courses[0].groups[i].GetSelectedGroupPokemon().encounterRate) {
                     Console.WriteLine("Encountered pokemon " + courses[0].groups[i].GetSelectedGroupPokemon().ToString());
+                    inventoryPokemon.Add(courses[0].groups[i].GetSelectedGroupPokemon());
                 }
             }
         }
 
-        private void GetPK4Info_Click(object sender, EventArgs e) {
-            Console.WriteLine("Loaded Pokemon Information: ");
-        }
-
-        private void BtnRandomIVs_Click(object sender, EventArgs e) {
-            strollPokemon.SetRandomIVs();
-        }
 
         private void BtnExportStrollPokemon_Click(object sender, EventArgs e) {
             if (!main.PKME_Tabs.EditsComplete)
@@ -122,6 +133,19 @@ namespace PokeWalkerSimulator {
 
         private void ExportSaveFileToolStripMenuItem_Click(object sender, EventArgs e) {
             main.C_SAV.ExportSaveFile();
+        }
+
+        private void RandomizeStrollPKMIVsToolStripMenuItem_Click(object sender, EventArgs e) {
+            strollPokemon.SetRandomIVs();
+        }
+
+        private void ViewPK4InformationToolStripMenuItem_Click(object sender, EventArgs e) {
+
+        }
+
+        private void ViewTrainerInformationToolStripMenuItem_Click(object sender, EventArgs e) {
+            PKMConverter.Trainer.ApplyToPKM(strollPokemon);
+            Console.WriteLine(strollPokemon.TID);
         }
     }
 }
