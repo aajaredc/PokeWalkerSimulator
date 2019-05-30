@@ -36,6 +36,7 @@
             this.picInventoryPokemon0.Location = new System.Drawing.Point(3, 3);
             this.picInventoryPokemon0.Name = "picInventoryPokemon0";
             this.picInventoryPokemon0.Size = new System.Drawing.Size(80, 60);
+            this.picInventoryPokemon0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picInventoryPokemon0.TabIndex = 1;
             this.picInventoryPokemon0.TabStop = false;
             // 
@@ -44,6 +45,7 @@
             this.picInventoryPokemon1.Location = new System.Drawing.Point(89, 3);
             this.picInventoryPokemon1.Name = "picInventoryPokemon1";
             this.picInventoryPokemon1.Size = new System.Drawing.Size(80, 60);
+            this.picInventoryPokemon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picInventoryPokemon1.TabIndex = 2;
             this.picInventoryPokemon1.TabStop = false;
             // 
@@ -52,6 +54,7 @@
             this.picInventoryPokemon2.Location = new System.Drawing.Point(175, 3);
             this.picInventoryPokemon2.Name = "picInventoryPokemon2";
             this.picInventoryPokemon2.Size = new System.Drawing.Size(80, 60);
+            this.picInventoryPokemon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picInventoryPokemon2.TabIndex = 3;
             this.picInventoryPokemon2.TabStop = false;
             // 

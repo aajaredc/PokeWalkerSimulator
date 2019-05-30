@@ -140,7 +140,7 @@ namespace PokeWalkerSimulator {
 
         private void BtnCatch_Click(object sender, EventArgs e) {
             Console.WriteLine("Catch successful");
-            
+            inventory.inventoryPokemon.Add(wildEncounter);
         }
 
 
