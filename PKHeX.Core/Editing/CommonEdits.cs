@@ -300,8 +300,10 @@ namespace PKHeX.Core
                 case 254: return 1; // Female-Only
                 case 0: return 0; // Male-Only
             }
-            if (!pkm.IsGenderValid())
+            if (!pkm.IsGenderValid()) {
+                Console.WriteLine("gender invalid");
                 return PKX.GetGenderFromPIDAndRatio(pkm.PID, gt);
+            }
             return pkm.Gender;
         }
 

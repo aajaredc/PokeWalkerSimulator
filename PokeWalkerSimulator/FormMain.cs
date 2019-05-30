@@ -16,7 +16,7 @@ using static PKHeX.Core.MessageStrings;
 
 namespace PokeWalkerSimulator {
     public partial class FormMain : Form {
-        public PKHeX.WinForms.Main main = new PKHeX.WinForms.Main();
+        public static PKHeX.WinForms.Main main = new PKHeX.WinForms.Main();
         public PKM strollPokemon;
         public PKM wildEncounter;
         public int steps;
@@ -141,6 +141,8 @@ namespace PokeWalkerSimulator {
         private void BtnCatch_Click(object sender, EventArgs e) {
             Console.WriteLine("Catch successful");
             inventory.inventoryPokemon.Add(wildEncounter);
+
+            inventory.inventoryPokemon[0].TID = 09628;
         }
 
 
@@ -176,7 +178,11 @@ namespace PokeWalkerSimulator {
         }
 
         private void ViewPK4InformationToolStripMenuItem_Click(object sender, EventArgs e) {
+            PKM pk = strollPokemon;
+            
+            PIDGenerator.SetRandomWildPID(pk, 4, pk.Nature, pk.Ability, pk.Gender, PIDType.Pokewalker);
 
+            main.PKME_Tabs.PopulateFields(pk);
         }
 
         private void ViewTrainerInformationToolStripMenuItem_Click(object sender, EventArgs e) {

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PKHeX.Core;
+using PKHeX.WinForms;
 
 namespace PokeWalkerSimulator.Controls {
     public partial class Inventory : UserControl {
@@ -53,6 +54,11 @@ namespace PokeWalkerSimulator.Controls {
         }
 
         private void picInventoryPokemon_MouseClick(object sender, EventArgs e) {
+
+            // Load the Pokemon in to PKHeX
+            FormMain.main.PKME_Tabs.PopulateFields(inventoryPokemon[0]);
+
+
 
         }
 

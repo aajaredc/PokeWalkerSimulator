@@ -266,13 +266,16 @@ namespace PKHeX.Core
 
         public static void SetRandomWildPID(PKM pk, int gen, int nature, int ability, int gender, PIDType specific = PIDType.None)
         {
+            Console.WriteLine(specific);
             if (specific == PIDType.Pokewalker)
             {
                 pk.Gender = gender;
+                Console.WriteLine(nature);
                 do
                 {
                     pk.PID = GetPokeWalkerPID(pk.TID, pk.SID, (uint) nature, gender, pk.PersonalInfo.Gender);
                 } while (!pk.IsGenderValid());
+                Console.WriteLine(pk.PID);
                 pk.RefreshAbility((int)(pk.PID & 1));
                 SetRandomIVs(pk);
                 return;
@@ -281,6 +284,7 @@ namespace PKHeX.Core
             {
                 case 3:
                 case 4:
+                    Console.WriteLine("pid4");
                     SetRandomWildPID4(pk, nature, ability, gender, specific);
                     break;
                 case 5:
@@ -303,8 +307,9 @@ namespace PKHeX.Core
             SetRandomIVs(pkm);
         }
 
-        private static void SetRandomWildPID4(PKM pk, int nature, int ability, int gender, PIDType specific = PIDType.None)
+        public static void SetRandomWildPID4(PKM pk, int nature, int ability, int gender, PIDType specific = PIDType.None)
         {
+            Console.WriteLine(nature);
             pk.RefreshAbility(ability);
             pk.Gender = gender;
             var type = GetPIDType(pk, specific);
@@ -313,22 +318,29 @@ namespace PKHeX.Core
             while (true)
             {
                 method(pk, Util.Rand32());
-                if (!IsValidCriteria4(pk, nature, ability, gender))
+                if (!IsValidCriteria4(pk, nature, ability, gender)) {
                     continue;
+                }
                 return;
             }
         }
 
         private static bool IsValidCriteria4(PKM pk, int nature, int ability, int gender)
         {
-            if (pk.GetSaneGender() != gender)
+            if (pk.GetSaneGender() != gender) {
+                Console.WriteLine("not sane gender");
                 return false;
+            }
 
-            if (pk.Nature != nature)
-                return false;
+            if (pk.Nature != nature) {
+                Console.WriteLine(pk.Nature + "!=" + nature);
 
-            if ((pk.PID & 1) != ability)
                 return false;
+            }
+            if ((pk.PID & 1) != ability) {
+                Console.WriteLine("not sane ability: " + (pk.PID & 1) + "!="  + ability);
+                return false;
+            }
 
             return true;
         }
