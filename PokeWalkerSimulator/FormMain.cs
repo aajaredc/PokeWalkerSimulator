@@ -20,6 +20,7 @@ namespace PokeWalkerSimulator {
         public PKM strollPokemon;
         public PKM wildEncounter;
         List<PKM> inventoryPokemon = new List<PKM>();
+        List<PictureBox> inventoryPokemonPictureBoxes;
         public int steps;
         public int watts;
         public Course[] courses = new Course[1];
@@ -30,10 +31,16 @@ namespace PokeWalkerSimulator {
 
             InitializeComponent();
 
+            inventoryPokemonPictureBoxes = new List<PictureBox> {
+                picInventoryPokemon0, picInventoryPokemon1, picInventoryPokemon2
+            };
+
+
             steps = 0;
             watts = StepsToWatts(steps);
 
             InitializeCourses();
+            UpdateInventory();
             
         }
 
@@ -129,13 +136,64 @@ namespace PokeWalkerSimulator {
         /// </summary>
         public void InitializePokeRadarBattle() {
             // Reset the images
-            picCurrentPokemon.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + strollPokemon.Species + ".png");
+            picPokeRadarUser.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + strollPokemon.Species + ".png");
             picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + wildEncounter.Species + ".png");
 
             // Enable the buttons
             btnAttack.Enabled = true;
             btnEvade.Enabled = true;
             btnCatch.Enabled = true;
+        }
+
+        private void BtnCatch_Click(object sender, EventArgs e) {
+            Console.WriteLine("Catch successful");
+            inventoryPokemon.Add(wildEncounter);
+            Console.WriteLine(inventoryPokemon[0].ToString());
+        }
+
+
+        /// <summary>
+        /// Updates the inventory accordingly
+        /// </summary>
+        public void UpdateInventory() {
+            Console.WriteLine("Updating inventory...");
+
+            // Inventory 0
+            try {
+                picInventoryPokemon0.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + inventoryPokemon[0].Species + ".png");
+            }
+            catch (Exception) {
+                Console.WriteLine("Inventory Pokemon 0 not found");
+                picInventoryPokemon0.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
+            }
+
+            // Inventory 1
+            try {
+                picInventoryPokemon1.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + inventoryPokemon[1].Species + ".png");
+            }
+            catch (Exception) {
+                Console.WriteLine("Inventory Pokemon 1 not found");
+                picInventoryPokemon1.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
+            }
+
+            // Inventory 2
+            try {
+                picInventoryPokemon2.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + inventoryPokemon[2].Species + ".png");
+            }
+            catch (Exception) {
+                Console.WriteLine("Inventory Pokemon 2 not found");
+                picInventoryPokemon2.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
+            }
+
+            for (int i = 0; i < inventoryPokemon.Count; i++) {
+                try {
+                    PKMConverter.Trainer.ApplyToPKM(inventoryPokemon[i]);
+                }
+                catch (Exception) {
+                    Console.WriteLine("Could not apply trainer information to inventory pokemon " + i);
+                }
+            }
+            
         }
 
 
@@ -197,7 +255,11 @@ namespace PokeWalkerSimulator {
         }
 
         private void ChangePokeRadarImagesToolStripMenuItem_Click(object sender, EventArgs e) {
-            picCurrentPokemon.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + strollPokemon.Species + ".png");
+            picPokeRadarUser.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + strollPokemon.Species + ".png");
+        }
+
+        private void UpdateInventoryToolStripMenuItem_Click(object sender, EventArgs e) {
+            UpdateInventory();
         }
     }
 }
