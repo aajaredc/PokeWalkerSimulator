@@ -42,9 +42,11 @@
             this.viewPK4InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTrainerInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePokeRadarImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.updateInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPokeRadar = new System.Windows.Forms.Button();
             this.btnExportStrollPokemon = new System.Windows.Forms.Button();
             this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.tabInventory = new System.Windows.Forms.TabPage();
             this.tabPokeRadar = new System.Windows.Forms.TabPage();
             this.lblPokeRadarFeedback = new System.Windows.Forms.Label();
             this.btnCatch = new System.Windows.Forms.Button();
@@ -52,21 +54,14 @@
             this.btnAttack = new System.Windows.Forms.Button();
             this.picPokeRadarUser = new System.Windows.Forms.PictureBox();
             this.picWildEncounter = new System.Windows.Forms.PictureBox();
-            this.tabInventory = new System.Windows.Forms.TabPage();
             this.tabDowsingMachine = new System.Windows.Forms.TabPage();
-            this.picInventoryPokemon0 = new System.Windows.Forms.PictureBox();
-            this.picInventoryPokemon1 = new System.Windows.Forms.PictureBox();
-            this.picInventoryPokemon2 = new System.Windows.Forms.PictureBox();
-            this.updateInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.inventory = new PokeWalkerSimulator.Controls.Inventory();
             this.menuMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
+            this.tabInventory.SuspendLayout();
             this.tabPokeRadar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPokeRadarUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWildEncounter)).BeginInit();
-            this.tabInventory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuMain
@@ -220,6 +215,13 @@
             this.changePokeRadarImagesToolStripMenuItem.Text = "Change PokeRadar Images";
             this.changePokeRadarImagesToolStripMenuItem.Click += new System.EventHandler(this.ChangePokeRadarImagesToolStripMenuItem_Click);
             // 
+            // updateInventoryToolStripMenuItem
+            // 
+            this.updateInventoryToolStripMenuItem.Name = "updateInventoryToolStripMenuItem";
+            this.updateInventoryToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
+            this.updateInventoryToolStripMenuItem.Text = "Update Inventory";
+            this.updateInventoryToolStripMenuItem.Click += new System.EventHandler(this.UpdateInventoryToolStripMenuItem_Click);
+            // 
             // btnPokeRadar
             // 
             this.btnPokeRadar.Location = new System.Drawing.Point(470, 56);
@@ -250,6 +252,17 @@
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(452, 407);
             this.tabControlMain.TabIndex = 6;
+            // 
+            // tabInventory
+            // 
+            this.tabInventory.Controls.Add(this.inventory);
+            this.tabInventory.Location = new System.Drawing.Point(4, 25);
+            this.tabInventory.Name = "tabInventory";
+            this.tabInventory.Padding = new System.Windows.Forms.Padding(3);
+            this.tabInventory.Size = new System.Drawing.Size(444, 378);
+            this.tabInventory.TabIndex = 0;
+            this.tabInventory.Text = "Inventory";
+            this.tabInventory.UseVisualStyleBackColor = true;
             // 
             // tabPokeRadar
             // 
@@ -327,19 +340,6 @@
             this.picWildEncounter.TabIndex = 0;
             this.picWildEncounter.TabStop = false;
             // 
-            // tabInventory
-            // 
-            this.tabInventory.Controls.Add(this.picInventoryPokemon2);
-            this.tabInventory.Controls.Add(this.picInventoryPokemon1);
-            this.tabInventory.Controls.Add(this.picInventoryPokemon0);
-            this.tabInventory.Location = new System.Drawing.Point(4, 25);
-            this.tabInventory.Name = "tabInventory";
-            this.tabInventory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInventory.Size = new System.Drawing.Size(444, 378);
-            this.tabInventory.TabIndex = 0;
-            this.tabInventory.Text = "Inventory";
-            this.tabInventory.UseVisualStyleBackColor = true;
-            // 
             // tabDowsingMachine
             // 
             this.tabDowsingMachine.Location = new System.Drawing.Point(4, 25);
@@ -350,36 +350,12 @@
             this.tabDowsingMachine.Text = "Dowsing Machine";
             this.tabDowsingMachine.UseVisualStyleBackColor = true;
             // 
-            // picInventoryPokemon0
+            // inventory
             // 
-            this.picInventoryPokemon0.Location = new System.Drawing.Point(7, 7);
-            this.picInventoryPokemon0.Name = "picInventoryPokemon0";
-            this.picInventoryPokemon0.Size = new System.Drawing.Size(80, 60);
-            this.picInventoryPokemon0.TabIndex = 0;
-            this.picInventoryPokemon0.TabStop = false;
-            // 
-            // picInventoryPokemon1
-            // 
-            this.picInventoryPokemon1.Location = new System.Drawing.Point(93, 7);
-            this.picInventoryPokemon1.Name = "picInventoryPokemon1";
-            this.picInventoryPokemon1.Size = new System.Drawing.Size(80, 60);
-            this.picInventoryPokemon1.TabIndex = 1;
-            this.picInventoryPokemon1.TabStop = false;
-            // 
-            // picInventoryPokemon2
-            // 
-            this.picInventoryPokemon2.Location = new System.Drawing.Point(179, 7);
-            this.picInventoryPokemon2.Name = "picInventoryPokemon2";
-            this.picInventoryPokemon2.Size = new System.Drawing.Size(80, 60);
-            this.picInventoryPokemon2.TabIndex = 2;
-            this.picInventoryPokemon2.TabStop = false;
-            // 
-            // updateInventoryToolStripMenuItem
-            // 
-            this.updateInventoryToolStripMenuItem.Name = "updateInventoryToolStripMenuItem";
-            this.updateInventoryToolStripMenuItem.Size = new System.Drawing.Size(260, 26);
-            this.updateInventoryToolStripMenuItem.Text = "Update Inventory";
-            this.updateInventoryToolStripMenuItem.Click += new System.EventHandler(this.UpdateInventoryToolStripMenuItem_Click);
+            this.inventory.Location = new System.Drawing.Point(7, 7);
+            this.inventory.Name = "inventory";
+            this.inventory.Size = new System.Drawing.Size(431, 365);
+            this.inventory.TabIndex = 0;
             // 
             // FormMain
             // 
@@ -397,14 +373,11 @@
             this.menuMain.ResumeLayout(false);
             this.menuMain.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
+            this.tabInventory.ResumeLayout(false);
             this.tabPokeRadar.ResumeLayout(false);
             this.tabPokeRadar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picPokeRadarUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWildEncounter)).EndInit();
-            this.tabInventory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -441,10 +414,8 @@
         private System.Windows.Forms.Button btnEvade;
         private System.Windows.Forms.Button btnAttack;
         private System.Windows.Forms.Label lblPokeRadarFeedback;
-        private System.Windows.Forms.PictureBox picInventoryPokemon2;
-        private System.Windows.Forms.PictureBox picInventoryPokemon1;
-        private System.Windows.Forms.PictureBox picInventoryPokemon0;
         private System.Windows.Forms.ToolStripMenuItem updateInventoryToolStripMenuItem;
+        private Controls.Inventory inventory;
     }
 }
 

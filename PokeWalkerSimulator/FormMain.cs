@@ -19,8 +19,6 @@ namespace PokeWalkerSimulator {
         public PKHeX.WinForms.Main main = new PKHeX.WinForms.Main();
         public PKM strollPokemon;
         public PKM wildEncounter;
-        List<PKM> inventoryPokemon = new List<PKM>();
-        List<PictureBox> inventoryPokemonPictureBoxes;
         public int steps;
         public int watts;
         public Course[] courses = new Course[1];
@@ -30,11 +28,6 @@ namespace PokeWalkerSimulator {
             
 
             InitializeComponent();
-
-            inventoryPokemonPictureBoxes = new List<PictureBox> {
-                picInventoryPokemon0, picInventoryPokemon1, picInventoryPokemon2
-            };
-
 
             steps = 0;
             watts = StepsToWatts(steps);
@@ -147,8 +140,7 @@ namespace PokeWalkerSimulator {
 
         private void BtnCatch_Click(object sender, EventArgs e) {
             Console.WriteLine("Catch successful");
-            inventoryPokemon.Add(wildEncounter);
-            Console.WriteLine(inventoryPokemon[0].ToString());
+            
         }
 
 
@@ -158,41 +150,7 @@ namespace PokeWalkerSimulator {
         public void UpdateInventory() {
             Console.WriteLine("Updating inventory...");
 
-            // Inventory 0
-            try {
-                picInventoryPokemon0.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + inventoryPokemon[0].Species + ".png");
-            }
-            catch (Exception) {
-                Console.WriteLine("Inventory Pokemon 0 not found");
-                picInventoryPokemon0.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
-            }
-
-            // Inventory 1
-            try {
-                picInventoryPokemon1.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + inventoryPokemon[1].Species + ".png");
-            }
-            catch (Exception) {
-                Console.WriteLine("Inventory Pokemon 1 not found");
-                picInventoryPokemon1.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
-            }
-
-            // Inventory 2
-            try {
-                picInventoryPokemon2.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + inventoryPokemon[2].Species + ".png");
-            }
-            catch (Exception) {
-                Console.WriteLine("Inventory Pokemon 2 not found");
-                picInventoryPokemon2.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
-            }
-
-            for (int i = 0; i < inventoryPokemon.Count; i++) {
-                try {
-                    PKMConverter.Trainer.ApplyToPKM(inventoryPokemon[i]);
-                }
-                catch (Exception) {
-                    Console.WriteLine("Could not apply trainer information to inventory pokemon " + i);
-                }
-            }
+            inventory.UpdateImages();
             
         }
 

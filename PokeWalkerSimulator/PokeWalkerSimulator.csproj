@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Inventory.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Inventory.Designer.cs">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\PokeRadar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PokeRadar.Designer.cs">
+      <DependentUpon>PokeRadar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -57,6 +69,12 @@
     <Compile Include="GroupPokemon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\Inventory.resx">
+      <DependentUpon>Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\PokeRadar.resx">
+      <DependentUpon>PokeRadar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
