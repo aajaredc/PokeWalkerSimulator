@@ -15,9 +15,18 @@ namespace PokeWalkerSimulator.Controls {
 
         public List<PKM> inventoryPokemon = new List<PKM>();
         public List<PictureBox> inventoryPokemonPictureBoxes;
+        public int lastSelectedInventoryPokemon;
+        public ContextMenuStrip inventoryPokemonContextMenu = new ContextMenuStrip();
+        ToolStripItem populatePKHeX;
+        ToolStripItem discard;
+
 
         public Inventory() {
             InitializeComponent();
+
+            populatePKHeX = inventoryPokemonContextMenu.Items.Add("Populate PKHeX");
+            discard = inventoryPokemonContextMenu.Items.Add("Remove");
+            inventoryPokemonContextMenu.ItemClicked += new ToolStripItemClickedEventHandler(inventoryPokemonContextMenu_ItemClicked);
 
             inventoryPokemonPictureBoxes = new List<PictureBox> {
                 picInventoryPokemon0, picInventoryPokemon1, picInventoryPokemon2
@@ -40,12 +49,12 @@ namespace PokeWalkerSimulator.Controls {
                     inventoryPokemonPictureBoxes[p].Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + inventoryPokemon[p].Species + ".png");
                 }
                 catch (Exception) {
-                    Console.WriteLine("Inventory Pokemon image" + p + " not found");
+                    Console.WriteLine("Inventory Pokemon" + p + " not found");
                     try {
                         inventoryPokemonPictureBoxes[p].Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
                     }
                     catch (Exception) {
-                        Console.WriteLine("Inventory Pokemon image" + p + " not found");
+                        Console.WriteLine("Inventory Pokemon" + p + " not found");
                     }
                 }
             }
@@ -75,15 +84,40 @@ namespace PokeWalkerSimulator.Controls {
 
         private int GetSelectedInventoryPokemon(PictureBox sender) => inventoryPokemonPictureBoxes.IndexOf(WinFormsUtil.GetUnderlyingControl(sender) as PictureBox);
 
-        private void picInventoryPokemon_MouseClick(object sender, EventArgs e) {
+        private void picInventoryPokemon_MouseClick(object sender, MouseEventArgs e) {
 
-            // Load the Pokemon in to PKHeX
-            Console.WriteLine("Loading Inventory Pokemon " + GetSelectedInventoryPokemon((PictureBox)sender));
-            try {
-                FormMain.main.PKME_Tabs.PopulateFields(inventoryPokemon[GetSelectedInventoryPokemon((PictureBox)sender)]);
+            lastSelectedInventoryPokemon = GetSelectedInventoryPokemon((PictureBox)sender);
+
+            // Right click, open context menu strip
+            if (e.Button == MouseButtons.Right) {
+                inventoryPokemonContextMenu.Show(Cursor.Position);
             }
-            catch (Exception) {
-                Console.WriteLine("Error: Inventory Pokemon is null");
+        }
+
+        private void inventoryPokemonContextMenu_ItemClicked(object sender, ToolStripItemClickedEventArgs e) {
+            // Populate PKHeX with the selected inventory pokemon
+            if (e.ClickedItem == populatePKHeX) {
+                Console.WriteLine("Loading Inventory Pokemon " + lastSelectedInventoryPokemon);
+                try {
+                    FormMain.main.PKME_Tabs.PopulateFields(inventoryPokemon[lastSelectedInventoryPokemon]);
+                }
+                catch (Exception) {
+                    Console.WriteLine("Error populating PKHeX: Inventory Pokemon is null");
+                    return;
+                }
+                Console.WriteLine("Inventory Pokemon loaded in PKHeX");
+            }
+
+            // Remove the pokemon from the inventory
+            if (e.ClickedItem == discard) {
+                try {
+                    inventoryPokemon.RemoveAt(lastSelectedInventoryPokemon);
+                } catch (Exception) {
+                    Console.WriteLine("Error discarding from inventory: Pokemon is null");
+                    return;
+                }
+
+                UpdateImages();
             }
         }
 
