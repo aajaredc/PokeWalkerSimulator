@@ -20,6 +20,8 @@ namespace PokeWalkerSimulator {
         public PKM strollPokemon;
         public PKM wildEncounter;
         public int steps;
+        public int tid = 09268;
+        public int sid = 62879;
         public int watts;
         public Course[] courses = new Course[1];
 
@@ -140,9 +142,9 @@ namespace PokeWalkerSimulator {
 
         private void BtnCatch_Click(object sender, EventArgs e) {
             Console.WriteLine("Catch successful");
-            inventory.inventoryPokemon.Add(wildEncounter);
-
-            inventory.inventoryPokemon[0].TID = 09628;
+            picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/item/item_4.png");
+            inventory.AddPokemonToInventory(wildEncounter);
+            
         }
 
 
@@ -178,11 +180,7 @@ namespace PokeWalkerSimulator {
         }
 
         private void ViewPK4InformationToolStripMenuItem_Click(object sender, EventArgs e) {
-            PKM pk = strollPokemon;
-            
-            PIDGenerator.SetRandomWildPID(pk, 4, pk.Nature, pk.Ability, pk.Gender, PIDType.Pokewalker);
-
-            main.PKME_Tabs.PopulateFields(pk);
+            Console.WriteLine(strollPokemon.Nature);
         }
 
         private void ViewTrainerInformationToolStripMenuItem_Click(object sender, EventArgs e) {

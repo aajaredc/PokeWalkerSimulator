@@ -53,13 +53,38 @@ namespace PokeWalkerSimulator.Controls {
             // Items
         }
 
+        /// <summary>
+        /// Adds the PKM to the inventory, while applying according properties
+        /// </summary>
+        /// <param name="pk"></param>
+        public void AddPokemonToInventory(PKM pk) {
+            pk.TID = FormMain.main.C_SAV.SAV.TID;
+            pk.SID = FormMain.main.C_SAV.SAV.SID;
+            pk.OT_Name = FormMain.main.C_SAV.SAV.OT;
+            pk.OT_Gender = FormMain.main.C_SAV.SAV.Gender;
+            pk.MetDate = DateTime.Today;
+            pk.SetRandomIVs();
+
+            pk.SetRandomPIDNature();
+            PIDGenerator.SetRandomWildPID(pk, 4, pk.Nature, pk.Ability, pk.Gender, PIDType.Pokewalker);
+
+            FormMain.main.PKME_Tabs.PopulateFields(pk);
+
+            inventoryPokemon.Add(pk);
+        }
+
+        private int GetSelectedInventoryPokemon(PictureBox sender) => inventoryPokemonPictureBoxes.IndexOf(WinFormsUtil.GetUnderlyingControl(sender) as PictureBox);
+
         private void picInventoryPokemon_MouseClick(object sender, EventArgs e) {
 
             // Load the Pokemon in to PKHeX
-            FormMain.main.PKME_Tabs.PopulateFields(inventoryPokemon[0]);
-
-
-
+            Console.WriteLine("Loading Inventory Pokemon " + GetSelectedInventoryPokemon((PictureBox)sender));
+            try {
+                FormMain.main.PKME_Tabs.PopulateFields(inventoryPokemon[GetSelectedInventoryPokemon((PictureBox)sender)]);
+            }
+            catch (Exception) {
+                Console.WriteLine("Error: Inventory Pokemon is null");
+            }
         }
 
         private void picInventoryPokemon_MouseEnter(object sender, EventArgs e) {

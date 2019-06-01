@@ -1067,6 +1067,20 @@ namespace PKHeX.Core
         }
 
         /// <summary>
+        /// Sets a random nature
+        /// </summary>
+        public void SetRandomPIDNature() {
+            Random random = new Random();
+            int n = random.Next(0, 24);
+
+            Console.WriteLine("Old nature: " + Nature);
+
+            SetPIDNature(n);
+
+            Console.WriteLine("New nature: " + Nature);
+        }
+
+        /// <summary>
         /// Clears moves that a <see cref="PKM"/> may have, possibly from a future generation.
         /// </summary>
         public void ClearInvalidMoves()
