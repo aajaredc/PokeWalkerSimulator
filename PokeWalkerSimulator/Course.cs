@@ -15,6 +15,10 @@ namespace PokeWalkerSimulator {
         public int courseNumber;
         public double[] encounterProbabilities;
 
+        public int[] itemNumbers;
+        public int[] itemRequiredSteps;
+        public double[] itemProbabilities;
+
         /// <summary>
         /// Decides which encounter type to be used
         /// </summary>

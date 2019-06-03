@@ -23,19 +23,64 @@ namespace PokeWalkerSimulator {
         public int sid = 62879;
         public int watts;
 
-        public FormMain() {
+        public static Course[] courses = new Course[3];
+        public static Course selectedCourse;
 
-            
+        public FormMain() {
 
             InitializeComponent();
 
             steps = 0;
             watts = StepsToWatts(steps);
 
-            pokeradar.InitializeCourses();
+            InitializeCourses();
             pokeradar.inventory = inventory;
+
             UpdateInventory();
             
+        }
+
+        /// <summary>
+        /// Initializes the courses
+        /// </summary>
+        public void InitializeCourses() {
+
+
+
+            // Create the courses
+            for (int i = 0; i < courses.Length; i++) {
+                courses[i] = new Course(CourseInformation.coursePokemonSteps[i]) {
+                    name = CourseInformation.courseNames[i],
+                    description = CourseInformation.courseDescriptions[i],
+                    courseNumber = i,
+                    encounterCalculationType = CourseInformation.pokemonEncounterCalculationTypes[i],
+                    encounterProbabilities = CourseInformation.pokemonEncounterProbabilties[i]
+                };
+            }
+
+            // Set the PKM for the courses
+            string path;
+            for (int courseIndex = 0; courseIndex < courses.Length; courseIndex++) {
+                for (int groupIndex = 0; groupIndex < courses[courseIndex].groups.Length; groupIndex++) {
+                    for (int groupPokemonIndex = 0; groupPokemonIndex < courses[courseIndex].groups[groupIndex].pokemon.Length; groupPokemonIndex++) {
+                        path = "../../PK4/" + courseIndex + "/" + groupIndex + groupPokemonIndex + ".pk4";
+
+                        FormMain.main.OpenQuick(path);
+                        Console.WriteLine(path);
+
+                        courses[courseIndex].groups[groupIndex].pokemon[groupPokemonIndex].pk = FormMain.main.PKME_Tabs.pkm;
+                    }
+                }
+            }
+            for (int i = 0; i < courses.Length; i++) {
+                courses[i].SetSelectedPokemon();
+                courses[i].UpdateEncounterRates();
+                //courses[i].Write();
+            }
+
+            // Set default course, for testing purposes
+            selectedCourse = courses[2];
+            selectedCourse.Write();
         }
 
         /// <summary>
@@ -122,13 +167,13 @@ namespace PokeWalkerSimulator {
         /// <param name="stepsToAdd">Steps to add</param>
         private void AddSteps(int stepsToAdd) {
             Console.WriteLine("Adding 1000 steps");
-            pokeradar.selectedCourse.stepsTaken += stepsToAdd;
-            steps += pokeradar.selectedCourse.stepsTaken;
-            watts = StepsToWatts(pokeradar.selectedCourse.stepsTaken);
+            selectedCourse.stepsTaken += stepsToAdd;
+            steps += selectedCourse.stepsTaken;
+            watts = StepsToWatts(selectedCourse.stepsTaken);
 
-            Console.WriteLine("New steps: " + pokeradar.selectedCourse.stepsTaken);
-            pokeradar.selectedCourse.UpdateEncounterRates();
-            pokeradar.selectedCourse.Write();
+            Console.WriteLine("New steps: " + selectedCourse.stepsTaken);
+            selectedCourse.UpdateEncounterRates();
+            selectedCourse.Write();
         }
 
         private void Steps100_Click(object sender, EventArgs e) {
@@ -145,6 +190,11 @@ namespace PokeWalkerSimulator {
 
         private void UpdateInventoryToolStripMenuItem_Click(object sender, EventArgs e) {
             UpdateInventory();
+        }
+
+        private void GetItemToolStripMenuItem_Click(object sender, EventArgs e) {
+            PKM pk = main.PreparePKM();
+            Console.WriteLine(pk.HeldItem);
         }
     }
 }

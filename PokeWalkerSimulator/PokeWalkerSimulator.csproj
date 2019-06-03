@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DowsingMachine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DowsingMachine.Designer.cs">
+      <DependentUpon>DowsingMachine.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Inventory.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="GroupPokemon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\DowsingMachine.resx">
+      <DependentUpon>DowsingMachine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\Inventory.resx">
       <DependentUpon>Inventory.cs</DependentUpon>
     </EmbeddedResource>

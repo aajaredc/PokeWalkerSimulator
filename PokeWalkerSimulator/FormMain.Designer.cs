@@ -49,6 +49,7 @@
             this.tabPokeRadar = new System.Windows.Forms.TabPage();
             this.pokeradar = new PokeWalkerSimulator.Controls.PokeRadar();
             this.tabDowsingMachine = new System.Windows.Forms.TabPage();
+            this.getItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabInventory.SuspendLayout();
@@ -108,7 +109,7 @@
             this.startStrollToolStripMenuItem,
             this.endStrollToolStripMenuItem});
             this.beginStrollToolStripMenuItem.Name = "beginStrollToolStripMenuItem";
-            this.beginStrollToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.beginStrollToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.beginStrollToolStripMenuItem.Text = "Stroll";
             // 
             // startStrollToolStripMenuItem
@@ -128,7 +129,7 @@
             // setStrollPokemonToolStripMenuItem
             // 
             this.setStrollPokemonToolStripMenuItem.Name = "setStrollPokemonToolStripMenuItem";
-            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.setStrollPokemonToolStripMenuItem.Text = "Set Stroll Pokemon";
             this.setStrollPokemonToolStripMenuItem.Click += new System.EventHandler(this.SetStrollPokemonToolStripMenuItem_Click);
             // 
@@ -139,7 +140,7 @@
             this.steps500,
             this.steps1000});
             this.stepsToolStripMenuItem.Name = "stepsToolStripMenuItem";
-            this.stepsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.stepsToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
             this.stepsToolStripMenuItem.Text = "Steps";
             // 
             // steps100
@@ -171,7 +172,8 @@
             this.viewPK4InformationToolStripMenuItem,
             this.viewTrainerInformationToolStripMenuItem,
             this.changePokeRadarImagesToolStripMenuItem,
-            this.updateInventoryToolStripMenuItem});
+            this.updateInventoryToolStripMenuItem,
+            this.getItemToolStripMenuItem});
             this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
             this.debugToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.debugToolStripMenuItem.Text = "Debug";
@@ -279,6 +281,13 @@
             this.tabDowsingMachine.Text = "Dowsing Machine";
             this.tabDowsingMachine.UseVisualStyleBackColor = true;
             // 
+            // getItemToolStripMenuItem
+            // 
+            this.getItemToolStripMenuItem.Name = "getItemToolStripMenuItem";
+            this.getItemToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
+            this.getItemToolStripMenuItem.Text = "Get item?";
+            this.getItemToolStripMenuItem.Click += new System.EventHandler(this.GetItemToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -329,6 +338,7 @@
         private System.Windows.Forms.ToolStripMenuItem updateInventoryToolStripMenuItem;
         public Controls.PokeRadar pokeradar;
         public Controls.Inventory inventory;
+        private System.Windows.Forms.ToolStripMenuItem getItemToolStripMenuItem;
     }
 }
 
