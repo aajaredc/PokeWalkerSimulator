@@ -33,6 +33,7 @@ namespace PokeWalkerSimulator {
             watts = StepsToWatts(steps);
 
             pokeradar.InitializeCourses();
+            pokeradar.inventory = inventory;
             UpdateInventory();
             
         }

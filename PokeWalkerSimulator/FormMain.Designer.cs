@@ -37,7 +37,6 @@
             this.steps500 = new System.Windows.Forms.ToolStripMenuItem();
             this.steps1000 = new System.Windows.Forms.ToolStripMenuItem();
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.randomizeStrollPKMIVsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewPK4InformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewTrainerInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePokeRadarImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,9 +45,9 @@
             this.btnExportStrollPokemon = new System.Windows.Forms.Button();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabInventory = new System.Windows.Forms.TabPage();
-            inventory = new PokeWalkerSimulator.Controls.Inventory();
+            this.inventory = new PokeWalkerSimulator.Controls.Inventory();
             this.tabPokeRadar = new System.Windows.Forms.TabPage();
-            pokeradar = new PokeWalkerSimulator.Controls.PokeRadar();
+            this.pokeradar = new PokeWalkerSimulator.Controls.PokeRadar();
             this.tabDowsingMachine = new System.Windows.Forms.TabPage();
             this.menuMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
@@ -147,7 +146,7 @@
             // 
             this.steps100.Enabled = false;
             this.steps100.Name = "steps100";
-            this.steps100.Size = new System.Drawing.Size(224, 26);
+            this.steps100.Size = new System.Drawing.Size(164, 26);
             this.steps100.Text = "100 Steps";
             this.steps100.Click += new System.EventHandler(this.Steps100_Click);
             // 
@@ -155,21 +154,20 @@
             // 
             this.steps500.Enabled = false;
             this.steps500.Name = "steps500";
-            this.steps500.Size = new System.Drawing.Size(224, 26);
+            this.steps500.Size = new System.Drawing.Size(164, 26);
             this.steps500.Text = "500 Steps";
             this.steps500.Click += new System.EventHandler(this.Steps500_Click);
             // 
             // steps1000
             // 
             this.steps1000.Name = "steps1000";
-            this.steps1000.Size = new System.Drawing.Size(224, 26);
+            this.steps1000.Size = new System.Drawing.Size(164, 26);
             this.steps1000.Text = "1000 Steps";
             this.steps1000.Click += new System.EventHandler(this.Steps1000_Click);
             // 
             // debugToolStripMenuItem
             // 
             this.debugToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.randomizeStrollPKMIVsToolStripMenuItem,
             this.viewPK4InformationToolStripMenuItem,
             this.viewTrainerInformationToolStripMenuItem,
             this.changePokeRadarImagesToolStripMenuItem,
@@ -177,13 +175,6 @@
             this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
             this.debugToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.debugToolStripMenuItem.Text = "Debug";
-            // 
-            // randomizeStrollPKMIVsToolStripMenuItem
-            // 
-            this.randomizeStrollPKMIVsToolStripMenuItem.Name = "randomizeStrollPKMIVsToolStripMenuItem";
-            this.randomizeStrollPKMIVsToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
-            this.randomizeStrollPKMIVsToolStripMenuItem.Text = "Randomize Stroll PKM IVs";
-            this.randomizeStrollPKMIVsToolStripMenuItem.Click += new System.EventHandler(this.RandomizeStrollPKMIVsToolStripMenuItem_Click);
             // 
             // viewPK4InformationToolStripMenuItem
             // 
@@ -245,7 +236,7 @@
             // 
             // tabInventory
             // 
-            this.tabInventory.Controls.Add(inventory);
+            this.tabInventory.Controls.Add(this.inventory);
             this.tabInventory.Location = new System.Drawing.Point(4, 25);
             this.tabInventory.Name = "tabInventory";
             this.tabInventory.Padding = new System.Windows.Forms.Padding(3);
@@ -256,14 +247,14 @@
             // 
             // inventory
             // 
-            inventory.Location = new System.Drawing.Point(7, 7);
-            inventory.Name = "inventory";
-            inventory.Size = new System.Drawing.Size(431, 365);
-            inventory.TabIndex = 0;
+            this.inventory.Location = new System.Drawing.Point(7, 7);
+            this.inventory.Name = "inventory";
+            this.inventory.Size = new System.Drawing.Size(431, 365);
+            this.inventory.TabIndex = 0;
             // 
             // tabPokeRadar
             // 
-            this.tabPokeRadar.Controls.Add(pokeradar);
+            this.tabPokeRadar.Controls.Add(this.pokeradar);
             this.tabPokeRadar.Location = new System.Drawing.Point(4, 25);
             this.tabPokeRadar.Name = "tabPokeRadar";
             this.tabPokeRadar.Size = new System.Drawing.Size(444, 378);
@@ -273,10 +264,10 @@
             // 
             // pokeradar
             // 
-            pokeradar.Location = new System.Drawing.Point(4, 4);
-            pokeradar.Name = "pokeradar";
-            pokeradar.Size = new System.Drawing.Size(431, 365);
-            pokeradar.TabIndex = 0;
+            this.pokeradar.Location = new System.Drawing.Point(4, 4);
+            this.pokeradar.Name = "pokeradar";
+            this.pokeradar.Size = new System.Drawing.Size(431, 365);
+            this.pokeradar.TabIndex = 0;
             // 
             // tabDowsingMachine
             // 
@@ -328,7 +319,6 @@
         private System.Windows.Forms.ToolStripMenuItem steps100;
         private System.Windows.Forms.ToolStripMenuItem steps500;
         private System.Windows.Forms.ToolStripMenuItem steps1000;
-        private System.Windows.Forms.ToolStripMenuItem randomizeStrollPKMIVsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewPK4InformationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem viewTrainerInformationToolStripMenuItem;
         private System.Windows.Forms.TabControl tabControlMain;
@@ -337,8 +327,8 @@
         private System.Windows.Forms.TabPage tabPokeRadar;
         private System.Windows.Forms.ToolStripMenuItem changePokeRadarImagesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateInventoryToolStripMenuItem;
-        public static Controls.PokeRadar pokeradar;
-        public static Controls.Inventory inventory;
+        public Controls.PokeRadar pokeradar;
+        public Controls.Inventory inventory;
     }
 }
 

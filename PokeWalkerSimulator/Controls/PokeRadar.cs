@@ -15,6 +15,7 @@ namespace PokeWalkerSimulator.Controls {
         public PKM wildEncounter;
         public Course[] courses = new Course[3];
         public Course selectedCourse;
+        public Inventory inventory;
         
         public PokeRadar() {
             InitializeComponent();
@@ -161,8 +162,8 @@ namespace PokeWalkerSimulator.Controls {
         private void BtnCatch_Click(object sender, EventArgs e) {
             Console.WriteLine("Catch successful");
             picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/item/item_4.png");
-            FormMain.inventory.AddPokemonToInventory(wildEncounter);
-            FormMain.inventory.UpdateImages();
+            inventory.AddPokemonToInventory(wildEncounter);
+            inventory.UpdateImages();
         }
     }
 }
