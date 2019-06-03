@@ -48,8 +48,8 @@
             this.tabInventory = new System.Windows.Forms.TabPage();
             inventory = new PokeWalkerSimulator.Controls.Inventory();
             this.tabPokeRadar = new System.Windows.Forms.TabPage();
-            this.tabDowsingMachine = new System.Windows.Forms.TabPage();
             pokeradar = new PokeWalkerSimulator.Controls.PokeRadar();
+            this.tabDowsingMachine = new System.Windows.Forms.TabPage();
             this.menuMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabInventory.SuspendLayout();
@@ -109,7 +109,7 @@
             this.startStrollToolStripMenuItem,
             this.endStrollToolStripMenuItem});
             this.beginStrollToolStripMenuItem.Name = "beginStrollToolStripMenuItem";
-            this.beginStrollToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.beginStrollToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.beginStrollToolStripMenuItem.Text = "Stroll";
             // 
             // startStrollToolStripMenuItem
@@ -129,7 +129,7 @@
             // setStrollPokemonToolStripMenuItem
             // 
             this.setStrollPokemonToolStripMenuItem.Name = "setStrollPokemonToolStripMenuItem";
-            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.setStrollPokemonToolStripMenuItem.Text = "Set Stroll Pokemon";
             this.setStrollPokemonToolStripMenuItem.Click += new System.EventHandler(this.SetStrollPokemonToolStripMenuItem_Click);
             // 
@@ -140,14 +140,14 @@
             this.steps500,
             this.steps1000});
             this.stepsToolStripMenuItem.Name = "stepsToolStripMenuItem";
-            this.stepsToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.stepsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.stepsToolStripMenuItem.Text = "Steps";
             // 
             // steps100
             // 
             this.steps100.Enabled = false;
             this.steps100.Name = "steps100";
-            this.steps100.Size = new System.Drawing.Size(164, 26);
+            this.steps100.Size = new System.Drawing.Size(224, 26);
             this.steps100.Text = "100 Steps";
             this.steps100.Click += new System.EventHandler(this.Steps100_Click);
             // 
@@ -155,15 +155,14 @@
             // 
             this.steps500.Enabled = false;
             this.steps500.Name = "steps500";
-            this.steps500.Size = new System.Drawing.Size(164, 26);
+            this.steps500.Size = new System.Drawing.Size(224, 26);
             this.steps500.Text = "500 Steps";
             this.steps500.Click += new System.EventHandler(this.Steps500_Click);
             // 
             // steps1000
             // 
-            this.steps1000.Enabled = false;
             this.steps1000.Name = "steps1000";
-            this.steps1000.Size = new System.Drawing.Size(164, 26);
+            this.steps1000.Size = new System.Drawing.Size(224, 26);
             this.steps1000.Text = "1000 Steps";
             this.steps1000.Click += new System.EventHandler(this.Steps1000_Click);
             // 
@@ -272,6 +271,13 @@
             this.tabPokeRadar.Text = "PokeRadar";
             this.tabPokeRadar.UseVisualStyleBackColor = true;
             // 
+            // pokeradar
+            // 
+            pokeradar.Location = new System.Drawing.Point(4, 4);
+            pokeradar.Name = "pokeradar";
+            pokeradar.Size = new System.Drawing.Size(431, 365);
+            pokeradar.TabIndex = 0;
+            // 
             // tabDowsingMachine
             // 
             this.tabDowsingMachine.Location = new System.Drawing.Point(4, 25);
@@ -281,13 +287,6 @@
             this.tabDowsingMachine.TabIndex = 1;
             this.tabDowsingMachine.Text = "Dowsing Machine";
             this.tabDowsingMachine.UseVisualStyleBackColor = true;
-            // 
-            // pokeradar
-            // 
-            pokeradar.Location = new System.Drawing.Point(4, 4);
-            pokeradar.Name = "pokeradar";
-            pokeradar.Size = new System.Drawing.Size(431, 365);
-            pokeradar.TabIndex = 0;
             // 
             // FormMain
             // 

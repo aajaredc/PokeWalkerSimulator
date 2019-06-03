@@ -121,13 +121,13 @@ namespace PokeWalkerSimulator {
         /// <param name="stepsToAdd">Steps to add</param>
         private void AddSteps(int stepsToAdd) {
             Console.WriteLine("Adding 1000 steps");
-            pokeradar.courses[0].stepsTaken += stepsToAdd;
-            steps += pokeradar.courses[0].stepsTaken;
-            watts = StepsToWatts(pokeradar.courses[0].stepsTaken);
+            pokeradar.selectedCourse.stepsTaken += stepsToAdd;
+            steps += pokeradar.selectedCourse.stepsTaken;
+            watts = StepsToWatts(pokeradar.selectedCourse.stepsTaken);
 
-            Console.WriteLine("New steps: " + pokeradar.courses[0].stepsTaken);
-            pokeradar.courses[0].UpdateEncounterRates();
-            pokeradar.courses[0].Write();
+            Console.WriteLine("New steps: " + pokeradar.selectedCourse.stepsTaken);
+            pokeradar.selectedCourse.UpdateEncounterRates();
+            pokeradar.selectedCourse.Write();
         }
 
         private void Steps100_Click(object sender, EventArgs e) {
