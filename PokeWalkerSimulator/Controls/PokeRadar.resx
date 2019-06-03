@@ -117,4 +117,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="picPokeRadarUser.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAeCAYAAABe3VzdAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAAA/ElEQVRYR+2Q
+        UQqDMABDvfOOsHN5to1AAiFE14lufvTBg1ltErZMJpMLeT4fL8jHe6FxKV//lzasyc9/C4rXda2D9uT1
+        a9Ew58hY3GHkOSBQomCL0bGex4rjeBhEwQj6tpmZrPqeDIIocFS4h+5tDYSsHKeFwDYwyxv5TZPVY7QA
+        6UO8OHX8PPMkq8doAWkW+gjo+LlnuKweowU0c4jO8lxnMDMkq8doAc0cssXpA0ELSXMgzhqfBrLye1qY
+        mwN9iKOzlsGq47RQV8U+RGf5nLLiHFoBioF+fxokGXkNXqSBYm8gr/+WvYH85P/o3/KBfHUfMPC24yaT
+        wyzLG1ywyNXyrdM5AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="picWildEncounter.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAeCAYAAABe3VzdAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAAA/ElEQVRYR+2Q
+        UQqDMABDvfOOsHN5to1AAiFE14lufvTBg1ltErZMJpMLeT4fL8jHe6FxKV//lzasyc9/C4rXda2D9uT1
+        a9Ew58hY3GHkOSBQomCL0bGex4rjeBhEwQj6tpmZrPqeDIIocFS4h+5tDYSsHKeFwDYwyxv5TZPVY7QA
+        6UO8OHX8PPMkq8doAWkW+gjo+LlnuKweowU0c4jO8lxnMDMkq8doAc0cssXpA0ELSXMgzhqfBrLye1qY
+        mwN9iKOzlsGq47RQV8U+RGf5nLLiHFoBioF+fxokGXkNXqSBYm8gr/+WvYH85P/o3/KBfHUfMPC24yaT
+        wyzLG1ywyNXyrdM5AAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

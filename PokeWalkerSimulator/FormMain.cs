@@ -17,13 +17,11 @@ using static PKHeX.Core.MessageStrings;
 namespace PokeWalkerSimulator {
     public partial class FormMain : Form {
         public static PKHeX.WinForms.Main main = new PKHeX.WinForms.Main();
-        public PKM strollPokemon;
-        public PKM wildEncounter;
+        public static PKM strollPokemon;
         public int steps;
         public int tid = 09268;
         public int sid = 62879;
         public int watts;
-        public Course[] courses = new Course[1];
 
         public FormMain() {
 
@@ -34,38 +32,9 @@ namespace PokeWalkerSimulator {
             steps = 0;
             watts = StepsToWatts(steps);
 
-            InitializeCourses();
+            pokeradar.InitializeCourses();
             UpdateInventory();
             
-        }
-
-        /// <summary>
-        /// Initializes the courses
-        /// </summary>
-        public void InitializeCourses() {
-
-            string path;
-
-            // Course 0 - Refreshing Field
-            int[] steps = { 2000, 3000, 500, 500, 0, 0 };
-            courses[0] = new Course(steps);
-            courses[0].name = "Refreshing Field";
-
-            for (int groupIndex = 0; groupIndex < courses[0].groups.Length; groupIndex++) {
-                for (int groupPokemonIndex = 0; groupPokemonIndex < courses[0].groups[groupIndex].pokemon.Length; groupPokemonIndex++) {
-                    path = "../../PK4/0/" + groupIndex + groupPokemonIndex + ".pk4";
-
-                    main.OpenQuick(path);
-                    Console.WriteLine(path);
-
-                    courses[0].groups[groupIndex].pokemon[groupPokemonIndex].pk = main.PKME_Tabs.pkm;
-                }
-            }
-
-            courses[0].SetSelectedPokemon();
-            courses[0].UpdateEncounterRates();
-            courses[0].Write();
-
         }
 
         /// <summary>
@@ -99,53 +68,10 @@ namespace PokeWalkerSimulator {
         }
 
         private void BtnPokeRadar_Click(object sender, EventArgs e) {
-            PokeRadarEncounter();
+            pokeradar.PokeRadarEncounter();
         }
 
-        /// <summary>
-        /// Encounter a Pokemon with the PokeRadar
-        /// </summary>
-        public void PokeRadarEncounter() {
-            Random random = new Random();
-            int pokeRadarSelection = random.Next(0, 100);
-            double cumulativeRandom = 0;
-            Console.WriteLine("Random: " + pokeRadarSelection);
 
-            for (int i = 0; i < courses[0].groups.Length; i++) {
-
-                cumulativeRandom += courses[0].groups[i].GetSelectedGroupPokemon().encounterRate;
-
-                if (pokeRadarSelection < cumulativeRandom) {
-                    Console.WriteLine("Encountered pokemon " + courses[0].groups[i].GetSelectedGroupPokemon().ToString());
-                    wildEncounter = courses[0].groups[i].GetSelectedGroupPokemon().pk;
-
-                    InitializePokeRadarBattle();
-
-                    return;
-                }
-            }
-        }
-
-        /// <summary>
-        /// Initializes the battle for the PokeRadar
-        /// </summary>
-        public void InitializePokeRadarBattle() {
-            // Reset the images
-            picPokeRadarUser.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + strollPokemon.Species + ".png");
-            picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + wildEncounter.Species + ".png");
-
-            // Enable the buttons
-            btnAttack.Enabled = true;
-            btnEvade.Enabled = true;
-            btnCatch.Enabled = true;
-        }
-
-        private void BtnCatch_Click(object sender, EventArgs e) {
-            Console.WriteLine("Catch successful");
-            picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/item/item_4.png");
-            inventory.AddPokemonToInventory(wildEncounter);
-            
-        }
 
 
         /// <summary>
@@ -195,13 +121,13 @@ namespace PokeWalkerSimulator {
         /// <param name="stepsToAdd">Steps to add</param>
         private void AddSteps(int stepsToAdd) {
             Console.WriteLine("Adding 1000 steps");
-            courses[0].stepsTaken += stepsToAdd;
-            steps += courses[0].stepsTaken;
-            watts = StepsToWatts(courses[0].stepsTaken);
+            pokeradar.courses[0].stepsTaken += stepsToAdd;
+            steps += pokeradar.courses[0].stepsTaken;
+            watts = StepsToWatts(pokeradar.courses[0].stepsTaken);
 
-            Console.WriteLine("New steps: " + courses[0].stepsTaken);
-            courses[0].UpdateEncounterRates();
-            courses[0].Write();
+            Console.WriteLine("New steps: " + pokeradar.courses[0].stepsTaken);
+            pokeradar.courses[0].UpdateEncounterRates();
+            pokeradar.courses[0].Write();
         }
 
         private void Steps100_Click(object sender, EventArgs e) {
@@ -214,10 +140,6 @@ namespace PokeWalkerSimulator {
 
         private void Steps1000_Click(object sender, EventArgs e) {
             AddSteps(1000);
-        }
-
-        private void ChangePokeRadarImagesToolStripMenuItem_Click(object sender, EventArgs e) {
-            picPokeRadarUser.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + strollPokemon.Species + ".png");
         }
 
         private void UpdateInventoryToolStripMenuItem_Click(object sender, EventArgs e) {
