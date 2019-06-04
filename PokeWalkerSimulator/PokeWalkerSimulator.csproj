@@ -65,6 +65,7 @@
       <DependentUpon>PokeRadar.cs</DependentUpon>
     </Compile>
     <Compile Include="Course.cs" />
+    <Compile Include="CourseInformation.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

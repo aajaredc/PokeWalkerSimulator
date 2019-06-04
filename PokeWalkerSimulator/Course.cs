@@ -17,7 +17,7 @@ namespace PokeWalkerSimulator {
 
         public int[] itemNumbers;
         public int[] itemRequiredSteps;
-        public double[] itemProbabilities;
+        public double[,] itemProbabilities;
 
         /// <summary>
         /// Decides which encounter type to be used

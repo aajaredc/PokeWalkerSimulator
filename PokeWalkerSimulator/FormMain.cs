@@ -23,7 +23,7 @@ namespace PokeWalkerSimulator {
         public int sid = 62879;
         public int watts;
 
-        public static Course[] courses = new Course[3];
+        public static Course[] courses = new Course[4];
         public static Course selectedCourse;
 
         public FormMain() {
@@ -45,7 +45,7 @@ namespace PokeWalkerSimulator {
         /// </summary>
         public void InitializeCourses() {
 
-
+            Console.WriteLine("rrrr: " + CourseInformation.itemProbabilities[0][0, 9]);
 
             // Create the courses
             for (int i = 0; i < courses.Length; i++) {
