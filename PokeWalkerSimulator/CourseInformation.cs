@@ -98,6 +98,9 @@ namespace PokeWalkerSimulator {
             new int[] { 7, 89, 73, 93, 154, 27, 153, 31, 152, 30 } // beautiful beach
         };
 
+        /// <summary>
+        /// Required steps for each items for each Course
+        /// </summary>
         public static double[][] itemRequiredSteps = {
             new double[] { 0, 300, 500, 600, 700, 800, 900, 1000, 2000, 2500 }, // refreshing field
             new double[] { 0, 200, 500, 700, 800, 900, 1000, 2000, 2500, 5000 }, // noisy forest
