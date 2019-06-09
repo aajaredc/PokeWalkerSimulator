@@ -13,7 +13,9 @@ namespace PokeWalkerSimulator {
             "Refreshing Field", // refreshing field
             "Noisy Forest", // noisy forest
             "Rugged Road", // rugged road
-            "Beautiful Beach" // beautiful beach
+            "Beautiful Beach", // beautiful beach
+            "Suburban Area", // suburban area
+            "Dim Cave" // dim cave
         };
 
         /// <summary>
@@ -23,7 +25,9 @@ namespace PokeWalkerSimulator {
             "A wonderfully refreshing field for a Stroll. You can meet many kinds of Pokémon here.", // refreshing field
             "A large natural forest that has been allowed to grow. Many Pokémon live deep in the forest.", // noisy forest
             "A hilly, rugged mountain road. The view from atop the mountain is very beautiful.", // rugged road
-            "This beautiful sea is a popular place for a Stroll. You can meet many Water-type Pokémon." // beautiful beach
+            "This beautiful sea is a popular place for a Stroll. You can meet many Water-type Pokémon.", // beautiful beach
+            "A residential area somewhere. Even when you take a Stroll here, you can meet Pokémon.", // suburban area
+            "A dark cave sometimes used as a test of courage. Look closely, and you'll find many Pokémon." // dim cave 
         };
 
         /// <summary>
