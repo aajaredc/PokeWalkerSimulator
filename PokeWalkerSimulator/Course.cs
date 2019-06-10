@@ -332,17 +332,17 @@ namespace PokeWalkerSimulator {
                         if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                             groups[0].pokemon[0].encounterRate = encounterProbabilities[0]; // 0
                             groups[1].pokemon[0].encounterRate = encounterProbabilities[6]; // 0
-                            groups[2].pokemon[1].encounterRate = encounterProbabilities[31]; // 100
+                            groups[2].pokemon[1].encounterRate = encounterProbabilities[30]; // 100
                         }
                         else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
                             groups[0].pokemon[0].encounterRate = encounterProbabilities[1]; // 0
                             groups[1].pokemon[0].encounterRate = encounterProbabilities[7]; // 85
-                            groups[2].pokemon[1].encounterRate = encounterProbabilities[32]; // 15
+                            groups[2].pokemon[1].encounterRate = encounterProbabilities[31]; // 15
                         }
                         else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
                             groups[0].pokemon[0].encounterRate = encounterProbabilities[2]; // 40
                             groups[1].pokemon[0].encounterRate = encounterProbabilities[8]; // 51
-                            groups[2].pokemon[1].encounterRate = encounterProbabilities[33]; // 9
+                            groups[2].pokemon[1].encounterRate = encounterProbabilities[32]; // 9
                         }
                     }
                     // (Magnemite / Murkrow) 0 1 1
@@ -350,17 +350,17 @@ namespace PokeWalkerSimulator {
                         if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                             groups[0].pokemon[0].encounterRate = encounterProbabilities[0]; // 0
                             groups[1].pokemon[1].encounterRate = encounterProbabilities[12]; // 0
-                            groups[2].pokemon[1].encounterRate = encounterProbabilities[34]; // 100
+                            groups[2].pokemon[1].encounterRate = encounterProbabilities[33]; // 100
                         }
                         else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
                             groups[0].pokemon[0].encounterRate = encounterProbabilities[1]; // 0
                             groups[1].pokemon[1].encounterRate = encounterProbabilities[13]; // 45
-                            groups[2].pokemon[1].encounterRate = encounterProbabilities[35]; // 55
+                            groups[2].pokemon[1].encounterRate = encounterProbabilities[34]; // 55
                         }
                         else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
                             groups[0].pokemon[0].encounterRate = encounterProbabilities[2]; // 40
                             groups[1].pokemon[1].encounterRate = encounterProbabilities[14]; // 27
-                            groups[2].pokemon[1].encounterRate = encounterProbabilities[36]; // 33
+                            groups[2].pokemon[1].encounterRate = encounterProbabilities[35]; // 33
                         }
                     }
                     // (Elekid / Magnemite) 1 0 1
