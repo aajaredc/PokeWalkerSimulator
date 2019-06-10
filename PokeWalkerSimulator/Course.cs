@@ -250,6 +250,157 @@ namespace PokeWalkerSimulator {
                     }
                 }
             }
+
+            if (encounterCalculationType == 1) {
+                if (groups[2].pokemon[0].isSelected) {
+                    // (Magnemite A & B)
+                    if (groups[0].pokemon[0].isSelected && groups[1].pokemon[0].isSelected) {
+                        if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = encounterProbabilities[0]; // 0
+                            groups[1].pokemon[0].encounterRate = encounterProbabilities[6]; // 0
+                            groups[2].pokemon[0].encounterRate = encounterProbabilities[18]; // 100
+                        }
+                        else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = encounterProbabilities[1]; // 0
+                            groups[1].pokemon[0].encounterRate = encounterProbabilities[7]; // 85
+                            groups[2].pokemon[0].encounterRate = encounterProbabilities[19]; // 15
+                        }
+                        else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = encounterProbabilities[2]; // 45
+                            groups[1].pokemon[0].encounterRate = encounterProbabilities[8]; // 51
+                            groups[2].pokemon[0].encounterRate = encounterProbabilities[20]; // 9
+                        }
+                    }
+                    // (Magnemite / Murkrow)
+                    else if (groups[0].pokemon[0].isSelected && groups[1].pokemon[1].isSelected) {
+                        if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = 0;
+                            groups[1].pokemon[1].encounterRate = 0;
+                            groups[2].pokemon[0].encounterRate = 100;
+                        }
+                        else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = 0;
+                            groups[1].pokemon[1].encounterRate = 45;
+                            groups[2].pokemon[0].encounterRate = 55;
+                        }
+                        else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = 40;
+                            groups[1].pokemon[1].encounterRate = 27;
+                            groups[2].pokemon[0].encounterRate = 33;
+                        }
+                    }
+                    // (Elekid / Magnemite)
+                    else if (groups[0].pokemon[1].isSelected && groups[1].pokemon[0].isSelected) {
+                        if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 0;
+                            groups[1].pokemon[0].encounterRate = 0;
+                            groups[2].pokemon[0].encounterRate = 100;
+                        }
+                        else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 0;
+                            groups[1].pokemon[0].encounterRate = 85;
+                            groups[2].pokemon[0].encounterRate = 15;
+                        }
+                        else if (stepsTaken >= groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 15;
+                            groups[1].pokemon[0].encounterRate = 72.25;
+                            groups[2].pokemon[0].encounterRate = 12.75;
+                        }
+                    }
+                    // (Elekid / Murkrow)
+                    else if (groups[0].pokemon[1].isSelected && groups[1].pokemon[1].isSelected) {
+                        if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 0;
+                            groups[1].pokemon[1].encounterRate = 0;
+                            groups[2].pokemon[0].encounterRate = 100;
+                        }
+                        else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 0;
+                            groups[1].pokemon[1].encounterRate = 45;
+                            groups[2].pokemon[0].encounterRate = 55;
+                        }
+                        else if (stepsTaken >= groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 15;
+                            groups[1].pokemon[1].encounterRate = 38.25;
+                            groups[2].pokemon[0].encounterRate = 47.75;
+                        }
+                    }
+                }
+                else if (groups[2].pokemon[1].isSelected) {
+                    // (Magnemite A & B)
+                    if (groups[0].pokemon[0].isSelected && groups[1].pokemon[0].isSelected) {
+                        if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = 0;
+                            groups[1].pokemon[0].encounterRate = 0;
+                            groups[2].pokemon[0].encounterRate = 100;
+                        }
+                        else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = 0;
+                            groups[1].pokemon[0].encounterRate = 85;
+                            groups[2].pokemon[0].encounterRate = 15;
+                        }
+                        else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = 40;
+                            groups[1].pokemon[0].encounterRate = 51;
+                            groups[2].pokemon[0].encounterRate = 9;
+                        }
+                    }
+                    // (Magnemite / Murkrow)
+                    else if (groups[0].pokemon[0].isSelected && groups[1].pokemon[1].isSelected) {
+                        if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = 0;
+                            groups[1].pokemon[1].encounterRate = 0;
+                            groups[2].pokemon[0].encounterRate = 100;
+                        }
+                        else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = 0;
+                            groups[1].pokemon[1].encounterRate = 45;
+                            groups[2].pokemon[0].encounterRate = 55;
+                        }
+                        else if (stepsTaken >= groups[0].pokemon[0].requiredSteps) {
+                            groups[0].pokemon[0].encounterRate = 40;
+                            groups[1].pokemon[1].encounterRate = 27;
+                            groups[2].pokemon[0].encounterRate = 33;
+                        }
+                    }
+                    // (Elekid / Magnemite)
+                    else if (groups[0].pokemon[1].isSelected && groups[1].pokemon[0].isSelected) {
+                        if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 0;
+                            groups[1].pokemon[0].encounterRate = 0;
+                            groups[2].pokemon[0].encounterRate = 100;
+                        }
+                        else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 0;
+                            groups[1].pokemon[0].encounterRate = 85;
+                            groups[2].pokemon[0].encounterRate = 15;
+                        }
+                        else if (stepsTaken >= groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 15;
+                            groups[1].pokemon[0].encounterRate = 72.25;
+                            groups[2].pokemon[0].encounterRate = 12.75;
+                        }
+                    }
+                    // (Elekid / Murkrow)
+                    else if (groups[0].pokemon[1].isSelected && groups[1].pokemon[1].isSelected) {
+                        if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 0;
+                            groups[1].pokemon[1].encounterRate = 0;
+                            groups[2].pokemon[0].encounterRate = 100;
+                        }
+                        else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 0;
+                            groups[1].pokemon[1].encounterRate = 45;
+                            groups[2].pokemon[0].encounterRate = 55;
+                        }
+                        else if (stepsTaken >= groups[0].pokemon[1].requiredSteps) {
+                            groups[0].pokemon[1].encounterRate = 15;
+                            groups[1].pokemon[1].encounterRate = 38.25;
+                            groups[2].pokemon[0].encounterRate = 47.75;
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>

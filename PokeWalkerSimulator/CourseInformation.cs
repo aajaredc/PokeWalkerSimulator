@@ -37,7 +37,8 @@ namespace PokeWalkerSimulator {
             new int[] { 2000, 3000, 500, 500, 0, 0 }, // refreshing field
             new int[] { 3000, 4000, 700, 700, 0, 0 }, // noisy forest
             new int[] { 4000, 5000, 1000, 1000, 0, 0 }, // rugged road
-            new int[] { 4000, 5000, 1500, 1000, 0, 0 } // beautiful beach
+            new int[] { 4000, 5000, 1500, 1000, 0, 0 }, // beautiful beach
+            new int[] { 4000, 5000, 1000, 1000, 0, 0} // suburban area
         };
 
         /// <summary>
@@ -47,7 +48,8 @@ namespace PokeWalkerSimulator {
             0, // refreshing field
             0, // noisy forest
             0, // rugged road
-            0 // beautiful beach
+            0, // beautiful beach
+            1 // suburban area
         };
 
         /// <summary>
@@ -89,6 +91,15 @@ namespace PokeWalkerSimulator {
                 0, 87, 26.1, 0, 87, 34.8,
                 100, 13, 3.9, 100, 13, 5.2,
                 100, 13, 3.9, 100, 13, 5.2
+            },
+            // suburban area
+            new double[] {
+                0, 0, 40,
+                0, 0, 15,
+                0, 85, 51, 0, 85, 72.25,
+                0, 45, 27, 0, 45, 38.25,
+                100, 15, 9, 100, 55, 33, /* */ 100, 15, 12.75, 100, 55, 46.75,
+                100, 15, 9, 100, 55, 33, /* */ 100, 15, 12.75, 100, 55, 46.75
             }
         };
 
