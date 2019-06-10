@@ -17,7 +17,8 @@ namespace PokeWalkerSimulator {
             "Suburban Area", // suburban area
             "Dim Cave", // dim cave
             "Blue Lake", // blue lake
-            "Town Outskirts" // town outskirts
+            "Town Outskirts", // town outskirts
+            "Hoenn Field" // hoenn field
         };
 
         /// <summary>
@@ -31,7 +32,8 @@ namespace PokeWalkerSimulator {
             "A residential area somewhere. Even when you take a Stroll here, you can meet Pokémon.", // suburban area
             "A dark cave sometimes used as a test of courage. Look closely, and you'll find many Pokémon.", // dim cave
             "A deep, blue lake. It's said that some rare Pokémon live at the bottom of this lake.", // blue lake 
-            "The outskirts of a town. Where people have moved away, Pokémon have moved in." // town outskirts
+            "The outskirts of a town. Where people have moved away, Pokémon have moved in.", // town outskirts
+            "A Route that goes deep into the Hoenn Region. You can meet many Pokémon not in Johto or Kanto." // hoenn field
         };
 
         /// <summary>
@@ -44,7 +46,9 @@ namespace PokeWalkerSimulator {
             new int[] { 4000, 5000, 1500, 1000, 0, 0 }, // beautiful beach
             new int[] { 4000, 5000, 1000, 1000, 0, 0}, // suburban area
             new int[] { 5000, 5000, 1000, 1000, 0, 0}, // dim cave
-            new int[] { 4000, 5000, 500, 500, 0, 0} // blue lake
+            new int[] { 4000, 5000, 500, 500, 0, 0}, // blue lake
+            new int[] { 5000, 3000, 1500, 1500, 0, 0}, // town outskirts
+            new int[] { 5000, 7500, 2000, 2000, 0, 0} // hoenn field
         };
 
         /// <summary>
@@ -57,7 +61,9 @@ namespace PokeWalkerSimulator {
             0, // beautiful beach
             1, // suburban area
             0, // dim cave
-            1 // blue lake
+            1, // blue lake
+            1, // town outskirts
+            0 // hoenn field
         };
 
         /// <summary>
@@ -126,6 +132,24 @@ namespace PokeWalkerSimulator {
                 0, 72, 28.8, 0, 72, 50.4,
                 100, 8, 3.2, 100, 28, 11.2, 100, 8, 5.6, 100, 28, 19.6,
                 100, 8, 3.2, 100, 28, 11.2, 100, 8, 5.6, 100, 28, 19.6
+            },
+            // town outskirts
+            new double[] {
+                0, 0, 40,
+                0, 0, 60,
+                0, 92, 55.2, 0, 92, 36.8,
+                0, 75, 45, 0, 75, 30,
+                100, 8, 4.8, 100, 25, 15, 100, 8, 3.2, 100, 25, 10,
+                100, 8, 4.8, 100, 25, 15, 100, 8, 3.2, 100, 25, 10
+            },
+            // hoenn field
+            new double[] {
+                0, 0, 75,
+                0, 0, 50,
+                0, 84, 21, 0, 84, 42,
+                0, 84, 21, 0, 84, 42,
+                100, 16, 4, 100, 16, 8,
+                100, 16, 4, 100, 16, 8
             }
         };
 
