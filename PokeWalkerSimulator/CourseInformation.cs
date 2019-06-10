@@ -18,7 +18,9 @@ namespace PokeWalkerSimulator {
             "Dim Cave", // dim cave
             "Blue Lake", // blue lake
             "Town Outskirts", // town outskirts
-            "Hoenn Field" // hoenn field
+            "Hoenn Field", // hoenn field
+            "Warm Beach", // warm beach
+            "Volcano Path" // volcano path
         };
 
         /// <summary>
@@ -33,7 +35,9 @@ namespace PokeWalkerSimulator {
             "A dark cave sometimes used as a test of courage. Look closely, and you'll find many Pokémon.", // dim cave
             "A deep, blue lake. It's said that some rare Pokémon live at the bottom of this lake.", // blue lake 
             "The outskirts of a town. Where people have moved away, Pokémon have moved in.", // town outskirts
-            "A Route that goes deep into the Hoenn Region. You can meet many Pokémon not in Johto or Kanto." // hoenn field
+            "A Route that goes deep into the Hoenn Region. You can meet many Pokémon not in Johto or Kanto.", // hoenn field
+            "A very warm beach in the Hoenn region. You can meet many Pokémon not in Johto or Kanto.", // warm beach
+            "A path through a currently active volcano. Very fiery and rare Pokémon live here." // volcano path
         };
 
         /// <summary>
@@ -48,7 +52,9 @@ namespace PokeWalkerSimulator {
             new int[] { 5000, 5000, 1000, 1000, 0, 0}, // dim cave
             new int[] { 4000, 5000, 500, 500, 0, 0}, // blue lake
             new int[] { 5000, 3000, 1500, 1500, 0, 0}, // town outskirts
-            new int[] { 5000, 7500, 2000, 2000, 0, 0} // hoenn field
+            new int[] { 5000, 7500, 2000, 2000, 0, 0}, // hoenn field
+            new int[] { 5000, 7000, 1500, 1500, 0, 0}, // warm beach
+            new int[] { 5000, 5000, 2000, 2000, 0, 0} // volcano path
         };
 
         /// <summary>
@@ -63,7 +69,9 @@ namespace PokeWalkerSimulator {
             0, // dim cave
             1, // blue lake
             1, // town outskirts
-            0 // hoenn field
+            0, // hoenn field
+            0, // warm beach
+            0 // volcano path
         };
 
         /// <summary>
@@ -150,6 +158,24 @@ namespace PokeWalkerSimulator {
                 0, 84, 21, 0, 84, 42,
                 100, 16, 4, 100, 16, 8,
                 100, 16, 4, 100, 16, 8
+            },
+            // warm beach
+            new double[] {
+                0, 0, 50,
+                0, 0, 50,
+                0, 84, 42, 0, 84, 42,
+                0, 84, 42, 0, 84, 42,
+                100, 16, 8, 100, 16, 8,
+                100, 16, 8, 100, 16, 8
+            },
+            // volcano path
+            new double[] {
+                0, 0, 70,
+                0, 0, 60,
+                0, 85, 25.5, 0, 85, 34,
+                0, 85, 25.5, 0, 85, 34,
+                100, 15, 4.5, 100, 15, 6,
+                100, 15, 4.5, 100, 15, 6
             }
         };
 
