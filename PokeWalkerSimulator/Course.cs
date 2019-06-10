@@ -368,17 +368,17 @@ namespace PokeWalkerSimulator {
                         if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                             groups[0].pokemon[1].encounterRate = encounterProbabilities[3]; // 0
                             groups[1].pokemon[0].encounterRate = encounterProbabilities[9]; // 0
-                            groups[2].pokemon[1].encounterRate = encounterProbabilities[37]; // 100
+                            groups[2].pokemon[1].encounterRate = encounterProbabilities[36]; // 100
                         }
                         else if (stepsTaken >= groups[1].pokemon[1].requiredSteps && stepsTaken < groups[0].pokemon[1].requiredSteps) {
                             groups[0].pokemon[1].encounterRate = encounterProbabilities[4]; // 0
                             groups[1].pokemon[0].encounterRate = encounterProbabilities[10]; // 85
-                            groups[2].pokemon[1].encounterRate = encounterProbabilities[38]; // 15
+                            groups[2].pokemon[1].encounterRate = encounterProbabilities[37]; // 15
                         }
                         else if (stepsTaken >= groups[0].pokemon[1].requiredSteps) {
                             groups[0].pokemon[1].encounterRate = encounterProbabilities[5]; // 15
                             groups[1].pokemon[0].encounterRate = encounterProbabilities[11]; // 72.25
-                            groups[2].pokemon[1].encounterRate = encounterProbabilities[39]; // 12.75
+                            groups[2].pokemon[1].encounterRate = encounterProbabilities[38]; // 12.75
                         }
                     }
                     // (Elekid / Murkrow) 1 1 1
