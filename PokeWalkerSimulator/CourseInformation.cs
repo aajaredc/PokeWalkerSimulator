@@ -20,7 +20,8 @@ namespace PokeWalkerSimulator {
             "Town Outskirts", // town outskirts
             "Hoenn Field", // hoenn field
             "Warm Beach", // warm beach
-            "Volcano Path" // volcano path
+            "Volcano Path", // volcano path
+            "Treehouse" // treehouse
         };
 
         /// <summary>
@@ -37,7 +38,8 @@ namespace PokeWalkerSimulator {
             "The outskirts of a town. Where people have moved away, Pokémon have moved in.", // town outskirts
             "A Route that goes deep into the Hoenn Region. You can meet many Pokémon not in Johto or Kanto.", // hoenn field
             "A very warm beach in the Hoenn region. You can meet many Pokémon not in Johto or Kanto.", // warm beach
-            "A path through a currently active volcano. Very fiery and rare Pokémon live here." // volcano path
+            "A path through a currently active volcano. Very fiery and rare Pokémon live here.", // volcano path
+            "A path that works with the trees of the forest. Pokémon here are always changing." // treehouse
         };
 
         /// <summary>
@@ -48,13 +50,14 @@ namespace PokeWalkerSimulator {
             new int[] { 3000, 4000, 700, 700, 0, 0 }, // noisy forest
             new int[] { 4000, 5000, 1000, 1000, 0, 0 }, // rugged road
             new int[] { 4000, 5000, 1500, 1000, 0, 0 }, // beautiful beach
-            new int[] { 4000, 5000, 1000, 1000, 0, 0}, // suburban area
-            new int[] { 5000, 5000, 1000, 1000, 0, 0}, // dim cave
-            new int[] { 4000, 5000, 500, 500, 0, 0}, // blue lake
-            new int[] { 5000, 3000, 1500, 1500, 0, 0}, // town outskirts
-            new int[] { 5000, 7500, 2000, 2000, 0, 0}, // hoenn field
-            new int[] { 5000, 7000, 1500, 1500, 0, 0}, // warm beach
-            new int[] { 5000, 5000, 2000, 2000, 0, 0} // volcano path
+            new int[] { 4000, 5000, 1000, 1000, 0, 0 }, // suburban area
+            new int[] { 5000, 5000, 1000, 1000, 0, 0 }, // dim cave
+            new int[] { 4000, 5000, 500, 500, 0, 0 }, // blue lake
+            new int[] { 5000, 3000, 1500, 1500, 0, 0 }, // town outskirts
+            new int[] { 5000, 7500, 2000, 2000, 0, 0 }, // hoenn field
+            new int[] { 5000, 7000, 1500, 1500, 0, 0 }, // warm beach
+            new int[] { 5000, 5000, 2000, 2000, 0, 0 }, // volcano path
+            new int[] { 5000, 5000, 1000, 1000, 0, 0 } // treehouse
         };
 
         /// <summary>
@@ -71,7 +74,8 @@ namespace PokeWalkerSimulator {
             1, // town outskirts
             0, // hoenn field
             0, // warm beach
-            0 // volcano path
+            0, // volcano path
+            0 // treehouse
         };
 
         /// <summary>
@@ -176,6 +180,15 @@ namespace PokeWalkerSimulator {
                 0, 85, 25.5, 0, 85, 34,
                 100, 15, 4.5, 100, 15, 6,
                 100, 15, 4.5, 100, 15, 6
+            },
+            // treehouse
+            new double[] {
+                0, 0, 30,
+                0, 0, 30,
+                0, 85, 59.5, 0, 85, 59.5,
+                0, 85, 59.5, 0, 85, 59.5,
+                100, 15, 10.5, 100, 15, 10.5,
+                100, 15, 10.5, 100, 15, 10.5
             }
         };
 
