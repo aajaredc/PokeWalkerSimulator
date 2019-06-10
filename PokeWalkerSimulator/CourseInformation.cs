@@ -15,7 +15,9 @@ namespace PokeWalkerSimulator {
             "Rugged Road", // rugged road
             "Beautiful Beach", // beautiful beach
             "Suburban Area", // suburban area
-            "Dim Cave" // dim cave
+            "Dim Cave", // dim cave
+            "Blue Lake", // blue lake
+            "Town Outskirts" // town outskirts
         };
 
         /// <summary>
@@ -27,7 +29,9 @@ namespace PokeWalkerSimulator {
             "A hilly, rugged mountain road. The view from atop the mountain is very beautiful.", // rugged road
             "This beautiful sea is a popular place for a Stroll. You can meet many Water-type Pokémon.", // beautiful beach
             "A residential area somewhere. Even when you take a Stroll here, you can meet Pokémon.", // suburban area
-            "A dark cave sometimes used as a test of courage. Look closely, and you'll find many Pokémon." // dim cave 
+            "A dark cave sometimes used as a test of courage. Look closely, and you'll find many Pokémon.", // dim cave
+            "A deep, blue lake. It's said that some rare Pokémon live at the bottom of this lake.", // blue lake 
+            "The outskirts of a town. Where people have moved away, Pokémon have moved in." // town outskirts
         };
 
         /// <summary>
