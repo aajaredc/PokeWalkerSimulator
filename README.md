@@ -20,9 +20,13 @@ Use the Debug or Release build configurations when building using the .NET Frame
 
 ## Dependencies
 
+This program uses [PKHeX](https://github.com/kwsch/PKHeX), which is licensed under [the GNU General Public License v3.0](https://github.com/kwsch/PKHeX/blob/master/LICENSE.md), for managing save data.
+
 PKHeX's QR code generation code is taken from [QRCoder](https://github.com/codebude/QRCoder), which is licensed under [the MIT license](https://github.com/codebude/QRCoder/blob/master/LICENSE.txt).
 
 PKHeX's shiny sprite collection is taken from [pokesprite](https://github.com/msikma/pokesprite), which is licensed under [the MIT license](https://github.com/msikma/pokesprite/blob/master/LICENSE).
+
+PK4 files are either made from scratch, or are taken from [Project Pokemon](https://projectpokemon.org/home/files/category/166-pok%C3%A9walker/).
 
 ### IDE
 
