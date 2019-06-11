@@ -26,7 +26,8 @@ namespace PokeWalkerSimulator {
             "Sinnoh Field", // sinnoh field
             "Icy Mountain Rd.", // icy mountain rd
             "Big Forest", // big forest
-            "White Lake" // white lake
+            "White Lake", // white lake
+            "Stormy Beach" // stormy beach
         };
 
         /// <summary>
@@ -49,7 +50,8 @@ namespace PokeWalkerSimulator {
             "A Route through the Sinnoh region, far from Johto and Kanto. Rare Pokémon live here.", // sinnoh field
             "A snow-covered road where a misstep could result in a fall-- it tests your trust in Pokémon.", // icy mountain rd
             "A forest surrounded by many old trees since the olden days. Many Pokémon live here.", // big forest
-            "A lake concealed in white mist. It lends a very mysterious feel to the area" // white lake
+            "A lake concealed in white mist. It lends a very mysterious feel to the area", // white lake
+            "Strong waves wash onto this beach. Because people don't visit, rare Pokémon live here." // stormy beach
         };
 
         /// <summary>
@@ -72,7 +74,8 @@ namespace PokeWalkerSimulator {
             new int[] { 7000, 7000, 3000, 3000, 0, 0 }, // sinnoh field
             new int[] { 10000, 10000, 3000, 3000, 0, 0 }, // icy mountain rd
             new int[] { 6000, 5000, 1000, 1000, 0, 0 }, // big forest
-            new int[] { 6000, 5000, 500, 1000, 0, 0 } // white lake
+            new int[] { 6000, 5000, 500, 1000, 0, 0 }, // white lake
+            new int[] { 5000, 4000, 1500, 500, 0, 0 } // stormy beach
         };
 
         /// <summary>
@@ -95,7 +98,8 @@ namespace PokeWalkerSimulator {
             0, // sinnoh field
             2, // icy mountain rd
             0, // big forest
-            2 // white lake
+            2, // white lake
+            0 // stormy beach
         };
 
         /// <summary>
@@ -254,6 +258,15 @@ namespace PokeWalkerSimulator {
                 0, 65, 32.5,
                 100, 45, 22.5, 100, 35, 17.5,
                 100, 45, 22.5, 100, 35, 17.5
+            },
+            // stormy beach
+            new double[] {
+                0, 0, 55,
+                0, 0, 30,
+                0, 69, 29.25, 0, 65, 45.5,
+                0, 69, 29.25, 0, 65, 45.5,
+                100, 35, 15.75, 100, 35, 24.5,
+                100, 35, 15.75, 100, 35, 24.5
             }
         };
 
