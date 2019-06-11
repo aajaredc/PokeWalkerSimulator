@@ -23,7 +23,7 @@ namespace PokeWalkerSimulator {
         public int sid = 62879;
         public int watts;
 
-        public static Course[] courses = new Course[19];
+        public static Course[] courses = new Course[21];
         public static Course selectedCourse;
 
         public FormMain() {
@@ -79,7 +79,7 @@ namespace PokeWalkerSimulator {
             }
 
             // Set default course, for testing purposes
-            selectedCourse = courses[18];
+            selectedCourse = courses[20];
             selectedCourse.Write();
         }
 

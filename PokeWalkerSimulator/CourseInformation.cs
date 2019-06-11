@@ -28,7 +28,9 @@ namespace PokeWalkerSimulator {
             "Big Forest", // big forest
             "White Lake", // white lake
             "Stormy Beach", // stormy beach
-            "Resort" // resort
+            "Resort", // resort
+            "Quiet Cave", // quiet cave
+            "Beyond the Sea" // beyond the sea
         };
 
         /// <summary>
@@ -53,7 +55,9 @@ namespace PokeWalkerSimulator {
             "A forest surrounded by many old trees since the olden days. Many Pokémon live here.", // big forest
             "A lake concealed in white mist. It lends a very mysterious feel to the area", // white lake
             "Strong waves wash onto this beach. Because people don't visit, rare Pokémon live here.", // stormy beach
-            "A high-class resort everyone wants to visit, famous for the cute Pokémon living here." // resort
+            "A high-class resort everyone wants to visit, famous for the cute Pokémon living here.", // resort
+            "A quiet, deep, and empty cave. If you look carefully, you'll find some rare Pokémon", // quiet cave
+            "A small island far away on the horizon. If you look to the sea, you can see Pokémon swimming." // beyond the sea
         };
 
         /// <summary>
@@ -78,7 +82,9 @@ namespace PokeWalkerSimulator {
             new int[] { 6000, 5000, 1000, 1000, 0, 0 }, // big forest
             new int[] { 6000, 5000, 500, 1000, 0, 0 }, // white lake
             new int[] { 5000, 4000, 1500, 500, 0, 0 }, // stormy beach
-            new int[] { 8000, 8000, 4000, 4000, 0, 0 } // resort
+            new int[] { 8000, 8000, 4000, 4000, 0, 0 }, // resort
+            new int[] { 10000, 10000, 500, 500, 0, 0 }, // quiet cave
+            new int[] { 5000, 5000, 2500, 2500, 0, 0 } // beyond the sea
         };
 
         /// <summary>
@@ -103,7 +109,9 @@ namespace PokeWalkerSimulator {
             0, // big forest
             2, // white lake
             0, // stormy beach
-            3 // resort
+            3, // resort
+            1, // quiet cave
+            0 // beyond the sea
         };
 
         /// <summary>
@@ -280,6 +288,24 @@ namespace PokeWalkerSimulator {
                 0, 55, 30.25,
                 100, 45, 24.75,
                 100, 45, 24.75
+            },
+            // quiet cave
+            new double[] {
+                0, 0, 5,
+                0, 0, 15,
+                0, 20, 19, 0, 20, 17,
+                0, 45, 42.75, 0, 45, 38.25,
+                100, 80, 76, 100, 55, 52.25, 100, 80, 68, 100, 55, 46.75,
+                100, 80, 76, 100, 55, 52.25, 100, 80, 68, 100, 55, 46.75
+            },
+            // beyond the sea
+            new double[] {
+                0, 0, 20,
+                0, 0, 5,
+                0, 55, 44, 0, 55, 52.25,
+                0, 55, 44, 0, 55, 52.25,
+                100, 45, 36, 100, 45, 42.75,
+                100, 45, 36, 100, 45, 42.75
             }
         };
 
