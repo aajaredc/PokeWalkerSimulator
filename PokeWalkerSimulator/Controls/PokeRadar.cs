@@ -32,14 +32,17 @@ namespace PokeWalkerSimulator.Controls {
 
                 cumulativeRandom += FormMain.selectedCourse.groups[i].GetSelectedGroupPokemon().encounterRate;
 
-                if (pokeRadarSelection < cumulativeRandom) {
-                    Console.WriteLine("Encountered pokemon " + FormMain.selectedCourse.groups[i].GetSelectedGroupPokemon().ToString());
-                    wildEncounter = FormMain.selectedCourse.groups[i].GetSelectedGroupPokemon().pk;
+                if (FormMain.selectedCourse.groups[i].GetSelectedGroupPokemon().isSelected) {
+                    if (pokeRadarSelection < cumulativeRandom) {
+                        Console.WriteLine("Encountered pokemon " + FormMain.selectedCourse.groups[i].GetSelectedGroupPokemon().ToString());
+                        wildEncounter = FormMain.selectedCourse.groups[i].GetSelectedGroupPokemon().pk;
 
-                    InitializePokeRadarBattle();
+                        InitializePokeRadarBattle();
 
-                    return;
+                        return;
+                    }
                 }
+
             }
         }
 

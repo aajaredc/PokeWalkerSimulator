@@ -27,7 +27,8 @@ namespace PokeWalkerSimulator {
             "Icy Mountain Rd.", // icy mountain rd
             "Big Forest", // big forest
             "White Lake", // white lake
-            "Stormy Beach" // stormy beach
+            "Stormy Beach", // stormy beach
+            "Resort" // resort
         };
 
         /// <summary>
@@ -51,7 +52,8 @@ namespace PokeWalkerSimulator {
             "A snow-covered road where a misstep could result in a fall-- it tests your trust in Pokémon.", // icy mountain rd
             "A forest surrounded by many old trees since the olden days. Many Pokémon live here.", // big forest
             "A lake concealed in white mist. It lends a very mysterious feel to the area", // white lake
-            "Strong waves wash onto this beach. Because people don't visit, rare Pokémon live here." // stormy beach
+            "Strong waves wash onto this beach. Because people don't visit, rare Pokémon live here.", // stormy beach
+            "A high-class resort everyone wants to visit, famous for the cute Pokémon living here." // resort
         };
 
         /// <summary>
@@ -75,7 +77,8 @@ namespace PokeWalkerSimulator {
             new int[] { 10000, 10000, 3000, 3000, 0, 0 }, // icy mountain rd
             new int[] { 6000, 5000, 1000, 1000, 0, 0 }, // big forest
             new int[] { 6000, 5000, 500, 1000, 0, 0 }, // white lake
-            new int[] { 5000, 4000, 1500, 500, 0, 0 } // stormy beach
+            new int[] { 5000, 4000, 1500, 500, 0, 0 }, // stormy beach
+            new int[] { 8000, 8000, 4000, 4000, 0, 0 } // resort
         };
 
         /// <summary>
@@ -99,7 +102,8 @@ namespace PokeWalkerSimulator {
             2, // icy mountain rd
             0, // big forest
             2, // white lake
-            0 // stormy beach
+            0, // stormy beach
+            3 // resort
         };
 
         /// <summary>
@@ -267,6 +271,15 @@ namespace PokeWalkerSimulator {
                 0, 69, 29.25, 0, 65, 45.5,
                 100, 35, 15.75, 100, 35, 24.5,
                 100, 35, 15.75, 100, 35, 24.5
+            },
+            // resort
+            new double[] {
+                0, 0, 45,
+                0, 0, 45,
+                0, 55, 30.25,
+                0, 55, 30.25,
+                100, 45, 24.75,
+                100, 45, 24.75
             }
         };
 
