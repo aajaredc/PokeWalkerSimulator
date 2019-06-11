@@ -23,7 +23,8 @@ namespace PokeWalkerSimulator {
             "Volcano Path", // volcano path
             "Treehouse", // treehouse
             "Scary Cave", // scary cave
-            "Sinnoh Field" // sinnoh field
+            "Sinnoh Field", // sinnoh field
+            "Icy Mountain Rd." // icy mountain rd
         };
 
         /// <summary>
@@ -43,7 +44,8 @@ namespace PokeWalkerSimulator {
             "A path through a currently active volcano. Very fiery and rare Pokémon live here.", // volcano path
             "A path that works with the trees of the forest. Pokémon here are always changing.", // treehouse
             "A pitch-black cave that seems haunted. It's said that many Pokémon live deep inside.", // scary cave
-            "A Route through the Sinnoh region, far from Johto and Kanto. Rare Pokémon live here." // sinnoh field
+            "A Route through the Sinnoh region, far from Johto and Kanto. Rare Pokémon live here.", // sinnoh field
+            "A snow-covered road where a misstep could result in a fall-- it tests your trust in Pokémon." // icy mountain rd
         };
 
         /// <summary>
@@ -62,7 +64,9 @@ namespace PokeWalkerSimulator {
             new int[] { 5000, 7000, 1500, 1500, 0, 0 }, // warm beach
             new int[] { 5000, 5000, 2000, 2000, 0, 0 }, // volcano path
             new int[] { 5000, 5000, 1000, 1000, 0, 0 }, // treehouse
-            new int[] { 5000, 5000, 500, 1000, 0, 0 } // scary cave
+            new int[] { 5000, 5000, 500, 1000, 0, 0 }, // scary cave
+            new int[] { 7000, 7000, 3000, 3000, 0, 0 }, // sinnoh field
+            new int[] { 10000, 10000, 3000, 3000, 0, 0 } // icy mountain rd
         };
 
         /// <summary>
@@ -81,7 +85,9 @@ namespace PokeWalkerSimulator {
             0, // warm beach
             0, // volcano path
             0, // treehouse
-            2 // scary cave
+            2, // scary cave
+            1, // sinnoh field
+            2 // icy mountain rd
         };
 
         /// <summary>
@@ -204,6 +210,24 @@ namespace PokeWalkerSimulator {
                 0, 55, 30.25,
                 100, 35, 19.25, 100, 45, 24.75,
                 100, 35, 19.25, 100, 45, 24.75
+            },
+            // sinnoh field
+            new double[] {
+                0, 0, 45,
+                0, 0, 40,
+                0, 55, 30.25, 0, 55, 33,
+                0, 55, 30.25, 0, 55, 33,
+                100, 45, 24.75, 100, 45, 27,
+                100, 45, 24.75, 100, 45, 27
+            },
+            // icy mountain rd
+            new double[] {
+                0, 0, 50,
+                0, 0, 50,
+                0, 55, 27.5,
+                0, 75, 37.5,
+                100, 45, 22.5, 100, 25, 12.5,
+                100, 45, 22.5, 100, 25, 12.5
             }
         };
 
