@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using PKHeX.Core;
 
 namespace PokeWalkerSimulator {
-    public class GroupPokemon : PK4 {
+    public class GroupPokemon {
 
         // PokeWalker related
         public int requiredSteps = -1;
