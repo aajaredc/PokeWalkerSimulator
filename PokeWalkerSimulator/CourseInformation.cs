@@ -21,7 +21,9 @@ namespace PokeWalkerSimulator {
             "Hoenn Field", // hoenn field
             "Warm Beach", // warm beach
             "Volcano Path", // volcano path
-            "Treehouse" // treehouse
+            "Treehouse", // treehouse
+            "Scary Cave", // scary cave
+            "Sinnoh Field" // sinnoh field
         };
 
         /// <summary>
@@ -39,7 +41,9 @@ namespace PokeWalkerSimulator {
             "A Route that goes deep into the Hoenn Region. You can meet many Pokémon not in Johto or Kanto.", // hoenn field
             "A very warm beach in the Hoenn region. You can meet many Pokémon not in Johto or Kanto.", // warm beach
             "A path through a currently active volcano. Very fiery and rare Pokémon live here.", // volcano path
-            "A path that works with the trees of the forest. Pokémon here are always changing." // treehouse
+            "A path that works with the trees of the forest. Pokémon here are always changing.", // treehouse
+            "A pitch-black cave that seems haunted. It's said that many Pokémon live deep inside.", // scary cave
+            "A Route through the Sinnoh region, far from Johto and Kanto. Rare Pokémon live here." // sinnoh field
         };
 
         /// <summary>
