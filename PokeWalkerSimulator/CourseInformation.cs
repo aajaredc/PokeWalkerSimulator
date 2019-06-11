@@ -61,7 +61,8 @@ namespace PokeWalkerSimulator {
             new int[] { 5000, 7500, 2000, 2000, 0, 0 }, // hoenn field
             new int[] { 5000, 7000, 1500, 1500, 0, 0 }, // warm beach
             new int[] { 5000, 5000, 2000, 2000, 0, 0 }, // volcano path
-            new int[] { 5000, 5000, 1000, 1000, 0, 0 } // treehouse
+            new int[] { 5000, 5000, 1000, 1000, 0, 0 }, // treehouse
+            new int[] { 5000, 5000, 500, 1000, 0, 0 } // scary cave
         };
 
         /// <summary>
@@ -79,7 +80,8 @@ namespace PokeWalkerSimulator {
             0, // hoenn field
             0, // warm beach
             0, // volcano path
-            0 // treehouse
+            0, // treehouse
+            2 // scary cave
         };
 
         /// <summary>
@@ -193,6 +195,15 @@ namespace PokeWalkerSimulator {
                 0, 85, 59.5, 0, 85, 59.5,
                 100, 15, 10.5, 100, 15, 10.5,
                 100, 15, 10.5, 100, 15, 10.5
+            },
+            // scary cave
+            new double[] {
+                0, 0, 45,
+                0, 0, 45,
+                0, 65, 35.75,
+                0, 55, 30.25,
+                100, 35, 19.25, 100, 45, 24.75,
+                100, 35, 19.25, 100, 45, 24.75
             }
         };
 

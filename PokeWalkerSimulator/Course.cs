@@ -404,149 +404,150 @@ namespace PokeWalkerSimulator {
 
             // Encounter type 2 (Scary Cave)
             else if (encounterCalculationType == 2) {
+                Console.WriteLine("Encounter type 2");
                 // 0 0 0
-                if (groups[0].pokemon[0].isSelected && groups[1].pokemon[0].isSelected && groups[1].pokemon[0].isSelected) {
+                if (groups[0].pokemon[0].isSelected && groups[1].pokemon[0].isSelected && groups[2].pokemon[0].isSelected) {
                     if (stepsTaken < groups[1].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 100; // 100
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[0]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[6]; // 0
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[12]; // 100
                     }
                     else if (stepsTaken >= groups[1].GetSelectedGroupPokemon().requiredSteps && stepsTaken < groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 65; // 65
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 35; // 35
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[1]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[7]; // 65
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[13]; // 35
                     }
                     else if (stepsTaken >= groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 45; // 45
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 35.75; // 35.75
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 19.25; // 19.25
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[2]; // 45
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[8]; // 35.75
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[14]; // 19.25
                     }
                 }
                 // 0 0 1
-                else if (groups[0].pokemon[0].isSelected && groups[1].pokemon[0].isSelected && groups[1].pokemon[1].isSelected) {
+                else if (groups[0].pokemon[0].isSelected && groups[1].pokemon[0].isSelected && groups[2].pokemon[1].isSelected) {
                     if (stepsTaken < groups[1].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 100; // 100
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[0]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[6]; // 0
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[18]; // 100
                     }
                     else if (stepsTaken >= groups[1].GetSelectedGroupPokemon().requiredSteps && stepsTaken < groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 65; // 65
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 35; // 35
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[1]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[7]; // 65
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[19]; // 35
                     }
                     else if (stepsTaken >= groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 45; // 45
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 35.75; // 35.75
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 19.25; // 19.25
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[2]; // 45
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[8]; // 35.75
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[20]; // 19.25
                     }
                 }
                 // 0 1 1
-                else if (groups[0].pokemon[0].isSelected && groups[1].pokemon[1].isSelected && groups[1].pokemon[1].isSelected) {
+                else if (groups[0].pokemon[0].isSelected && groups[1].pokemon[1].isSelected && groups[2].pokemon[1].isSelected) {
                     if (stepsTaken < groups[1].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 100; // 100
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[0]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[9]; // 0
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[21]; // 100
                     }
                     else if (stepsTaken >= groups[1].GetSelectedGroupPokemon().requiredSteps && stepsTaken < groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 55; // 55
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 45; // 45
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[1]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[10]; // 55
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[22]; // 45
                     }
                     else if (stepsTaken >= groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 45; // 45
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 30.25; // 30.25
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 24.75; // 24.75
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[2]; // 45
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[11]; // 30.25
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[23]; // 24.75
                     }
                 }
                 // 0 1 0
-                else if (groups[0].pokemon[0].isSelected && groups[1].pokemon[1].isSelected && groups[1].pokemon[0].isSelected) {
+                else if (groups[0].pokemon[0].isSelected && groups[1].pokemon[1].isSelected && groups[2].pokemon[0].isSelected) {
                     if (stepsTaken < groups[1].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 100; // 100
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[0]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[9]; // 0
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[15]; // 100
                     }
                     else if (stepsTaken >= groups[1].GetSelectedGroupPokemon().requiredSteps && stepsTaken < groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 55; // 55
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 45; // 45
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[1]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[10]; // 55
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[16]; // 45
                     }
                     else if (stepsTaken >= groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 45; // 45
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 30.25; // 30.25
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 24.75; // 24.75
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[2]; // 45
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[11]; // 30.25
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[17]; // 24.75
                     }
                 }
                 // -------- //
                 // 1 0 0
-                else if (groups[1].pokemon[0].isSelected && groups[1].pokemon[0].isSelected && groups[1].pokemon[0].isSelected) {
+                else if (groups[0].pokemon[1].isSelected && groups[1].pokemon[0].isSelected && groups[2].pokemon[0].isSelected) {
                     if (stepsTaken < groups[1].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 100; // 100
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[3]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[6]; // 0
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[12]; // 100
                     }
                     else if (stepsTaken >= groups[1].GetSelectedGroupPokemon().requiredSteps && stepsTaken < groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 65; // 65
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 35; // 35
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[4]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[7]; // 65
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[13]; // 35
                     }
                     else if (stepsTaken >= groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 45; // 45
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 35.75; // 35.75
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 19.25; // 19.25
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[5]; // 45
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[8]; // 35.75
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[14]; // 19.25
                     }
                 }
                 // 1 0 1
-                else if (groups[1].pokemon[0].isSelected && groups[1].pokemon[0].isSelected && groups[1].pokemon[1].isSelected) {
+                else if (groups[0].pokemon[1].isSelected && groups[1].pokemon[0].isSelected && groups[2].pokemon[1].isSelected) {
                     if (stepsTaken < groups[1].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 100; // 100
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[3]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[6]; // 0
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[18]; // 100
                     }
                     else if (stepsTaken >= groups[1].GetSelectedGroupPokemon().requiredSteps && stepsTaken < groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 65; // 65
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 35; // 35
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[4]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[7]; // 65
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[19]; // 35
                     }
                     else if (stepsTaken >= groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 45; // 45
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 35.75; // 35.75
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 19.25; // 19.25
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[5]; // 45
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[8]; // 35.75
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[20]; // 19.25
                     }
                 }
                 // 1 1 1
-                else if (groups[1].pokemon[0].isSelected && groups[1].pokemon[1].isSelected && groups[1].pokemon[1].isSelected) {
+                else if (groups[0].pokemon[1].isSelected && groups[1].pokemon[1].isSelected && groups[2].pokemon[1].isSelected) {
                     if (stepsTaken < groups[1].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 100; // 100
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[3]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[9]; // 0
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[21]; // 100
                     }
                     else if (stepsTaken >= groups[1].GetSelectedGroupPokemon().requiredSteps && stepsTaken < groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 55; // 55
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 45; // 45
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[4]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[10]; // 55
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[22]; // 45
                     }
                     else if (stepsTaken >= groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 45; // 45
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 30.25; // 30.25
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 24.75; // 24.75
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[5]; // 45
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[11]; // 30.25
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[23]; // 24.75
                     }
                 }
                 // 1 1 0
-                else if (groups[1].pokemon[0].isSelected && groups[1].pokemon[1].isSelected && groups[1].pokemon[0].isSelected) {
+                else if (groups[0].pokemon[1].isSelected && groups[1].pokemon[1].isSelected && groups[2].pokemon[0].isSelected) {
                     if (stepsTaken < groups[1].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 100; // 100
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[0]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[9]; // 0
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[15]; // 100
                     }
                     else if (stepsTaken >= groups[1].GetSelectedGroupPokemon().requiredSteps && stepsTaken < groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 0; // 0
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 55; // 55
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 45; // 45
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[1]; // 0
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[10]; // 55
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[16]; // 45
                     }
                     else if (stepsTaken >= groups[0].GetSelectedGroupPokemon().requiredSteps) {
-                        groups[0].GetSelectedGroupPokemon().encounterRate = 45; // 45
-                        groups[1].GetSelectedGroupPokemon().encounterRate = 30.25; // 30.25
-                        groups[2].GetSelectedGroupPokemon().encounterRate = 24.75; // 24.75
+                        groups[0].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[2]; // 45
+                        groups[1].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[11]; // 30.25
+                        groups[2].GetSelectedGroupPokemon().encounterRate = encounterProbabilities[17]; // 24.75
                     }
                 }
             }
