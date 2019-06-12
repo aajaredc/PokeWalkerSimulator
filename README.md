@@ -2,7 +2,7 @@ PokeWalkerSimulator
 =====
 ![License](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
-This is a WIP PokeWalker simulator made around [PKHeX](https://github.com/kwsch/PKHeX). It currently features full functionality for catching all six Pokemon in each of the twenty-seven courses. All information taken about the PokeWalker is documented on [Serebii](https://serebii.net/heartgoldsoulsilver/pokewalker.shtml) and [BulbaPedia](https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9walker).
+This is a WIP PokeWalker simulator made around [PKHeX](https://github.com/kwsch/PKHeX). It currently features full functionality for catching all six Pokemon in each of the twenty-seven courses. All information taken about the PokeWalker is documented on [Serebii](https://serebii.net/heartgoldsoulsilver/pokewalker.shtml) and [Bulbapedia](https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9walker).
 
 ## Screenshots
 
