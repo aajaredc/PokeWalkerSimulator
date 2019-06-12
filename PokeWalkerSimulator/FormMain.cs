@@ -54,7 +54,12 @@ namespace PokeWalkerSimulator {
                     description = CourseInformation.courseDescriptions[i],
                     courseNumber = i,
                     encounterCalculationType = CourseInformation.pokemonEncounterCalculationTypes[i],
-                    encounterProbabilities = CourseInformation.pokemonEncounterProbabilties[i]
+                    encounterProbabilities = CourseInformation.pokemonEncounterProbabilties[i],
+
+                    // TODO change this reflect all courses once the information is added
+                    itemNumbers = CourseInformation.itemNumbers[0],
+                    itemRequiredSteps = CourseInformation.itemRequiredSteps[0],
+                    itemProbabilities = CourseInformation.itemProbabilities[0]
                 };
             }
 
@@ -79,8 +84,7 @@ namespace PokeWalkerSimulator {
             }
 
             // Set default course, for testing purposes
-            selectedCourse = courses[20];
-            selectedCourse.Write();
+            selectedCourse = courses[0];
         }
 
         /// <summary>

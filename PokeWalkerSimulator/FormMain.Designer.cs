@@ -41,6 +41,7 @@
             this.viewTrainerInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePokeRadarImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateInventoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnPokeRadar = new System.Windows.Forms.Button();
             this.btnExportStrollPokemon = new System.Windows.Forms.Button();
             this.tabControlMain = new System.Windows.Forms.TabControl();
@@ -49,11 +50,12 @@
             this.tabPokeRadar = new System.Windows.Forms.TabPage();
             this.pokeradar = new PokeWalkerSimulator.Controls.PokeRadar();
             this.tabDowsingMachine = new System.Windows.Forms.TabPage();
-            this.getItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dowsingMachine1 = new PokeWalkerSimulator.Controls.DowsingMachine();
             this.menuMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabInventory.SuspendLayout();
             this.tabPokeRadar.SuspendLayout();
+            this.tabDowsingMachine.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuMain
@@ -205,6 +207,13 @@
             this.updateInventoryToolStripMenuItem.Text = "Update Inventory";
             this.updateInventoryToolStripMenuItem.Click += new System.EventHandler(this.UpdateInventoryToolStripMenuItem_Click);
             // 
+            // getItemToolStripMenuItem
+            // 
+            this.getItemToolStripMenuItem.Name = "getItemToolStripMenuItem";
+            this.getItemToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
+            this.getItemToolStripMenuItem.Text = "Get item?";
+            this.getItemToolStripMenuItem.Click += new System.EventHandler(this.GetItemToolStripMenuItem_Click);
+            // 
             // btnPokeRadar
             // 
             this.btnPokeRadar.Location = new System.Drawing.Point(470, 56);
@@ -273,6 +282,7 @@
             // 
             // tabDowsingMachine
             // 
+            this.tabDowsingMachine.Controls.Add(this.dowsingMachine1);
             this.tabDowsingMachine.Location = new System.Drawing.Point(4, 25);
             this.tabDowsingMachine.Name = "tabDowsingMachine";
             this.tabDowsingMachine.Padding = new System.Windows.Forms.Padding(3);
@@ -281,12 +291,12 @@
             this.tabDowsingMachine.Text = "Dowsing Machine";
             this.tabDowsingMachine.UseVisualStyleBackColor = true;
             // 
-            // getItemToolStripMenuItem
+            // dowsingMachine1
             // 
-            this.getItemToolStripMenuItem.Name = "getItemToolStripMenuItem";
-            this.getItemToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
-            this.getItemToolStripMenuItem.Text = "Get item?";
-            this.getItemToolStripMenuItem.Click += new System.EventHandler(this.GetItemToolStripMenuItem_Click);
+            this.dowsingMachine1.Location = new System.Drawing.Point(7, 7);
+            this.dowsingMachine1.Name = "dowsingMachine1";
+            this.dowsingMachine1.Size = new System.Drawing.Size(431, 365);
+            this.dowsingMachine1.TabIndex = 0;
             // 
             // FormMain
             // 
@@ -306,6 +316,7 @@
             this.tabControlMain.ResumeLayout(false);
             this.tabInventory.ResumeLayout(false);
             this.tabPokeRadar.ResumeLayout(false);
+            this.tabDowsingMachine.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,6 +350,7 @@
         public Controls.PokeRadar pokeradar;
         public Controls.Inventory inventory;
         private System.Windows.Forms.ToolStripMenuItem getItemToolStripMenuItem;
+        private Controls.DowsingMachine dowsingMachine1;
     }
 }
 

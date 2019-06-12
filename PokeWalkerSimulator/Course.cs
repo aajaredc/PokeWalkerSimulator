@@ -46,7 +46,7 @@ namespace PokeWalkerSimulator {
                 } else {
                     groups[g].pokemon[1].isSelected = true;
                 }
-                Console.WriteLine("Selected " + groups[g].GetSelectedGroupPokemon().ToString());
+                //Console.WriteLine("Selected " + groups[g].GetSelectedGroupPokemon().ToString());
             }
 
         }
@@ -67,7 +67,7 @@ namespace PokeWalkerSimulator {
                         // Pokemon 1 of group c is selected
                         if (groups[2].pokemon[0].isSelected) {
                             // 1a 1b 1c
-                            Console.WriteLine("1a 1b 1c");
+                            //Console.WriteLine("1a 1b 1c");
                             if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                                 groups[0].pokemon[0].encounterRate = encounterProbabilities[0]; // 0
                                 groups[1].pokemon[0].encounterRate = encounterProbabilities[6]; // 0
@@ -88,7 +88,7 @@ namespace PokeWalkerSimulator {
                         // Pokemon 2 of group c is selected
                         else if (groups[2].pokemon[1].isSelected) {
                             // 1a 1b 2c
-                            Console.WriteLine("1a 1b 2c");
+                            //Console.WriteLine("1a 1b 2c");
                             if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                                 groups[0].pokemon[0].encounterRate = encounterProbabilities[0]; // 0
                                 groups[1].pokemon[0].encounterRate = encounterProbabilities[6]; // 0
@@ -112,7 +112,7 @@ namespace PokeWalkerSimulator {
                         // Pokemon 1 of group c is selected
                         if (groups[2].pokemon[0].isSelected) {
                             // 1a 2b 1c
-                            Console.WriteLine("1a 2b 1c");
+                            //Console.WriteLine("1a 2b 1c");
                             if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                                 groups[0].pokemon[0].encounterRate = encounterProbabilities[0]; // 0
                                 groups[1].pokemon[1].encounterRate = encounterProbabilities[12]; // 0
@@ -133,7 +133,7 @@ namespace PokeWalkerSimulator {
                         // Pokemon 2 of group c is selected
                         else if (groups[2].pokemon[1].isSelected) {
                             // 1a 2b 2c
-                            Console.WriteLine("1a 2b 2c");
+                            //Console.WriteLine("1a 2b 2c");
                             if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                                 groups[0].pokemon[0].encounterRate = encounterProbabilities[0]; // 0
                                 groups[1].pokemon[1].encounterRate = encounterProbabilities[12]; // 0
@@ -163,7 +163,7 @@ namespace PokeWalkerSimulator {
                         // Pokemon 1 of group c is selected
                         if (groups[2].pokemon[0].isSelected) {
                             // 2a 1b 1c
-                            Console.WriteLine("2a 1b 1c");
+                            //Console.WriteLine("2a 1b 1c");
                             if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                                 groups[0].pokemon[1].encounterRate = encounterProbabilities[3]; // 0
                                 groups[1].pokemon[0].encounterRate = encounterProbabilities[9]; // 0
@@ -184,7 +184,7 @@ namespace PokeWalkerSimulator {
                         // Pokemon 2 of group c is selected
                         else if (groups[2].pokemon[1].isSelected) {
                             // 2a 1b 2c
-                            Console.WriteLine("2a 1b 2c");
+                            //Console.WriteLine("2a 1b 2c");
                             if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                                 groups[0].pokemon[1].encounterRate = encounterProbabilities[3]; // 0
                                 groups[1].pokemon[0].encounterRate = encounterProbabilities[9]; // 0
@@ -208,7 +208,7 @@ namespace PokeWalkerSimulator {
                         // Pokemon 1 of group c is selected
                         if (groups[2].pokemon[0].isSelected) {
                             // 2a 2b 1c
-                            Console.WriteLine("2a 2b 1c");
+                            //Console.WriteLine("2a 2b 1c");
                             if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                                 groups[0].pokemon[1].encounterRate = encounterProbabilities[3]; // 0
                                 groups[1].pokemon[1].encounterRate = encounterProbabilities[15]; // 0
@@ -229,7 +229,7 @@ namespace PokeWalkerSimulator {
                         // Pokemon 2 of group c is selected
                         else if (groups[2].pokemon[1].isSelected) {
                             // 2a 2b 2c
-                            Console.WriteLine("2a 2b 2c");
+                            //Console.WriteLine("2a 2b 2c");
                             if (stepsTaken < groups[1].pokemon[1].requiredSteps) {
                                 groups[0].pokemon[1].encounterRate = encounterProbabilities[3]; // 0
                                 groups[1].pokemon[1].encounterRate = encounterProbabilities[15]; // 0
@@ -404,7 +404,7 @@ namespace PokeWalkerSimulator {
 
             // Encounter type 2 (Scary Cave)
             else if (encounterCalculationType == 2) {
-                Console.WriteLine("Encounter type 2");
+                //Console.WriteLine("Encounter type 2");
                 // 0 0 0
                 if (groups[0].pokemon[0].isSelected && groups[1].pokemon[0].isSelected && groups[2].pokemon[0].isSelected) {
                     if (stepsTaken < groups[1].GetSelectedGroupPokemon().requiredSteps) {
