@@ -50,7 +50,7 @@
             this.tabPokeRadar = new System.Windows.Forms.TabPage();
             this.pokeradar = new PokeWalkerSimulator.Controls.PokeRadar();
             this.tabDowsingMachine = new System.Windows.Forms.TabPage();
-            this.dowsingMachine1 = new PokeWalkerSimulator.Controls.DowsingMachine();
+            this.dowsingmachine = new PokeWalkerSimulator.Controls.DowsingMachine();
             this.menuMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabInventory.SuspendLayout();
@@ -282,7 +282,7 @@
             // 
             // tabDowsingMachine
             // 
-            this.tabDowsingMachine.Controls.Add(this.dowsingMachine1);
+            this.tabDowsingMachine.Controls.Add(this.dowsingmachine);
             this.tabDowsingMachine.Location = new System.Drawing.Point(4, 25);
             this.tabDowsingMachine.Name = "tabDowsingMachine";
             this.tabDowsingMachine.Padding = new System.Windows.Forms.Padding(3);
@@ -293,10 +293,10 @@
             // 
             // dowsingMachine1
             // 
-            this.dowsingMachine1.Location = new System.Drawing.Point(7, 7);
-            this.dowsingMachine1.Name = "dowsingMachine1";
-            this.dowsingMachine1.Size = new System.Drawing.Size(431, 365);
-            this.dowsingMachine1.TabIndex = 0;
+            this.dowsingmachine.Location = new System.Drawing.Point(7, 7);
+            this.dowsingmachine.Name = "dowsingMachine1";
+            this.dowsingmachine.Size = new System.Drawing.Size(431, 365);
+            this.dowsingmachine.TabIndex = 0;
             // 
             // FormMain
             // 
@@ -350,7 +350,7 @@
         public Controls.PokeRadar pokeradar;
         public Controls.Inventory inventory;
         private System.Windows.Forms.ToolStripMenuItem getItemToolStripMenuItem;
-        private Controls.DowsingMachine dowsingMachine1;
+        private Controls.DowsingMachine dowsingmachine;
     }
 }
 

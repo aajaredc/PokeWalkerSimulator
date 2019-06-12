@@ -13,6 +13,8 @@ namespace PKHeX.WinForms
         private readonly SaveFile Origin;
         private readonly SaveFile SAV;
 
+        public List<int> pokewalkerItems;
+
         public SAV_Inventory(SaveFile sav)
         {
             InitializeComponent();
@@ -22,6 +24,29 @@ namespace PKHeX.WinForms
 
             for (int i = 0; i < itemlist.Length; i++)
             {
+                if (string.IsNullOrEmpty(itemlist[i]))
+                    itemlist[i] = $"(Item #{i:000})";
+            }
+
+            HasFreeSpace = SAV.Generation == 7 && !(SAV is SAV7b);
+            HasNew = CHK_NEW.Visible = SAV.Generation == 7;
+            Pouches = SAV.Inventory;
+            CreateBagViews();
+            LoadAllBags();
+            ChangeViewedPouch(0);
+        }
+
+        public SAV_Inventory(SaveFile sav, List<int> pokewalkerItems) 
+        {
+
+            this.pokewalkerItems = pokewalkerItems;
+
+            InitializeComponent();
+            WinFormsUtil.TranslateInterface(this, Main.CurrentLanguage);
+            SAV = (Origin = sav).Clone();
+            itemlist = GameInfo.Strings.GetItemStrings(SAV.Generation, SAV.Version).ToArray();
+
+            for (int i = 0; i < itemlist.Length; i++) {
                 if (string.IsNullOrEmpty(itemlist[i]))
                     itemlist[i] = $"(Item #{i:000})";
             }
@@ -215,6 +240,7 @@ namespace PKHeX.WinForms
         private void SetBag(DataGridView dgv, InventoryPouch pouch)
         {
             int ctr = 0;
+            Console.WriteLine("rows: " + dgv.Rows.Count);
             for (int i = 0; i < dgv.Rows.Count; i++)
             {
                 var cells = dgv.Rows[i].Cells;
@@ -360,6 +386,57 @@ namespace PKHeX.WinForms
             SetBag(dgv, p); // save current
             func(p); // update
             GetBag(dgv, p); // load current
+        }
+
+        /// <summary>
+        /// Adds an item to the inventory, for use with the PokeWalker
+        /// </summary>
+        /// <param name="number"></param>
+        public void AddItemFromPokeWalker(ushort number) {
+            for (int p = 0; p < Pouches.Length; p++) {
+
+                var dgv = GetGrid(p);
+                
+                for (int i = 0; i < Pouches[p].Items.Length; i++) {
+                    //Console.Write(Pouches[p].Items[i].Index);
+
+                    if (Pouches[p].Items[i].Index == number) {
+                        Console.WriteLine("Adding " + itemlist[Pouches[p].Items[i].Index]);
+
+                        //Console.Write(" --- found potion");
+                        //Console.Write(" --- row " + dgv.Rows[i].Cells[1].Value);
+                        //Console.Write(" --- count " + Pouches[p].Items[i].Count);
+                        Pouches[p].Items[i].Count += 1;
+                        dgv.Rows[i].Cells[1].Value = Pouches[p].Items[i].Count;
+                        //Console.Write(" --- count " + Pouches[p].Items[i].Count);
+
+                        return;
+                    }
+                    else if (Pouches[p].LegalItems.Contains<ushort>(number)) {
+                        Console.WriteLine("Pouch " + p + " contains item id " + number);
+                        //Console.WriteLine("Adding " + itemlist[Pouches[p].Items[i].Index]);
+                        dgv.Rows.Add(itemlist[number], 1);
+
+                        return;
+                    }
+
+
+                    //Console.Write("\n"); itemlist[pouch.Items[i].Index]
+                }
+            }
+        }
+
+        /// <summary>
+        /// Button that receives items from the PokeWalker
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnReceiveFromPokeWalker_Click(object sender, EventArgs e) {
+            
+            for (int i = 0; i < pokewalkerItems.Count; i++) {
+                AddItemFromPokeWalker(Convert.ToUInt16(pokewalkerItems[i]));
+            }
+
         }
     }
 }

@@ -15,27 +15,36 @@ namespace PokeWalkerSimulator.Controls {
 
         public List<PKM> inventoryPokemon = new List<PKM>();
         public List<PictureBox> inventoryPokemonPictureBoxes;
+        public List<int> inventoryItems = new List<int>();
+        public List<PictureBox> inventoryItemPictureBoxes;
         public int lastSelectedInventoryPokemon;
+        public int lastSelectedInventoryItem;
         public ContextMenuStrip inventoryPokemonContextMenu = new ContextMenuStrip();
+        public ContextMenuStrip inventoryItemContextMenu = new ContextMenuStrip();
         ToolStripItem populatePKHeX;
-        ToolStripItem discard;
+        ToolStripItem discardPokemon;
+        ToolStripItem discardItem;
 
 
         public Inventory() {
             InitializeComponent();
 
             populatePKHeX = inventoryPokemonContextMenu.Items.Add("Populate PKHeX");
-            discard = inventoryPokemonContextMenu.Items.Add("Remove");
+            discardPokemon = inventoryPokemonContextMenu.Items.Add("Remove");
             inventoryPokemonContextMenu.ItemClicked += new ToolStripItemClickedEventHandler(inventoryPokemonContextMenu_ItemClicked);
 
             inventoryPokemonPictureBoxes = new List<PictureBox> {
                 picInventoryPokemon0, picInventoryPokemon1, picInventoryPokemon2
             };
 
+            inventoryItemPictureBoxes = new List<PictureBox> {
+                picItem0, picItem1, picItem2
+            };
+
             foreach (var pb in inventoryPokemonPictureBoxes) {
                 pb.MouseClick += picInventoryPokemon_MouseClick;
-                pb.MouseEnter += picInventoryPokemon_MouseEnter;
-                pb.MouseLeave += picInventoryPokemon_MouseLeave;
+                pb.MouseEnter += inventory_MouseEnter;
+                pb.MouseLeave += inventory_MouseLeave;
             }
         }
 
@@ -60,6 +69,20 @@ namespace PokeWalkerSimulator.Controls {
             }
 
             // Items
+            for (int p = 0; p < inventoryItemPictureBoxes.Count; p++) {
+                try {
+                    inventoryItemPictureBoxes[p].Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/item/item_" + inventoryItems[p] + ".png");
+                }
+                catch (Exception) {
+                    Console.WriteLine("Inventory Item" + p + " not found");
+                    try {
+                        inventoryPokemonPictureBoxes[p].Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
+                    }
+                    catch (Exception) {
+                        Console.WriteLine("Inventory Item" + p + " not found");
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -80,6 +103,16 @@ namespace PokeWalkerSimulator.Controls {
             FormMain.main.PKME_Tabs.PopulateFields(pk);
 
             inventoryPokemon.Add(pk);
+            UpdateImages();
+        }
+
+        /// <summary>
+        /// Adds an item to the inventory
+        /// </summary>
+        /// <param name="item"></param>
+        public void AddItemToInventory(int item) {
+            inventoryItems.Add(item);
+            UpdateImages();
         }
 
         private int GetSelectedInventoryPokemon(PictureBox sender) => inventoryPokemonPictureBoxes.IndexOf(WinFormsUtil.GetUnderlyingControl(sender) as PictureBox);
@@ -109,7 +142,7 @@ namespace PokeWalkerSimulator.Controls {
             }
 
             // Remove the pokemon from the inventory
-            if (e.ClickedItem == discard) {
+            if (e.ClickedItem == discardPokemon) {
                 try {
                     inventoryPokemon.RemoveAt(lastSelectedInventoryPokemon);
                 } catch (Exception) {
@@ -121,14 +154,16 @@ namespace PokeWalkerSimulator.Controls {
             }
         }
 
-        private void picInventoryPokemon_MouseEnter(object sender, EventArgs e) {
+        private void inventory_MouseEnter(object sender, EventArgs e) {
             var pb = (PictureBox)sender;
             pb.BackColor = System.Drawing.SystemColors.ButtonShadow;
         }
 
-        private void picInventoryPokemon_MouseLeave(object sender, EventArgs e) {
+        private void inventory_MouseLeave(object sender, EventArgs e) {
             var pb = (PictureBox)sender;
             pb.BackColor = System.Drawing.Color.Transparent;
         }
+
+        private void BtnTransferItems_Click(object sender, EventArgs e) => new SAV_Inventory(FormMain.main.C_SAV.SAV, inventoryItems).ShowDialog();
     }
 }

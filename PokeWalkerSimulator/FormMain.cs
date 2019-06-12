@@ -35,6 +35,7 @@ namespace PokeWalkerSimulator {
 
             InitializeCourses();
             pokeradar.inventory = inventory;
+            dowsingmachine.inventory = inventory;
 
             UpdateInventory();
             

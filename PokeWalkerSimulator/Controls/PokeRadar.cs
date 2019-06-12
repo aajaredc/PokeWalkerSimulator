@@ -64,7 +64,6 @@ namespace PokeWalkerSimulator.Controls {
             Console.WriteLine("Catch successful");
             picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/item/item_4.png");
             inventory.AddPokemonToInventory(wildEncounter);
-            inventory.UpdateImages();
         }
     }
 }

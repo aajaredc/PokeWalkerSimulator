@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace PokeWalkerSimulator.Controls {
     public partial class DowsingMachine : UserControl {
+
+        public Inventory inventory;
+
         public DowsingMachine() {
             InitializeComponent();
         }
@@ -42,9 +45,9 @@ namespace PokeWalkerSimulator.Controls {
         }
 
         /// <summary>
-        /// 
+        /// Run a search for an item
         /// </summary>
-        /// <param name="itemNumberColumn"></param>
+        /// <param name="itemNumberColumn">The item "column" as in the probabilties array</param>
         private void SearchForItem(int itemNumberColumn) {
             Console.WriteLine("Searching column " + itemNumberColumn);
 
@@ -58,7 +61,10 @@ namespace PokeWalkerSimulator.Controls {
                 cumulativeRandom += FormMain.selectedCourse.itemProbabilities[n, itemNumberColumn];
 
                 if (dowsingMachineSelection < cumulativeRandom) {
-                    Console.WriteLine("Found item " + FormMain.selectedCourse.itemNumbers[n]);
+                    int foundItem = FormMain.selectedCourse.itemNumbers[n];
+
+                    Console.WriteLine("Found item " + foundItem);
+                    inventory.AddItemToInventory(foundItem);
                 }
 
             }
