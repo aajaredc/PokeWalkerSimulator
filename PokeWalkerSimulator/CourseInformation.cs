@@ -30,7 +30,13 @@ namespace PokeWalkerSimulator {
             "Stormy Beach", // stormy beach
             "Resort", // resort
             "Quiet Cave", // quiet cave
-            "Beyond the Sea" // beyond the sea
+            "Beyond the Sea", // beyond the sea
+            "Night Skys Edge", // night skys edge
+            "Yellow Forest", // yellow forest
+            "Rally", //rally
+            "Sightseeing", // sightseeing
+            "Winner's Path", // winner's path
+            "Amity Meadow" // amity meadow
         };
 
         /// <summary>
@@ -57,7 +63,13 @@ namespace PokeWalkerSimulator {
             "Strong waves wash onto this beach. Because people don't visit, rare Pokémon live here.", // stormy beach
             "A high-class resort everyone wants to visit, famous for the cute Pokémon living here.", // resort
             "A quiet, deep, and empty cave. If you look carefully, you'll find some rare Pokémon", // quiet cave
-            "A small island far away on the horizon. If you look to the sea, you can see Pokémon swimming." // beyond the sea
+            "A small island far away on the horizon. If you look to the sea, you can see Pokémon swimming.", // beyond the sea
+            "A dark mountain path that gives you the feeling you've traveled through time back to the past.", // night skys edge
+            "Many PIKACHU live in harmony in this forest. Walk through here frequently, and try to find one!", // yellow forest
+            "A fun Route to play with your Pokéwalker. Take a Stroll and visit the many places!", // rally
+            "You can find many Pokémon on this Route. Take a long walk and see if you can find them all!", // sightseeing
+            "If you're aiming to be Champion, you'll want to walk this Route! You'll meet strong Pokémon!", // winner's path
+            "You can meet cute Pokémon that evolve through friendship and find items to evolve Pokémon!" // amity meadow
         };
 
         /// <summary>
@@ -84,7 +96,13 @@ namespace PokeWalkerSimulator {
             new int[] { 5000, 4000, 1500, 500, 0, 0 }, // stormy beach
             new int[] { 8000, 8000, 4000, 4000, 0, 0 }, // resort
             new int[] { 10000, 10000, 500, 500, 0, 0 }, // quiet cave
-            new int[] { 5000, 5000, 2500, 2500, 0, 0 } // beyond the sea
+            new int[] { 5000, 5000, 2500, 2500, 0, 0 }, // beyond the sea
+            new int[] { 5000, 5000, 2500, 2500, 0, 0 }, // night skys edge
+            new int[] { 10000, 9500, 2000, 5000, 0, 0 }, // yellow forest
+            new int[] { 1000, 1000, 500, 500, 0, 0 }, // rally
+            new int[] { 7000, 10000, 2000, 3000, 0, 0 }, // sightseeing
+            new int[] { 8000, 8000, 3000, 3000, 0, 0 }, // winner's path
+            new int[] { 5000, 5000, 2000, 2000, 0, 0 } // amity meadow
         };
 
         /// <summary>
@@ -111,7 +129,13 @@ namespace PokeWalkerSimulator {
             0, // stormy beach
             3, // resort
             1, // quiet cave
-            0 // beyond the sea
+            0, // beyond the sea
+            3, // night skys edge
+            1, // yellow forest
+            3, // rally
+            0, // sightseeing
+            0, // winner's path
+            3 // amity meadow
         };
 
         /// <summary>
@@ -306,6 +330,60 @@ namespace PokeWalkerSimulator {
                 0, 55, 44, 0, 55, 52.25,
                 100, 45, 36, 100, 45, 42.75,
                 100, 45, 36, 100, 45, 42.75
+            },
+            // night skys edge
+            new double[] {
+                0, 0, 55,
+                0, 0, 55,
+                0, 75, 33.75,
+                0, 75, 33.75,
+                100, 25, 11.25,
+                100, 25, 11.25
+            },
+            // yellow forest
+            new double[] {
+                0, 0, 2,
+                0, 0, 3,
+                0, 35, 34.3, 0, 35, 33.95,
+                0, 8, 7.84, 0, 8, 7.8,
+                100, 65, 63.7, 100, 92, 90.46, 100, 65, 63.05, 100, 92, 89.2,
+                100, 65, 63.7, 100, 92, 90.46, 100, 65, 63.05, 100, 92, 89.2
+            },
+            // rally
+            new double[] {
+                0, 0, 25,
+                0, 0, 25,
+                0, 55, 41.25,
+                0, 55, 41.25,
+                100, 45, 33.75,
+                100, 45, 33.75,
+            },
+            // sightseeing
+            new double[] {
+                0, 0, 10,
+                0, 0, 1,
+                0, 35, 31.5, 0, 35, 34.65,
+                0, 35, 31.5, 0, 35, 34.65,
+                100, 65, 58.5, 100, 65, 64.35,
+                100, 65, 58.5, 100, 65, 64.35
+            },
+            // winner's path
+            new double[] {
+                0, 0, 20,
+                0, 0, 5,
+                0, 55, 45, 0, 55, 52.25,
+                0, 55, 45, 0, 55, 52.25,
+                100, 45, 36, 100, 45, 42.75,
+                100, 45, 36, 100, 45, 42.75,
+            },
+            // amity meadow
+            new double[] {
+                0, 0, 20,
+                0, 0, 20,
+                0, 55, 44,
+                0, 55, 44,
+                100, 45, 36,
+                100, 45, 36
             }
         };
 

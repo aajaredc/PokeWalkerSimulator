@@ -23,7 +23,7 @@ namespace PokeWalkerSimulator {
         public int sid = 62879;
         public int watts;
 
-        public static Course[] courses = new Course[21];
+        public static Course[] courses = new Course[27];
         public static Course selectedCourse;
 
         public FormMain() {
