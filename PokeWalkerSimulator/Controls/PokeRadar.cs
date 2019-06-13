@@ -53,6 +53,7 @@ namespace PokeWalkerSimulator.Controls {
             // Reset the images
             picPokeRadarUser.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + FormMain.strollPokemon.Species + ".png");
             picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + wildEncounter.Species + ".png");
+            picWildEncounter.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
             // Enable the buttons
             btnAttack.Enabled = true;
@@ -64,6 +65,10 @@ namespace PokeWalkerSimulator.Controls {
             Console.WriteLine("Catch successful");
             picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/item/item_4.png");
             inventory.AddPokemonToInventory(wildEncounter);
+        }
+
+        private void BtnStartPokeRadar_Click(object sender, EventArgs e) {
+            PokeRadarEncounter();
         }
     }
 }

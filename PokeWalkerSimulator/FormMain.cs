@@ -29,11 +29,15 @@ namespace PokeWalkerSimulator {
         public FormMain() {
 
             InitializeComponent();
+            InitializeCourses();
+
+            
 
             steps = 0;
             watts = StepsToWatts(steps);
 
-            InitializeCourses();
+            setup.UpdateCoursePreview();
+
             pokeradar.inventory = inventory;
             dowsingmachine.inventory = inventory;
 
@@ -46,8 +50,6 @@ namespace PokeWalkerSimulator {
         /// </summary>
         public void InitializeCourses() {
 
-            Console.WriteLine("rrrr: " + CourseInformation.itemProbabilities[0][0, 9]);
-
             // Create the courses
             for (int i = 0; i < courses.Length; i++) {
                 courses[i] = new Course(CourseInformation.coursePokemonSteps[i]) {
@@ -56,6 +58,8 @@ namespace PokeWalkerSimulator {
                     courseNumber = i,
                     encounterCalculationType = CourseInformation.pokemonEncounterCalculationTypes[i],
                     encounterProbabilities = CourseInformation.pokemonEncounterProbabilties[i],
+
+                    courseImage = CourseInformation.courseImages[i],
 
                     // TODO change this reflect all courses once the information is added
                     itemNumbers = CourseInformation.itemNumbers[0],
@@ -135,13 +139,14 @@ namespace PokeWalkerSimulator {
             
         }
 
-
+        /*
         private void BtnExportStrollPokemon_Click(object sender, EventArgs e) {
             if (!main.PKME_Tabs.EditsComplete)
                 return;
             PKM pk = main.PreparePKM();
             WinFormsUtil.SavePKMDialog(pk);
         }
+        */
 
         private void SelectSaveFileToolStripMenuItem_Click(object sender, EventArgs e) {
             if (WinFormsUtil.OpenSAVPKMDialog(main.C_SAV.SAV.PKMExtensions, out string path))
@@ -191,6 +196,10 @@ namespace PokeWalkerSimulator {
 
         private void Steps1000_Click(object sender, EventArgs e) {
             AddSteps(1000);
+        }
+
+        private void Steps5000_Click(object sender, EventArgs e) {
+            AddSteps(5000);
         }
 
         private void UpdateInventoryToolStripMenuItem_Click(object sender, EventArgs e) {

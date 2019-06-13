@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -70,6 +71,36 @@ namespace PokeWalkerSimulator {
             "You can find many Pokémon on this Route. Take a long walk and see if you can find them all!", // sightseeing
             "If you're aiming to be Champion, you'll want to walk this Route! You'll meet strong Pokémon!", // winner's path
             "You can meet cute Pokémon that evolve through friendship and find items to evolve Pokémon!" // amity meadow
+        };
+
+        public static Bitmap[] courseImages = {
+            Properties.Resources.Route_plains2, // refreshing field
+            Properties.Resources.Route_forests2, // noisy forest
+            Properties.Resources.Route_paths2, // rugged road
+            Properties.Resources.Route_sea2, // beautiful beach
+            Properties.Resources.Route_towns2, // suburban area
+            Properties.Resources.Route_caves2, // dim cave
+            Properties.Resources.Route_lakes2, // blue lake
+            Properties.Resources.Route_city2, // town outskirts
+            Properties.Resources.Route_plains2, // hoenn field
+            Properties.Resources.Route_sea2, // warm beach
+            Properties.Resources.Route_paths2, // volcano path
+            Properties.Resources.Route_forests2, // treehouse
+            Properties.Resources.Route_caves2, // scary cave
+            Properties.Resources.Route_plains2, // sinnoh field
+            Properties.Resources.Route_paths2, // icy mountain rd
+            Properties.Resources.Route_forests2, // big forest
+            Properties.Resources.Route_lakes2, // white lake
+            Properties.Resources.Route_sea2, // stormy beach
+            Properties.Resources.Route_towns2, // resort
+            Properties.Resources.Route_caves2, // quiet cave
+            Properties.Resources.Route_sea2, // beyond the sea
+            Properties.Resources.Route_paths2, // night skys edge
+            Properties.Resources.Route_forests2, // yellow forest
+            Properties.Resources.Route_towns2, // rally
+            Properties.Resources.Route_city2, // sightseeing
+            Properties.Resources.Route_paths2, // winner's path
+            Properties.Resources.Route_plains2 // amity meadow
         };
 
         /// <summary>

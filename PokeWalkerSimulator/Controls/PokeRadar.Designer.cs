@@ -24,25 +24,15 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PokeRadar));
-            this.lblPokeRadarFeedback = new System.Windows.Forms.Label();
             this.btnCatch = new System.Windows.Forms.Button();
             this.btnEvade = new System.Windows.Forms.Button();
             this.btnAttack = new System.Windows.Forms.Button();
             this.picPokeRadarUser = new System.Windows.Forms.PictureBox();
             this.picWildEncounter = new System.Windows.Forms.PictureBox();
+            this.btnStartPokeRadar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picPokeRadarUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWildEncounter)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblPokeRadarFeedback
-            // 
-            this.lblPokeRadarFeedback.AutoSize = true;
-            this.lblPokeRadarFeedback.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPokeRadarFeedback.Location = new System.Drawing.Point(27, 291);
-            this.lblPokeRadarFeedback.Name = "lblPokeRadarFeedback";
-            this.lblPokeRadarFeedback.Size = new System.Drawing.Size(26, 31);
-            this.lblPokeRadarFeedback.TabIndex = 11;
-            this.lblPokeRadarFeedback.Text = "ll";
             // 
             // btnCatch
             // 
@@ -95,11 +85,21 @@
             this.picWildEncounter.TabIndex = 6;
             this.picWildEncounter.TabStop = false;
             // 
+            // btnStartPokeRadar
+            // 
+            this.btnStartPokeRadar.Location = new System.Drawing.Point(135, 280);
+            this.btnStartPokeRadar.Name = "btnStartPokeRadar";
+            this.btnStartPokeRadar.Size = new System.Drawing.Size(160, 43);
+            this.btnStartPokeRadar.TabIndex = 11;
+            this.btnStartPokeRadar.Text = "Start PokeRadar";
+            this.btnStartPokeRadar.UseVisualStyleBackColor = true;
+            this.btnStartPokeRadar.Click += new System.EventHandler(this.BtnStartPokeRadar_Click);
+            // 
             // PokeRadar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lblPokeRadarFeedback);
+            this.Controls.Add(this.btnStartPokeRadar);
             this.Controls.Add(this.btnCatch);
             this.Controls.Add(this.btnEvade);
             this.Controls.Add(this.btnAttack);
@@ -110,17 +110,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPokeRadarUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picWildEncounter)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblPokeRadarFeedback;
         private System.Windows.Forms.Button btnCatch;
         private System.Windows.Forms.Button btnEvade;
         private System.Windows.Forms.Button btnAttack;
         private System.Windows.Forms.PictureBox picPokeRadarUser;
         private System.Windows.Forms.PictureBox picWildEncounter;
+        private System.Windows.Forms.Button btnStartPokeRadar;
     }
 }

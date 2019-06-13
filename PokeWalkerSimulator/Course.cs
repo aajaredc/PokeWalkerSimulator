@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,12 +8,15 @@ using System.Threading.Tasks;
 namespace PokeWalkerSimulator {
     public class Course {
 
-        public Group[] groups = new Group[3];
         public string name = "Refreshing Field";
         public string description = "A wonderfully refreshing field for a Stroll. " +
             "You can meet many kinds of Pokémon here. ";
-        public int stepsTaken;
+        public Bitmap courseImage;
         public int courseNumber;
+
+        public Group[] groups = new Group[3];
+        public int stepsTaken;
+        
         public double[] encounterProbabilities;
 
         public int[] itemNumbers;

@@ -64,6 +64,12 @@
     <Compile Include="Controls\PokeRadar.Designer.cs">
       <DependentUpon>PokeRadar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\Setup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Setup.Designer.cs">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Course.cs" />
     <Compile Include="CourseInformation.cs" />
     <Compile Include="FormMain.cs">
@@ -85,6 +91,9 @@
     <EmbeddedResource Include="Controls\PokeRadar.resx">
       <DependentUpon>PokeRadar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Setup.resx">
+      <DependentUpon>Setup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,6 +129,30 @@
       <Project>{d1b91861-a448-4762-a313-c7bc179f4415}</Project>
       <Name>PKHeX.WinForms</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Route_forests2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Route_plains2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Route_paths2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Route_sea2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Route_towns2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Route_caves2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Route_city2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Route_lakes2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
