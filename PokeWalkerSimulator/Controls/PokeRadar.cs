@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PKHeX.Core;
+using System.Resources;
 
 namespace PokeWalkerSimulator.Controls {
     public partial class PokeRadar : UserControl {
@@ -50,9 +51,12 @@ namespace PokeWalkerSimulator.Controls {
         /// Initializes the battle for the PokeRadar
         /// </summary>
         public void InitializePokeRadarBattle() {
+            // Resource management
+            ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
+
             // Reset the images
-            picPokeRadarUser.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + FormMain.strollPokemon.Species + ".png");
-            picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + wildEncounter.Species + ".png");
+            picPokeRadarUser.Image = (Image)rm.GetObject("_" + FormMain.strollPokemon.Species);
+            picWildEncounter.Image = (Image)rm.GetObject("_" + wildEncounter.Species);
             picWildEncounter.Image.RotateFlip(RotateFlipType.RotateNoneFlipX);
 
             // Enable the buttons
@@ -63,7 +67,10 @@ namespace PokeWalkerSimulator.Controls {
 
         private void BtnCatch_Click(object sender, EventArgs e) {
             Console.WriteLine("Catch successful");
-            picWildEncounter.Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/item/item_4.png");
+
+            ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
+
+            picWildEncounter.Image = (Image)rm.GetObject("item_4"); ;
             inventory.AddPokemonToInventory(wildEncounter);
         }
 

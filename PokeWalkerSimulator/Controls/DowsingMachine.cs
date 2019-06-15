@@ -65,6 +65,7 @@ namespace PokeWalkerSimulator.Controls {
 
                     Console.WriteLine("Found item " + foundItem);
                     inventory.AddItemToInventory(foundItem);
+                    return;
                 }
 
             }

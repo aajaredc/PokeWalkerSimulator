@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PKHeX.WinForms;
 
 namespace PokeWalkerSimulator.Controls {
     public partial class Setup : UserControl {
 
         public int courseNumber = 0;
+        public bool hasSaveLoaded = false;
+        public bool hasStrollPokemonLoaded = false;
 
         public Setup() {
             InitializeComponent();
@@ -49,6 +52,42 @@ namespace PokeWalkerSimulator.Controls {
             UpdateCoursePreview();
         }
 
+        private void BtnSelectSaveFile_Click(object sender, EventArgs e) {
+            if (WinFormsUtil.OpenSAVPKMDialog(FormMain.main.C_SAV.SAV.PKMExtensions, out string path)) {
+                FormMain.main.OpenQuick(path);
+                hasSaveLoaded = true;
+            }
 
+            if (CanStartStroll()) {
+                btnStartStroll.Enabled = true;
+            }
+        }
+
+        private void BtnSelectStrollPokemon_Click(object sender, EventArgs e) {
+            // Select the Pokemon
+            if (WinFormsUtil.OpenSAVPKMDialog(FormMain.main.C_SAV.SAV.PKMExtensions, out string path)) {
+                FormMain.main.OpenQuick(path);
+                hasStrollPokemonLoaded = true;
+            }
+
+            // Set the Pokemon
+            FormMain.strollPokemon = FormMain.main.PKME_Tabs.pkm;
+
+            if (CanStartStroll()) {
+                btnStartStroll.Enabled = true;
+            }
+        }
+
+        public bool CanStartStroll() {
+            if (hasStrollPokemonLoaded && hasSaveLoaded) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        private void BtnStartStroll_Click(object sender, EventArgs e) {
+            FormMain.selectedCourse = FormMain.courses[courseNumber];
+        }
     }
 }

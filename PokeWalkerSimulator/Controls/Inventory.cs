@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PKHeX.Core;
 using PKHeX.WinForms;
+using System.Resources;
 
 namespace PokeWalkerSimulator.Controls {
     public partial class Inventory : UserControl {
@@ -46,41 +47,39 @@ namespace PokeWalkerSimulator.Controls {
                 pb.MouseEnter += inventory_MouseEnter;
                 pb.MouseLeave += inventory_MouseLeave;
             }
+
+            foreach (var pb in inventoryItemPictureBoxes) {
+                pb.MouseEnter += inventory_MouseEnter;
+                pb.MouseLeave += inventory_MouseLeave;
+            }
         }
 
         /// <summary>
         /// Updates the images for the picture boxes
         /// </summary>
         public void UpdateImages() {
+            ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
+            string resourceName;
+
             // Pokemon
             for (int p = 0; p < inventoryPokemonPictureBoxes.Count; p++) {
                 try {
-                    inventoryPokemonPictureBoxes[p].Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/" + inventoryPokemon[p].Species + ".png");
+                    resourceName = "_" + inventoryPokemon[p].Species;
+                    inventoryPokemonPictureBoxes[p].Image = (Image)rm.GetObject(resourceName);
                 }
                 catch (Exception) {
                     Console.WriteLine("Inventory Pokemon" + p + " not found");
-                    try {
-                        inventoryPokemonPictureBoxes[p].Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
-                    }
-                    catch (Exception) {
-                        Console.WriteLine("Inventory Pokemon" + p + " not found");
-                    }
                 }
             }
 
             // Items
             for (int p = 0; p < inventoryItemPictureBoxes.Count; p++) {
                 try {
-                    inventoryItemPictureBoxes[p].Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/item/item_" + inventoryItems[p] + ".png");
+                    resourceName = "item_" + inventoryItems[p];
+                    inventoryItemPictureBoxes[p].Image = (Image)rm.GetObject(resourceName); ;
                 }
                 catch (Exception) {
                     Console.WriteLine("Inventory Item" + p + " not found");
-                    try {
-                        inventoryPokemonPictureBoxes[p].Image = Image.FromFile("../../../PKHeX.WinForms/Resources/img/Pokemon Sprites/_.png");
-                    }
-                    catch (Exception) {
-                        Console.WriteLine("Inventory Item" + p + " not found");
-                    }
                 }
             }
         }

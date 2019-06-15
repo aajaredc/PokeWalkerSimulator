@@ -24,14 +24,14 @@
         /// </summary>
         private void InitializeComponent() {
             this.grpCourseSetup = new System.Windows.Forms.GroupBox();
-            this.lblCourseName = new System.Windows.Forms.Label();
-            this.lblCourseDescription = new System.Windows.Forms.Label();
-            this.picCoursePreviewImage = new System.Windows.Forms.PictureBox();
-            this.btnNextCourse = new System.Windows.Forms.Button();
             this.btnPreviousCourse = new System.Windows.Forms.Button();
+            this.btnNextCourse = new System.Windows.Forms.Button();
+            this.lblCourseDescription = new System.Windows.Forms.Label();
+            this.lblCourseName = new System.Windows.Forms.Label();
+            this.picCoursePreviewImage = new System.Windows.Forms.PictureBox();
             this.grpAdditionalSettings = new System.Windows.Forms.GroupBox();
-            this.btnSelectSaveFile = new System.Windows.Forms.Button();
             this.btnSelectStrollPokemon = new System.Windows.Forms.Button();
+            this.btnSelectSaveFile = new System.Windows.Forms.Button();
             this.btnStartStroll = new System.Windows.Forms.Button();
             this.grpCourseSetup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCoursePreviewImage)).BeginInit();
@@ -52,14 +52,26 @@
             this.grpCourseSetup.TabStop = false;
             this.grpCourseSetup.Text = "Select Course";
             // 
-            // lblCourseName
+            // btnPreviousCourse
             // 
-            this.lblCourseName.AutoSize = true;
-            this.lblCourseName.Location = new System.Drawing.Point(165, 22);
-            this.lblCourseName.Name = "lblCourseName";
-            this.lblCourseName.Size = new System.Drawing.Size(94, 17);
-            this.lblCourseName.TabIndex = 1;
-            this.lblCourseName.Text = "Course Name";
+            this.btnPreviousCourse.Enabled = false;
+            this.btnPreviousCourse.Location = new System.Drawing.Point(128, 91);
+            this.btnPreviousCourse.Name = "btnPreviousCourse";
+            this.btnPreviousCourse.Size = new System.Drawing.Size(30, 30);
+            this.btnPreviousCourse.TabIndex = 4;
+            this.btnPreviousCourse.Text = "<";
+            this.btnPreviousCourse.UseVisualStyleBackColor = true;
+            this.btnPreviousCourse.Click += new System.EventHandler(this.BtnPreviousCourse_Click);
+            // 
+            // btnNextCourse
+            // 
+            this.btnNextCourse.Location = new System.Drawing.Point(264, 91);
+            this.btnNextCourse.Name = "btnNextCourse";
+            this.btnNextCourse.Size = new System.Drawing.Size(30, 30);
+            this.btnNextCourse.TabIndex = 3;
+            this.btnNextCourse.Text = ">";
+            this.btnNextCourse.UseVisualStyleBackColor = true;
+            this.btnNextCourse.Click += new System.EventHandler(this.BtnNextCourse_Click);
             // 
             // lblCourseDescription
             // 
@@ -72,6 +84,15 @@
             this.lblCourseDescription.Text = "CourseDescription";
             this.lblCourseDescription.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // lblCourseName
+            // 
+            this.lblCourseName.AutoSize = true;
+            this.lblCourseName.Location = new System.Drawing.Point(165, 22);
+            this.lblCourseName.Name = "lblCourseName";
+            this.lblCourseName.Size = new System.Drawing.Size(94, 17);
+            this.lblCourseName.TabIndex = 1;
+            this.lblCourseName.Text = "Course Name";
+            // 
             // picCoursePreviewImage
             // 
             this.picCoursePreviewImage.Image = global::PokeWalkerSimulator.Properties.Resources.Route_plains2;
@@ -81,27 +102,6 @@
             this.picCoursePreviewImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picCoursePreviewImage.TabIndex = 0;
             this.picCoursePreviewImage.TabStop = false;
-            // 
-            // btnNextCourse
-            // 
-            this.btnNextCourse.Location = new System.Drawing.Point(264, 91);
-            this.btnNextCourse.Name = "btnNextCourse";
-            this.btnNextCourse.Size = new System.Drawing.Size(30, 30);
-            this.btnNextCourse.TabIndex = 3;
-            this.btnNextCourse.Text = ">";
-            this.btnNextCourse.UseVisualStyleBackColor = true;
-            this.btnNextCourse.Click += new System.EventHandler(this.BtnNextCourse_Click);
-            // 
-            // btnPreviousCourse
-            // 
-            this.btnPreviousCourse.Enabled = false;
-            this.btnPreviousCourse.Location = new System.Drawing.Point(128, 91);
-            this.btnPreviousCourse.Name = "btnPreviousCourse";
-            this.btnPreviousCourse.Size = new System.Drawing.Size(30, 30);
-            this.btnPreviousCourse.TabIndex = 4;
-            this.btnPreviousCourse.Text = "<";
-            this.btnPreviousCourse.UseVisualStyleBackColor = true;
-            this.btnPreviousCourse.Click += new System.EventHandler(this.BtnPreviousCourse_Click);
             // 
             // grpAdditionalSettings
             // 
@@ -114,15 +114,6 @@
             this.grpAdditionalSettings.TabStop = false;
             this.grpAdditionalSettings.Text = "Additional Settings";
             // 
-            // btnSelectSaveFile
-            // 
-            this.btnSelectSaveFile.Location = new System.Drawing.Point(85, 30);
-            this.btnSelectSaveFile.Name = "btnSelectSaveFile";
-            this.btnSelectSaveFile.Size = new System.Drawing.Size(116, 31);
-            this.btnSelectSaveFile.TabIndex = 0;
-            this.btnSelectSaveFile.Text = "Select Save";
-            this.btnSelectSaveFile.UseVisualStyleBackColor = true;
-            // 
             // btnSelectStrollPokemon
             // 
             this.btnSelectStrollPokemon.Location = new System.Drawing.Point(207, 30);
@@ -131,6 +122,17 @@
             this.btnSelectStrollPokemon.TabIndex = 1;
             this.btnSelectStrollPokemon.Text = "Select Stroll PKM";
             this.btnSelectStrollPokemon.UseVisualStyleBackColor = true;
+            this.btnSelectStrollPokemon.Click += new System.EventHandler(this.BtnSelectStrollPokemon_Click);
+            // 
+            // btnSelectSaveFile
+            // 
+            this.btnSelectSaveFile.Location = new System.Drawing.Point(85, 30);
+            this.btnSelectSaveFile.Name = "btnSelectSaveFile";
+            this.btnSelectSaveFile.Size = new System.Drawing.Size(116, 31);
+            this.btnSelectSaveFile.TabIndex = 0;
+            this.btnSelectSaveFile.Text = "Select Save";
+            this.btnSelectSaveFile.UseVisualStyleBackColor = true;
+            this.btnSelectSaveFile.Click += new System.EventHandler(this.BtnSelectSaveFile_Click);
             // 
             // btnStartStroll
             // 
@@ -141,6 +143,7 @@
             this.btnStartStroll.TabIndex = 2;
             this.btnStartStroll.Text = "Start Stroll";
             this.btnStartStroll.UseVisualStyleBackColor = true;
+            this.btnStartStroll.Click += new System.EventHandler(this.BtnStartStroll_Click);
             // 
             // Setup
             // 
