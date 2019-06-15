@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,9 +31,11 @@ namespace PokeWalkerSimulator {
         public FormMain() {
 
             InitializeComponent();
+
+            main.LoadBlankSaveFile(GameVersion.HGSS);
+
             InitializeCourses();
 
-            
 
             steps = 0;
             watts = StepsToWatts(steps);
@@ -69,14 +73,15 @@ namespace PokeWalkerSimulator {
             }
 
             // Set the PKM for the courses
-            string path;
+            ResourceManager rm = new ResourceManager(typeof(Properties.Resources));
+            string resourceName;
             for (int courseIndex = 0; courseIndex < courses.Length; courseIndex++) {
                 for (int groupIndex = 0; groupIndex < courses[courseIndex].groups.Length; groupIndex++) {
                     for (int groupPokemonIndex = 0; groupPokemonIndex < courses[courseIndex].groups[groupIndex].pokemon.Length; groupPokemonIndex++) {
-                        path = "../../PK4/" + courseIndex + "/" + groupIndex + groupPokemonIndex + ".pk4";
+                        resourceName = "_" + courseIndex + "_" + groupIndex + groupPokemonIndex;
 
-                        FormMain.main.OpenQuick(path);
-                        Console.WriteLine(path);
+                        FormMain.main.OpenFile((byte[])rm.GetObject(resourceName), "", ".pk4");
+                        Console.WriteLine(resourceName);
 
                         courses[courseIndex].groups[groupIndex].pokemon[groupPokemonIndex].pk = FormMain.main.PKME_Tabs.pkm;
                     }

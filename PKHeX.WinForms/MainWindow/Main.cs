@@ -216,7 +216,7 @@ namespace PKHeX.WinForms
             }
         }
 
-        private void LoadBlankSaveFile(GameVersion ver)
+        public void LoadBlankSaveFile(GameVersion ver)
         {
             var sav = SaveUtil.GetBlankSAV(ver, "PKHeX");
             if (sav.Version == GameVersion.Invalid) // will fail to load
@@ -578,7 +578,7 @@ namespace PKHeX.WinForms
             #endif
         }
 
-        private void OpenFile(byte[] input, string path, string ext)
+        public void OpenFile(byte[] input, string path, string ext)
         {
             var obj = FileUtil.GetSupportedFile(input, ext, C_SAV.SAV);
             if (obj != null && LoadFile(obj, path))
