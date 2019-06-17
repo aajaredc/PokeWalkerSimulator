@@ -44,8 +44,6 @@ namespace PokeWalkerSimulator {
 
             pokeradar.inventory = inventory;
             dowsingmachine.inventory = inventory;
-
-            UpdateInventory();
             
         }
 
@@ -131,19 +129,6 @@ namespace PokeWalkerSimulator {
             pokeradar.PokeRadarEncounter();
         }
 
-
-
-
-        /// <summary>
-        /// Updates the inventory accordingly
-        /// </summary>
-        public void UpdateInventory() {
-            Console.WriteLine("Updating inventory...");
-
-            inventory.UpdateImages();
-            
-        }
-
         /*
         private void BtnExportStrollPokemon_Click(object sender, EventArgs e) {
             if (!main.PKME_Tabs.EditsComplete)
@@ -207,13 +192,13 @@ namespace PokeWalkerSimulator {
             AddSteps(5000);
         }
 
-        private void UpdateInventoryToolStripMenuItem_Click(object sender, EventArgs e) {
-            UpdateInventory();
-        }
-
         private void GetItemToolStripMenuItem_Click(object sender, EventArgs e) {
             PKM pk = main.PreparePKM();
             Console.WriteLine(pk.HeldItem);
+        }
+
+        private void UpdateInventoryGridToolStripMenuItem_Click(object sender, EventArgs e) {
+            inventory.UpdateInventoryGrid();
         }
     }
 }

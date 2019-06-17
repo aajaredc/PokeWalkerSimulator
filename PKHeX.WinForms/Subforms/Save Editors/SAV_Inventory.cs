@@ -303,6 +303,7 @@ namespace PKHeX.WinForms
 
         // Initialize String Tables
         private readonly string[] itemlist;
+        public string[] GetItemList() { return itemlist; }
 
         private string[] GetStringsForPouch(ushort[] items, bool sort = true)
         {

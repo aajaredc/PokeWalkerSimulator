@@ -23,116 +23,205 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.picInventoryPokemon0 = new System.Windows.Forms.PictureBox();
-            this.picInventoryPokemon1 = new System.Windows.Forms.PictureBox();
-            this.picInventoryPokemon2 = new System.Windows.Forms.PictureBox();
-            this.picItem2 = new System.Windows.Forms.PictureBox();
-            this.picItem1 = new System.Windows.Forms.PictureBox();
-            this.picItem0 = new System.Windows.Forms.PictureBox();
             this.btnTransferItems = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picItem0)).BeginInit();
+            this.InventoryTabs = new System.Windows.Forms.TabControl();
+            this.tabPokemon = new System.Windows.Forms.TabPage();
+            this.tabItems = new System.Windows.Forms.TabPage();
+            this.grdItems = new System.Windows.Forms.DataGridView();
+            this.grdPokemon = new System.Windows.Forms.DataGridView();
+            this.btnClearItems = new System.Windows.Forms.Button();
+            this.columnImage = new System.Windows.Forms.DataGridViewImageColumn();
+            this.columnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Selected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.columnPopulatePKHeX = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.InventoryTabs.SuspendLayout();
+            this.tabPokemon.SuspendLayout();
+            this.tabItems.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPokemon)).BeginInit();
             this.SuspendLayout();
-            // 
-            // picInventoryPokemon0
-            // 
-            this.picInventoryPokemon0.Location = new System.Drawing.Point(3, 3);
-            this.picInventoryPokemon0.Name = "picInventoryPokemon0";
-            this.picInventoryPokemon0.Size = new System.Drawing.Size(80, 60);
-            this.picInventoryPokemon0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picInventoryPokemon0.TabIndex = 1;
-            this.picInventoryPokemon0.TabStop = false;
-            // 
-            // picInventoryPokemon1
-            // 
-            this.picInventoryPokemon1.Location = new System.Drawing.Point(89, 3);
-            this.picInventoryPokemon1.Name = "picInventoryPokemon1";
-            this.picInventoryPokemon1.Size = new System.Drawing.Size(80, 60);
-            this.picInventoryPokemon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picInventoryPokemon1.TabIndex = 2;
-            this.picInventoryPokemon1.TabStop = false;
-            // 
-            // picInventoryPokemon2
-            // 
-            this.picInventoryPokemon2.Location = new System.Drawing.Point(175, 3);
-            this.picInventoryPokemon2.Name = "picInventoryPokemon2";
-            this.picInventoryPokemon2.Size = new System.Drawing.Size(80, 60);
-            this.picInventoryPokemon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picInventoryPokemon2.TabIndex = 3;
-            this.picInventoryPokemon2.TabStop = false;
-            // 
-            // picItem2
-            // 
-            this.picItem2.Location = new System.Drawing.Point(175, 69);
-            this.picItem2.Name = "picItem2";
-            this.picItem2.Size = new System.Drawing.Size(80, 60);
-            this.picItem2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picItem2.TabIndex = 6;
-            this.picItem2.TabStop = false;
-            // 
-            // picItem1
-            // 
-            this.picItem1.Location = new System.Drawing.Point(89, 69);
-            this.picItem1.Name = "picItem1";
-            this.picItem1.Size = new System.Drawing.Size(80, 60);
-            this.picItem1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picItem1.TabIndex = 5;
-            this.picItem1.TabStop = false;
-            // 
-            // picItem0
-            // 
-            this.picItem0.Location = new System.Drawing.Point(3, 69);
-            this.picItem0.Name = "picItem0";
-            this.picItem0.Size = new System.Drawing.Size(80, 60);
-            this.picItem0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.picItem0.TabIndex = 4;
-            this.picItem0.TabStop = false;
             // 
             // btnTransferItems
             // 
-            this.btnTransferItems.Location = new System.Drawing.Point(261, 76);
+            this.btnTransferItems.Location = new System.Drawing.Point(297, 56);
             this.btnTransferItems.Name = "btnTransferItems";
             this.btnTransferItems.Size = new System.Drawing.Size(113, 43);
             this.btnTransferItems.TabIndex = 12;
-            this.btnTransferItems.Text = "Send to Save";
+            this.btnTransferItems.Text = "Open SAV";
             this.btnTransferItems.UseVisualStyleBackColor = true;
             this.btnTransferItems.Click += new System.EventHandler(this.BtnTransferItems_Click);
+            // 
+            // InventoryTabs
+            // 
+            this.InventoryTabs.Controls.Add(this.tabPokemon);
+            this.InventoryTabs.Controls.Add(this.tabItems);
+            this.InventoryTabs.Location = new System.Drawing.Point(4, 4);
+            this.InventoryTabs.Name = "InventoryTabs";
+            this.InventoryTabs.SelectedIndex = 0;
+            this.InventoryTabs.Size = new System.Drawing.Size(424, 358);
+            this.InventoryTabs.TabIndex = 13;
+            // 
+            // tabPokemon
+            // 
+            this.tabPokemon.Controls.Add(this.grdPokemon);
+            this.tabPokemon.Location = new System.Drawing.Point(4, 25);
+            this.tabPokemon.Name = "tabPokemon";
+            this.tabPokemon.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPokemon.Size = new System.Drawing.Size(416, 329);
+            this.tabPokemon.TabIndex = 0;
+            this.tabPokemon.Text = "Pokemon";
+            this.tabPokemon.UseVisualStyleBackColor = true;
+            // 
+            // tabItems
+            // 
+            this.tabItems.Controls.Add(this.btnClearItems);
+            this.tabItems.Controls.Add(this.grdItems);
+            this.tabItems.Controls.Add(this.btnTransferItems);
+            this.tabItems.Location = new System.Drawing.Point(4, 25);
+            this.tabItems.Name = "tabItems";
+            this.tabItems.Padding = new System.Windows.Forms.Padding(3);
+            this.tabItems.Size = new System.Drawing.Size(416, 329);
+            this.tabItems.TabIndex = 1;
+            this.tabItems.Text = "Items";
+            this.tabItems.UseVisualStyleBackColor = true;
+            // 
+            // grdItems
+            // 
+            this.grdItems.AllowUserToAddRows = false;
+            this.grdItems.AllowUserToDeleteRows = false;
+            this.grdItems.AllowUserToResizeColumns = false;
+            this.grdItems.AllowUserToResizeRows = false;
+            this.grdItems.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.grdItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.columnImage,
+            this.columnName,
+            this.columnSelect});
+            this.grdItems.Location = new System.Drawing.Point(4, 7);
+            this.grdItems.Name = "grdItems";
+            this.grdItems.RowHeadersVisible = false;
+            this.grdItems.RowHeadersWidth = 51;
+            this.grdItems.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.grdItems.RowTemplate.Height = 24;
+            this.grdItems.Size = new System.Drawing.Size(287, 316);
+            this.grdItems.TabIndex = 13;
+            // 
+            // grdPokemon
+            // 
+            this.grdPokemon.AllowUserToAddRows = false;
+            this.grdPokemon.AllowUserToDeleteRows = false;
+            this.grdPokemon.AllowUserToResizeColumns = false;
+            this.grdPokemon.AllowUserToResizeRows = false;
+            this.grdPokemon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.grdPokemon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.grdPokemon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdPokemon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewImageColumn1,
+            this.dataGridViewTextBoxColumn1,
+            this.Selected,
+            this.columnPopulatePKHeX});
+            this.grdPokemon.Location = new System.Drawing.Point(6, 7);
+            this.grdPokemon.Name = "grdPokemon";
+            this.grdPokemon.RowHeadersVisible = false;
+            this.grdPokemon.RowHeadersWidth = 51;
+            this.grdPokemon.RowTemplate.Height = 24;
+            this.grdPokemon.Size = new System.Drawing.Size(287, 316);
+            this.grdPokemon.TabIndex = 0;
+            this.grdPokemon.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GrdPokemon_CellContentClick);
+            // 
+            // btnClearItems
+            // 
+            this.btnClearItems.Location = new System.Drawing.Point(297, 7);
+            this.btnClearItems.Name = "btnClearItems";
+            this.btnClearItems.Size = new System.Drawing.Size(113, 43);
+            this.btnClearItems.TabIndex = 14;
+            this.btnClearItems.Text = "Clear All";
+            this.btnClearItems.UseVisualStyleBackColor = true;
+            this.btnClearItems.Click += new System.EventHandler(this.BtnClearItems_Click);
+            // 
+            // columnImage
+            // 
+            this.columnImage.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.columnImage.HeaderText = "Image";
+            this.columnImage.MinimumWidth = 6;
+            this.columnImage.Name = "columnImage";
+            this.columnImage.Width = 52;
+            // 
+            // columnName
+            // 
+            this.columnName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnName.HeaderText = "Name";
+            this.columnName.MinimumWidth = 6;
+            this.columnName.Name = "columnName";
+            // 
+            // columnSelect
+            // 
+            this.columnSelect.HeaderText = "Selected";
+            this.columnSelect.MinimumWidth = 6;
+            this.columnSelect.Name = "columnSelect";
+            this.columnSelect.Width = 69;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "Image";
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 52;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // Selected
+            // 
+            this.Selected.HeaderText = "Selected";
+            this.Selected.MinimumWidth = 6;
+            this.Selected.Name = "Selected";
+            this.Selected.Width = 69;
+            // 
+            // columnPopulatePKHeX
+            // 
+            this.columnPopulatePKHeX.HeaderText = "PKHeX";
+            this.columnPopulatePKHeX.MinimumWidth = 6;
+            this.columnPopulatePKHeX.Name = "columnPopulatePKHeX";
+            this.columnPopulatePKHeX.Width = 59;
             // 
             // Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnTransferItems);
-            this.Controls.Add(this.picItem2);
-            this.Controls.Add(this.picItem1);
-            this.Controls.Add(this.picItem0);
-            this.Controls.Add(this.picInventoryPokemon2);
-            this.Controls.Add(this.picInventoryPokemon1);
-            this.Controls.Add(this.picInventoryPokemon0);
+            this.Controls.Add(this.InventoryTabs);
             this.Name = "Inventory";
             this.Size = new System.Drawing.Size(431, 365);
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picInventoryPokemon2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picItem0)).EndInit();
+            this.InventoryTabs.ResumeLayout(false);
+            this.tabPokemon.ResumeLayout(false);
+            this.tabItems.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdPokemon)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox picInventoryPokemon0;
-        private System.Windows.Forms.PictureBox picInventoryPokemon1;
-        private System.Windows.Forms.PictureBox picInventoryPokemon2;
-        private System.Windows.Forms.PictureBox picItem2;
-        private System.Windows.Forms.PictureBox picItem1;
-        private System.Windows.Forms.PictureBox picItem0;
         private System.Windows.Forms.Button btnTransferItems;
+        private System.Windows.Forms.TabControl InventoryTabs;
+        private System.Windows.Forms.TabPage tabPokemon;
+        private System.Windows.Forms.TabPage tabItems;
+        private System.Windows.Forms.DataGridView grdItems;
+        private System.Windows.Forms.DataGridView grdPokemon;
+        private System.Windows.Forms.Button btnClearItems;
+        private System.Windows.Forms.DataGridViewImageColumn columnImage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnName;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn columnSelect;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Selected;
+        private System.Windows.Forms.DataGridViewButtonColumn columnPopulatePKHeX;
     }
 }
