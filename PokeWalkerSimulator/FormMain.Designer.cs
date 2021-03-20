@@ -43,6 +43,7 @@
             this.viewTrainerInformationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getItemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateInventoryGridToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convertPK4ToPokeWalkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabSetup = new System.Windows.Forms.TabPage();
             this.setup = new PokeWalkerSimulator.Controls.Setup();
@@ -52,7 +53,6 @@
             this.pokeradar = new PokeWalkerSimulator.Controls.PokeRadar();
             this.tabDowsingMachine = new System.Windows.Forms.TabPage();
             this.dowsingmachine = new PokeWalkerSimulator.Controls.DowsingMachine();
-            this.convertPK4ToPokeWalkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabSetup.SuspendLayout();
@@ -114,7 +114,7 @@
             this.startStrollToolStripMenuItem,
             this.endStrollToolStripMenuItem});
             this.beginStrollToolStripMenuItem.Name = "beginStrollToolStripMenuItem";
-            this.beginStrollToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.beginStrollToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.beginStrollToolStripMenuItem.Text = "Stroll";
             // 
             // startStrollToolStripMenuItem
@@ -134,7 +134,7 @@
             // setStrollPokemonToolStripMenuItem
             // 
             this.setStrollPokemonToolStripMenuItem.Name = "setStrollPokemonToolStripMenuItem";
-            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.setStrollPokemonToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.setStrollPokemonToolStripMenuItem.Text = "Set Stroll Pokemon";
             this.setStrollPokemonToolStripMenuItem.Click += new System.EventHandler(this.SetStrollPokemonToolStripMenuItem_Click);
             // 
@@ -147,43 +147,41 @@
             this.steps5000,
             this.enterStepsToolStripMenuItem});
             this.stepsToolStripMenuItem.Name = "stepsToolStripMenuItem";
-            this.stepsToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.stepsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.stepsToolStripMenuItem.Text = "Steps";
             // 
             // steps100
             // 
-            this.steps100.Enabled = false;
             this.steps100.Name = "steps100";
-            this.steps100.Size = new System.Drawing.Size(166, 26);
+            this.steps100.Size = new System.Drawing.Size(224, 26);
             this.steps100.Text = "100 Steps";
             this.steps100.Click += new System.EventHandler(this.Steps100_Click);
             // 
             // steps500
             // 
-            this.steps500.Enabled = false;
             this.steps500.Name = "steps500";
-            this.steps500.Size = new System.Drawing.Size(166, 26);
+            this.steps500.Size = new System.Drawing.Size(224, 26);
             this.steps500.Text = "500 Steps";
             this.steps500.Click += new System.EventHandler(this.Steps500_Click);
             // 
             // steps1000
             // 
             this.steps1000.Name = "steps1000";
-            this.steps1000.Size = new System.Drawing.Size(166, 26);
+            this.steps1000.Size = new System.Drawing.Size(224, 26);
             this.steps1000.Text = "1000 Steps";
             this.steps1000.Click += new System.EventHandler(this.Steps1000_Click);
             // 
             // steps5000
             // 
             this.steps5000.Name = "steps5000";
-            this.steps5000.Size = new System.Drawing.Size(166, 26);
+            this.steps5000.Size = new System.Drawing.Size(224, 26);
             this.steps5000.Text = "5000 Steps";
             this.steps5000.Click += new System.EventHandler(this.Steps5000_Click);
             // 
             // enterStepsToolStripMenuItem
             // 
             this.enterStepsToolStripMenuItem.Name = "enterStepsToolStripMenuItem";
-            this.enterStepsToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.enterStepsToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.enterStepsToolStripMenuItem.Text = "Enter Steps";
             // 
             // debugToolStripMenuItem
@@ -225,6 +223,13 @@
             this.updateInventoryGridToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.updateInventoryGridToolStripMenuItem.Text = "Update InventoryGrid";
             this.updateInventoryGridToolStripMenuItem.Click += new System.EventHandler(this.UpdateInventoryGridToolStripMenuItem_Click);
+            // 
+            // convertPK4ToPokeWalkerToolStripMenuItem
+            // 
+            this.convertPK4ToPokeWalkerToolStripMenuItem.Name = "convertPK4ToPokeWalkerToolStripMenuItem";
+            this.convertPK4ToPokeWalkerToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
+            this.convertPK4ToPokeWalkerToolStripMenuItem.Text = "Convert PK4 to PokeWalker";
+            this.convertPK4ToPokeWalkerToolStripMenuItem.Click += new System.EventHandler(this.convertPK4ToPokeWalkerToolStripMenuItem_Click);
             // 
             // tabControlMain
             // 
@@ -308,13 +313,6 @@
             this.dowsingmachine.Name = "dowsingmachine";
             this.dowsingmachine.Size = new System.Drawing.Size(431, 365);
             this.dowsingmachine.TabIndex = 0;
-            // 
-            // convertPK4ToPokeWalkerToolStripMenuItem
-            // 
-            this.convertPK4ToPokeWalkerToolStripMenuItem.Name = "convertPK4ToPokeWalkerToolStripMenuItem";
-            this.convertPK4ToPokeWalkerToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
-            this.convertPK4ToPokeWalkerToolStripMenuItem.Text = "Convert PK4 to PokeWalker";
-            this.convertPK4ToPokeWalkerToolStripMenuItem.Click += new System.EventHandler(this.convertPK4ToPokeWalkerToolStripMenuItem_Click);
             // 
             // FormMain
             // 
