@@ -52,6 +52,7 @@
             this.pokeradar = new PokeWalkerSimulator.Controls.PokeRadar();
             this.tabDowsingMachine = new System.Windows.Forms.TabPage();
             this.dowsingmachine = new PokeWalkerSimulator.Controls.DowsingMachine();
+            this.convertPK4ToPokeWalkerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabSetup.SuspendLayout();
@@ -191,7 +192,8 @@
             this.viewPK4InformationToolStripMenuItem,
             this.viewTrainerInformationToolStripMenuItem,
             this.getItemToolStripMenuItem,
-            this.updateInventoryGridToolStripMenuItem});
+            this.updateInventoryGridToolStripMenuItem,
+            this.convertPK4ToPokeWalkerToolStripMenuItem});
             this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
             this.debugToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.debugToolStripMenuItem.Text = "Debug";
@@ -199,28 +201,28 @@
             // viewPK4InformationToolStripMenuItem
             // 
             this.viewPK4InformationToolStripMenuItem.Name = "viewPK4InformationToolStripMenuItem";
-            this.viewPK4InformationToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.viewPK4InformationToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.viewPK4InformationToolStripMenuItem.Text = "View PK4 Information";
             this.viewPK4InformationToolStripMenuItem.Click += new System.EventHandler(this.ViewPK4InformationToolStripMenuItem_Click);
             // 
             // viewTrainerInformationToolStripMenuItem
             // 
             this.viewTrainerInformationToolStripMenuItem.Name = "viewTrainerInformationToolStripMenuItem";
-            this.viewTrainerInformationToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.viewTrainerInformationToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.viewTrainerInformationToolStripMenuItem.Text = "View Trainer Information";
             this.viewTrainerInformationToolStripMenuItem.Click += new System.EventHandler(this.ViewTrainerInformationToolStripMenuItem_Click);
             // 
             // getItemToolStripMenuItem
             // 
             this.getItemToolStripMenuItem.Name = "getItemToolStripMenuItem";
-            this.getItemToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.getItemToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.getItemToolStripMenuItem.Text = "Get item?";
             this.getItemToolStripMenuItem.Click += new System.EventHandler(this.GetItemToolStripMenuItem_Click);
             // 
             // updateInventoryGridToolStripMenuItem
             // 
             this.updateInventoryGridToolStripMenuItem.Name = "updateInventoryGridToolStripMenuItem";
-            this.updateInventoryGridToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.updateInventoryGridToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
             this.updateInventoryGridToolStripMenuItem.Text = "Update InventoryGrid";
             this.updateInventoryGridToolStripMenuItem.Click += new System.EventHandler(this.UpdateInventoryGridToolStripMenuItem_Click);
             // 
@@ -307,6 +309,13 @@
             this.dowsingmachine.Size = new System.Drawing.Size(431, 365);
             this.dowsingmachine.TabIndex = 0;
             // 
+            // convertPK4ToPokeWalkerToolStripMenuItem
+            // 
+            this.convertPK4ToPokeWalkerToolStripMenuItem.Name = "convertPK4ToPokeWalkerToolStripMenuItem";
+            this.convertPK4ToPokeWalkerToolStripMenuItem.Size = new System.Drawing.Size(270, 26);
+            this.convertPK4ToPokeWalkerToolStripMenuItem.Text = "Convert PK4 to PokeWalker";
+            this.convertPK4ToPokeWalkerToolStripMenuItem.Click += new System.EventHandler(this.convertPK4ToPokeWalkerToolStripMenuItem_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -360,6 +369,7 @@
         private System.Windows.Forms.TabPage tabSetup;
         private Controls.Setup setup;
         private System.Windows.Forms.ToolStripMenuItem updateInventoryGridToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem convertPK4ToPokeWalkerToolStripMenuItem;
     }
 }
 

@@ -200,5 +200,19 @@ namespace PokeWalkerSimulator {
         private void UpdateInventoryGridToolStripMenuItem_Click(object sender, EventArgs e) {
             inventory.UpdateInventoryGrid();
         }
+
+        private void convertPK4ToPokeWalkerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PKM pk = main.PreparePKM();
+
+            pk.TID = main.C_SAV.SAV.TID;
+            pk.SID = main.C_SAV.SAV.SID;
+            pk.OT_Name = main.C_SAV.SAV.OT;
+            pk.OT_Gender = main.C_SAV.SAV.Gender;
+            pk.MetDate = DateTime.Today;
+            PIDGenerator.SetRandomWildPID(pk, 4, pk.Nature, pk.Ability, pk.Gender, PIDType.Pokewalker);
+
+            main.PKME_Tabs.PopulateFields(pk);
+        }
     }
 }
