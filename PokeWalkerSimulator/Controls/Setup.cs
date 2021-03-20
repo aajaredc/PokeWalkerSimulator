@@ -88,6 +88,7 @@ namespace PokeWalkerSimulator.Controls {
 
         private void BtnStartStroll_Click(object sender, EventArgs e) {
             FormMain.selectedCourse = FormMain.courses[courseNumber];
+            MessageBox.Show("Stroll started");
         }
     }
 }
